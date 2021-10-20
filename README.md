@@ -1,5 +1,6 @@
 # ChromiumOS
-ChromiumOS builds with x264 and linux firmware.
+<img src="https://github.com/Alex313031/ChromiumOS/blob/main/cros_bootsplash.png">
+- ChromiumOS builds with x264 and linux firmware.
 
 Inspired and based on ArnoldTheBats builds which can be downloaded here > https://arnoldthebat.co.uk/wordpress/
 
