@@ -1,0 +1,86 @@
+# Copyright 2015 The Chromium OS Authors. All rights reserved.
+# Distributed under the terms of the GNU General Public License v2
+
+CHROMEOS_KERNEL_SPLITCONFIG="chromiumos-x86_64"
+CHROMEOS_KERNEL_ARCH="x86_64"
+
+# We assume that our 64bit baseline CPU supports at least
+# MMX, SSE, SSE2, and SSE3.
+BOARD_COMPILER_FLAGS="-march=x86-64 -msse3"
+BOARD_RUSTFLAGS="-Ctarget-cpu=x86-64 -Ctarget-feature=+sse3"
+
+# Include many firmwares as this is a "generic" board and might run on a
+# wide variety of platforms with who knows what kind of hardware.
+LINUX_FIRMWARE="iwlwifi-all"
+
+# Use LLVM amdgpu target when building LLVM.
+LLVM_TARGETS="AMDGPU X86"
+
+# Initial value just for style purposes.
+USE=""
+
+USE="${USE} chrome_media x264"
+
+USE="${USE} containers kvm_host crosvm-gpu virtio_gpu"
+
+USE="${USE} legacy_usb legacy_keyboard legacy_power_button sse kernel-4_14"
+
+USE="${USE} frecon"
+
+USE="${USE} direncryption"
+
+# Enable all optional features on generic overlays.
+USE="${USE} buffet"
+
+USE="${USE} modules"
+
+# LLVM is required to build the llvmpipe and radeon drivers.
+USE="${USE} llvm"
+
+# Enable NNAPI for testing.
+USE="${USE} nnapi"
+
+# Enable hps for testing.
+USE="${USE} hps"
+
+# Enable camera HALv3
+USE="${USE} arc-camera3"
+
+# Enable sirenia for testing.
+USE="${USE} sirenia"
+
+# Enable vivid
+USE="${USE} vivid"
+
+# Enable hostap hwsim tests.
+USE="${USE} wifi_hostap_test"
+
+# Include the kernel in the base image.
+USE="${USE} include_vmlinuz"
+
+# Disable unibuild on this legacy board. This is only for existing (as of Jan 2019)
+# boards as all new boards must be unibuild enabled moving forward. Do not copy this
+# to new boards as it will be rejected. See
+# https://chromium.googlesource.com/chromiumos/platform2/+/HEAD/chromeos-config/README.md
+# for further details about chromeos-config, which is the required entry point for
+# unified builds.
+USE="${USE} -unibuild"
+
+# Enable wayland and egl for LaCrOS.
+USE="${USE} wayland egl"
+
+# Enable Vulkan for ClusterFuzz.
+USE="${USE} vulkan"
+
+# Use legacy pre-Groot UI for initramfs and init script screens.
+USE="${USE} legacy_firmware_ui"
+
+# Enable a few more video cards as this is a generic board.
+VIDEO_CARDS="intel i915 llvmpipe nouveau radeon"
+
+# Virtual machines don't have physical TPMs.
+# Enable TPM2.0 simulator on it.
+USE="${USE} -tpm tpm2 tpm2_simulator tpm2_simulator_manufacturer"
+
+# Enable vTPM proxy on it for driver-level TPM simulator.
+USE="${USE} vtpm_proxy"
