@@ -24,10 +24,7 @@ fi
 DESCRIPTION="Linux firmware files"
 HOMEPAGE="https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git"
 
-LICENSE="GPL-2 GPL-2+ GPL-3 BSD MIT || ( MPL-1.1 GPL-2 )
-	redistributable? (
-		linux-fw-redistributable ( BSD-2 BSD BSD-4 ISC MIT no-source-code ) )
-	unknown-license? ( all-rights-reserved )"
+LICENSE="GPL-3"
 SLOT="0"
 IUSE="initramfs +redistributable savedconfig unknown-license"
 REQUIRED_USE="initramfs? ( redistributable )"
