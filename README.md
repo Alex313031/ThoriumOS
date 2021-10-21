@@ -10,3 +10,5 @@ To start building > https://chromium.googlesource.com/chromiumos/docs/+/HEAD/dev
 Overlays - https://www.chromium.org/chromium-os/how-tos-and-troubleshooting/working-with-your-overlay-faq
 
 The files here can be copied on top of overlay-amd46-generic in //chromiumos/src/overlays/overlay-amd64-generic.
+
+ - The zip contains chromiumos_image.bin which can be flashed to a USB Drive with https://www.balena.io/etcher/ and booted on most processors supporting SSE3 or later.
