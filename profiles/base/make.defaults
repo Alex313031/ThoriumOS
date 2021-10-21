@@ -32,7 +32,7 @@ USE="${USE} modules"
 USE="${USE} frecon"
 
 # Enable all optional features on generic overlays.
-USE="${USE} buffet"
+USE="${USE} buffet -wifi_bootstrapping"
 
 # LLVM is required to build the llvmpipe and radeon drivers.
 USE="${USE} llvm"
@@ -76,7 +76,7 @@ USE="${USE} vulkan"
 USE="${USE} legacy_firmware_ui"
 
 # Enable a few more video cards as this is a generic board.
-VIDEO_CARDS="intel i915 llvmpipe nouveau radeon"
+VIDEO_CARDS="intel i915 i965 llvmpipe nouveau radeon"
 
 # Virtual machines don't have physical TPMs.
 # Enable TPM2.0 simulator on it.
