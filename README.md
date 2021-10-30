@@ -23,6 +23,8 @@ The files here can be copied in place on top of overlay-amd46-generic in *//chro
 - Run (inside cros_sdk) the export commands in the exports file.
 - Run (inside cros_sdk) the emerge commands also in the exports file.
 - When running './build_packages' append `--nowithdebug` \
-&nbsp; - *This builds chromeos-base/chrome (Chromium) locally instead of downloading prebuilt binaries from google storage.*
+&nbsp; - *This builds chromeos-base/chrome (Chromium) locally instead of downloading prebuilt binaries from google storage.*\
+NOTE: To login, API Keys are needed. Follow > https://www.chromium.org/developers/how-tos/api-keys \
+&nbsp;&nbsp; - A sample .googleapikeys and chrome_dev.conf file are provided.
 
 The .zips in Releases contain **chromiumos_image.bin** which can be flashed to a USB Drive with https://www.balena.io/etcher/, *dd*, or *cros_flash* and booted on most processors supporting SSE3 or later. NOTE: NVidia is not supported. (yet)
