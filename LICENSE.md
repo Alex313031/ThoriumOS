@@ -1,1 +1,4 @@
+
 http://www.chromium.org/chromium-os/licenses
+
+## The license for this repo is GPL-3.
