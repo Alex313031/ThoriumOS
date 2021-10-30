@@ -21,11 +21,15 @@ USE=""
 
 USE="${USE} chrome_media v4l2_codec vaapi x264 widevine"
 
+USE="${USE} background_blur"
+
 USE="${USE} containers kvm_host crosvm-gpu virtio_gpu"
 
 USE="${USE} legacy_usb legacy_keyboard legacy_power_button sse kernel-5_10"
 
 USE="${USE} direncryption"
+
+USE="${USE} direncription_allow_v2"
 
 USE="${USE} modules"
 
