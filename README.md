@@ -18,7 +18,8 @@ The files here can be copied in place on top of overlay-amd46-generic in *//chro
 - Download chromium source code > https://chromium.googlesource.com/chromium/src/+/refs/heads/main/docs/linux/build_instructions.md
 - Copy the *.gclient* file to the chromium source directory.
 - Enter the CrOS SDK with `cros_sdk --chrome_root=/path/to/chromium`
-- Run `export CHROME_ORIGIN=LOCAL_SOURCE` from within the chroot.
+- Run (inside cros_sdk) the export commands in the exports file.
+- Run (inside cros_sdk) the emerge commands also in the exports file.
 - When running './build_packages' append `--nowithdebug` \
 &nbsp; - *This builds chromeos-base/chrome (Chromium) locally instead of downloading prebuilt binaries from google storage.*
 
