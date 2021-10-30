@@ -1,0 +1,11 @@
+media-libs/mesa-llvmpipe egl gles2 shared-glapi
+
+# Enabling wayland pulls media-libs/mesa package, which conflicts with
+# mesa-llvmpipe pulled by overwritten virtual/opengles package.
+x11-libs/libva-intel-driver -wayland
+
+# Enabling wayland causes the wl_proxy_marshal_constructor_versioned not found
+# error in waffle.
+media-libs/waffle -wayland
+
+chromeos-base/chromeos-chrome chrome_media v4l2_codec vaapi x264 widevine

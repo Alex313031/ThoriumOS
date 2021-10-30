@@ -1,0 +1,5 @@
+export CHROME_ORIGIN=LOCAL_SOURCE
+export OFFICIAL_BUILD='1'
+export CHROME_BUILD_TYPE='_official'
+export is_official_build=true
+
