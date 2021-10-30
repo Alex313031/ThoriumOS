@@ -16,7 +16,7 @@ About overlays > https://www.chromium.org/chromium-os/how-tos-and-troubleshootin
 
 The files here can be copied in place on top of overlay-amd46-generic in *//chromiumos/src/overlays/overlay-amd64-generic*.
 
-> To build with x264, you must also
+> To build with x264 and the extra packages, you must also
 - Download chromium source code > https://chromium.googlesource.com/chromium/src/+/refs/heads/main/docs/linux/build_instructions.md
 - Copy the *.gclient* file to the chromium source directory.
 - Enter the CrOS SDK with `cros_sdk --chrome_root=/path/to/chromium`
