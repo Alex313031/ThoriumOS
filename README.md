@@ -3,6 +3,8 @@
 
 ## ChromiumOS builds with x264 and linux firmware/modules support.
 
+- Also contains extra packages like iotop, sysstat, htop, and sl.
+
 &nbsp;&nbsp;&ndash; Inspired by and based off of ArnoldTheBat's builds which can be downloaded here > https://arnoldthebat.co.uk/wordpress/ \
 &nbsp;&nbsp; - Also some code from FydeOS > https://github.com/FydeOS
 
