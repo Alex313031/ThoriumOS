@@ -19,7 +19,7 @@ LLVM_TARGETS="AMDGPU X86"
 # Initial value just for style purposes.
 USE=""
 
-USE="${USE} chrome_media v4l2_codec v4lplugin vaapi x264 widevine"
+USE="${USE} chrome_media v4l2_codec vaapi x264 widevine"
 
 USE="${USE} background_blur"
 
