@@ -29,8 +29,6 @@ USE="${USE} legacy_usb legacy_keyboard legacy_power_button sse -kernel-4_14 kern
 
 USE="${USE} direncryption"
 
-USE="${USE} direncription_allow_v2"
-
 USE="${USE} modules"
 
 USE="${USE} frecon"
