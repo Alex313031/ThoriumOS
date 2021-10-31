@@ -1,11 +1,12 @@
 ## EXPORT COMMANDS
 
+export BOARD=amd64-generic
 export CHROME_ORIGIN=LOCAL_SOURCE
 export OFFICIAL_BUILD='1'
 export CHROME_BUILD_TYPE='_official'
 export is_official_build=true
 
 ## EMERGE COMMANDS
-emerge app-admin/sysstat
-emerge sys-process/htop
-emerge sys-process/iotop
+sudo emerge app-admin/sysstat
+sudo emerge sys-process/htop
+sudo emerge sys-process/iotop
