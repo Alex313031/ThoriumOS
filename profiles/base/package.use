@@ -8,4 +8,4 @@ x11-libs/libva-intel-driver -wayland
 # error in waffle.
 media-libs/waffle -wayland
 
-chromeos-base/chromeos-chrome chrome_media v4l2_codec v4lplugin vaapi x264 widevine
+chromeos-base/chromeos-chrome chrome_media v4l2_codec vaapi x264 widevine
