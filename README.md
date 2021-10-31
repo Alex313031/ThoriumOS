@@ -1,7 +1,7 @@
 # ChromiumOS
 <img src="https://github.com/Alex313031/ChromiumOS/blob/main/cros_bootsplash.png">
 
-## ChromiumOS builds with x264 and linux firmware/modules support.
+## ChromiumOS builds with x264, kernel 5.10, and linux firmware/modules support.
 
 - Also contains extra packages like iotop, sysstat, htop, and sl.
 
