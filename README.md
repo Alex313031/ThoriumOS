@@ -24,6 +24,7 @@ The files here can be copied in place on top of overlay-amd46-generic in *//chro
 - Run (inside cros_sdk) the emerge commands also in the exports file.
 - When running './build_packages' append `--nowithdebug` \
 &nbsp; - *This builds chromeos-base/chrome (Chromium) locally instead of downloading prebuilt binaries from google storage.*\
+- To build the disk image, use `./build_image --board=${BOARD} --noenable_rootfs_verification dev`
 NOTE: To login, API Keys are needed. Follow > https://www.chromium.org/developers/how-tos/api-keys \
 &nbsp;&nbsp; - Sample .googleapikeys and chrome_dev.conf files are provided.
 
