@@ -5,9 +5,9 @@ CHROMEOS_KERNEL_SPLITCONFIG="chromiumos-x86_64"
 CHROMEOS_KERNEL_ARCH="x86_64"
 
 # We assume that our 64bit baseline CPU supports at least
-# MMX, SSE, SSE2, and SSE3.
-BOARD_COMPILER_FLAGS="-march=x86-64 -msse3"
-BOARD_RUSTFLAGS="-Ctarget-cpu=x86-64 -Ctarget-feature=+sse3"
+# MMX, SSE, SSE2, SSE3, and SSE4.
+BOARD_COMPILER_FLAGS="-march=x86-64 -msse4"
+BOARD_RUSTFLAGS="-Ctarget-cpu=x86-64 -Ctarget-feature=+sse4"
 
 # Include many firmwares as this is a "generic" board and might run on a
 # wide variety of platforms with who knows what kind of hardware.
@@ -19,21 +19,34 @@ LLVM_TARGETS="AMDGPU X86"
 # Initial value just for style purposes.
 USE=""
 
+# Enable non-free codecs and components.
 USE="${USE} chrome_media v4l2_codec vaapi x264 widevine"
 
+# Enable background blur on all graphics chipsets.
 USE="${USE} background_blur"
 
+# Used by crostini.
 USE="${USE} containers kvm_host crosvm-gpu virtio_gpu"
 
-USE="${USE} legacy_usb legacy_keyboard legacy_power_button sse -kernel-4_14 kernel-4_19"
+# Enable Downloadable Content (DLC), optional USE for crostini.
+# USE="${USE} dlc"
 
+# Enable legacy components for generic x64 board.
+USE="${USE} legacy_usb legacy_keyboard legacy_power_button sse kernel-4_14"
+
+# Enable NFS and FAT/FAT32/EXFAT.
+USE="${USE} nfs vfat"
+
+# Dircrypto for stateful partition. On kernel 5.x this should be set to direncryption_allow_v2.
 USE="${USE} direncryption"
 
+# Use linux kernel modules and enable calling them from cmdline.
 USE="${USE} modules"
 
+# Use frecon, the freon graphics virtual terminal for devices using KMS for graphics setting.
 USE="${USE} frecon"
 
-# Enable all optional features on generic overlays.
+# Enable all optional features on generic overlays, minus wifi bootstrapping for linux-firmware.
 USE="${USE} buffet -wifi_bootstrapping"
 
 # LLVM is required to build the llvmpipe and radeon drivers.
@@ -77,7 +90,7 @@ USE="${USE} vulkan"
 # Use legacy pre-Groot UI for initramfs and init script screens.
 USE="${USE} legacy_firmware_ui"
 
-# Enable a few more video cards as this is a generic board.
+# Enable a few more video cards as this is a generic board. i915 is kept for posterity after M90.
 VIDEO_CARDS="intel i915 i965 llvmpipe nouveau radeon"
 
 # Virtual machines don't have physical TPMs.
@@ -87,5 +100,5 @@ USE="${USE} -tpm tpm2 tpm2_simulator tpm2_simulator_manufacturer"
 # Enable vTPM proxy on it for driver-level TPM simulator.
 USE="${USE} vtpm_proxy"
 
-# No support for zero-copy on virtual machines.
-USE="${USE} -video_capture_use_gpu_memory_buffer"
+# No support for zero-copy on virtual machines. Comment out for phyiscal machines.
+# USE="${USE} -video_capture_use_gpu_memory_buffer"
