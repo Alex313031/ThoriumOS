@@ -19,6 +19,7 @@ The files here can be copied in place on top of overlay-amd46-generic in *//chro
 > To build with x264 and the extra packages, you must also
 - Download chromium source code > https://chromium.googlesource.com/chromium/src/+/refs/heads/main/docs/linux/build_instructions.md
 - Copy the *.gclient* file to the chromium source directory.
+- Copy the *BUILD.gn* file to //chromium/src/build/config/compiler/ and overwrite the one in there.
 - Enter the CrOS SDK with `cros_sdk --chrome_root=/path/to/chromium`
 - Run (inside cros_sdk) the export commands in the exports file.
 - Run (inside cros_sdk) the emerge commands also in the exports file.
