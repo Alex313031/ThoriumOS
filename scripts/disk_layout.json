@@ -1,6 +1,5 @@
 {
   "_comment": "See http://www.chromium.org/chromium-os/developer-guide/disk-layout-format",
-  "_comment": "USB ROOTFS increased from 2048 to 4092 MB.",
   "parent": "legacy_disk_layout.json",
   "layouts":{
     "common":[
@@ -28,8 +27,7 @@
     "usb":[
       {
         "num": 3,
-        "size": "4096 MiB",
-        "fs_size": "4000 MiB"
+        "size": "2048 MiB"
       }
     ],
     "factory_install": [
