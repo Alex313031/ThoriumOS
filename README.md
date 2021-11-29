@@ -10,6 +10,11 @@
 
 Here is Arnold's source code which this project is based on > https://github.com/arnoldthebat/chromiumos - if you don't know how to work with these overlays, I invite you to learn, but one can just download the premade image in releases.
 
+## Installing
+Follow https://chromium.googlesource.com/chromiumos/docs/+/HEAD/developer_guide.md#installing-your-chromium-os-image-to-your-hard-disk
+However when running `/usr/sbin/chromeos-install` append `--dst /dev/sdxx`, where *sdx* is your hard drive i.e. *sda1*.
+If you built your own image, API Keys will be needed to sign in. (See below.)
+
 ## Building
 To start building > https://chromium.googlesource.com/chromiumos/docs/+/HEAD/developer_guide.md \
 About overlays > https://www.chromium.org/chromium-os/how-tos-and-troubleshooting/working-with-your-overlay-faq \
