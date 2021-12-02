@@ -16,8 +16,16 @@
         "size": "128 MiB"
       },
       {
+        # Slot B rootfs, unused on USB, but pad to 2M.
+        # installation will expand this to size from base.
+        "num": 5,
+        "fs_size":"2700 MiB",
+        "size": "2724 MiB"
+      },
+      {
         "num": 3,
-        "fs_size":"2000 MiB"
+        "fs_size":"2700 MiB",
+        "size": "2724 MiB"
       },
       {
         "num": 1,
@@ -26,20 +34,44 @@
     ],
     "usb":[
       {
+        # Slot B rootfs, unused on USB, but pad to 2M.
+        # installation will expand this to size from base.
+        "num": 5,
+        "fs_size":"2700 MiB",
+        "size": "2724 MiB"
+      },
+      {
         "num": 3,
-        "size": "2048 MiB"
+        "fs_size":"2700 MiB",
+        "size": "2724 MiB"
       }
     ],
     "factory_install": [
       {
+        # Slot B rootfs, unused on USB, but pad to 2M.
+        # installation will expand this to size from base.
+        "num": 5,
+        "fs_size":"2700 MiB",
+        "size": "2724 MiB"
+      },
+      {
         "num": 3,
-        "size": "2048 MiB"
+        "fs_size":"2700 MiB",
+        "size": "2724 MiB"
       }
     ],
     "recovery":[
       {
+        # Slot B rootfs, unused on USB, but pad to 2M.
+        # installation will expand this to size from base.
+        "num": 5,
+        "fs_size":"2700 MiB",
+        "size": "2724 MiB"
+      },
+      {
         "num": 3,
-        "size": "2048 MiB"
+        "fs_size":"2700 MiB",
+        "size": "2724 MiB"
       }
     ],
     "4gb-rootfs": [
@@ -57,7 +89,8 @@
       },
       {
         "num": 5,
-        "size": "2 MiB"
+        "fs_size":"2700 MiB",
+        "size": "2724 MiB"
       },
       {
         "num": 3,
@@ -86,7 +119,8 @@
       },
       {
         "num": 5,
-        "size": "2 MiB"
+        "fs_size":"2700 MiB",
+        "size": "2724 MiB"
       },
       {
         "num": 3,
