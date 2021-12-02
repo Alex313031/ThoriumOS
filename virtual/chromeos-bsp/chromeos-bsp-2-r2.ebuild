@@ -25,6 +25,7 @@ RDEPEND="
 	app-admin/sysstat
 	sys-process/htop
 	sys-process/iotop
+	chromeos-base/google-drive-fs
 "
 DEPEND="${RDEPEND}"
 
