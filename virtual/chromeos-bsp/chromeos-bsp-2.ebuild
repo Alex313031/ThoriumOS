@@ -1,4 +1,4 @@
-# Copyright (c) 2013 The Chromium OS Authors. All rights reserved.
+# Copyright (c) 2022 The Chromium OS Authors and Alex313031. All rights reserved.
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -17,6 +17,8 @@ KEYWORDS="*"
 
 RDEPEND="
 	!chromeos-base/chromeos-bsp-null
+	chromeos-base/frick-oem-wallpapers
+	chromeos-base/cros-trimly
 	sys-kernel/linux-firmware
 	media-libs/x264
 	media-libs/cros-camera-hal-usb
