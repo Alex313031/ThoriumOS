@@ -3,7 +3,7 @@
 
 ## ChromiumOS builds with x264(H.264), kernel 4.14.255, linux firmware/modules support, and extra packages.
 
-- Extra packages include iotop, iotools, sysstat, htop, and sl.
+- Extra packages include iotop, iotools, sysstat, htop, sl, custom wallpapers, and TrImLy: a fstrim and e4defrag automator script I made for ChromiumOS.
 
 &nbsp;&nbsp;&ndash; Inspired by and based off of ArnoldTheBat's builds which can be downloaded here > https://arnoldthebat.co.uk/wordpress/ \
 &nbsp;&nbsp; - Also some code from FydeOS > https://github.com/FydeOS
