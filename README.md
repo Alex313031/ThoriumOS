@@ -1,9 +1,11 @@
 # ChromiumOS
 <img src="https://github.com/Alex313031/ChromiumOS/blob/main/cros_bootsplash.png">
 
-## ChromiumOS builds with x264(H.264), kernel 5.4, linux firmware/modules support, intel microcode, and extra packages.
+## ChromiumOS builds with x264(H.264) codecs, Kernel 5.4, Linux firmware/modules support, Intel microcode, and extra packages.
 
-- Extra packages include iotop, iotools, sysstat, htop, sl, custom wallpapers, screenfetch-dev, and TrImLy: a fstrim and e4defrag automator script I made for ChromiumOS.
+- Extra packages include iotop, iotools, sysstat, htop, sl, custom wallpapers, screenfetch-dev, and TrImLy: a fstrim and e4defrag automator script I made for ChromiumOS. \
+&nbsp;&nbsp; TrImLy > https://github.com/Alex313031/TrImLy/ \
+&nbsp;&nbsp; ScreenFetch > https://github.com/KittyKatt/screenFetch
 
 &nbsp;&nbsp;&ndash; Inspired by and based off of ArnoldTheBat's builds which can be downloaded here > https://arnoldthebat.co.uk/wordpress/ \
 &nbsp;&nbsp; - Also some code from FydeOS > https://github.com/FydeOS
