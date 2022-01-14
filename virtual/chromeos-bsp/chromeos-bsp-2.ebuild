@@ -19,6 +19,8 @@ RDEPEND="
 	!chromeos-base/chromeos-bsp-null
 	chromeos-base/frick-oem-wallpapers
 	chromeos-base/cros-trimly
+	sys-apps/iucode_tool
+	sys-firmware/intel-microcode
 	sys-kernel/linux-firmware
 	media-libs/x264
 	media-libs/cros-camera-hal-usb
