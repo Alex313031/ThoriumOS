@@ -8,5 +8,6 @@ export is_official_build=true
 
 ## EMERGE COMMANDS
 sudo emerge app-admin/sysstat
+sudo emerge sys-process/atop
 sudo emerge sys-process/htop
 sudo emerge sys-process/iotop
