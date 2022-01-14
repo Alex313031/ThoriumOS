@@ -10,9 +10,9 @@ BOARD_COMPILER_FLAGS="-march=x86-64 -mavx -maes"
 BOARD_RUSTFLAGS="-Ctarget-cpu=x86-64 -Ctarget-feature=+avx"
 
 # Include many firmwares as this is a "generic" board and might run on a
-# wide variety of platforms with who knows what kind of hardware.
+# wide variety of platforms with who knows what kind of hardware. -cros-pd disabled EC firmware updating.
 # LINUX_FIRMWARE="iwlwifi-all"
-LINUX_FIRMWARE="* -cros-pd"
+LINUX_FIRMWARE="* -cros-pd iwlwifi-all"
 
 # Use LLVM amdgpu target when building LLVM.
 LLVM_TARGETS="AMDGPU X86"
@@ -30,16 +30,16 @@ USE="${USE} background_blur"
 USE="${USE} containers kvm_host crosvm-gpu virtio_gpu"
 
 # Enable Downloadable Content (DLC), optional USE for crostini.
-USE="${USE} dlc"
+# USE="${USE} dlc"
 
 # Enable legacy components for generic x64 board.
-USE="${USE} legacy_usb legacy_keyboard legacy_power_button sse kernel-5_4"
+USE="${USE} legacy_usb legacy_keyboard legacy_power_button sse -kernel-4_4 -kernel-4_14 -kernel-4_19 kernel-5_4"
 
 # Enable NFS and FAT/FAT32/EXFAT.
 USE="${USE} nfs vfat"
 
 # Dircrypto for stateful partition. On kernel 5.x this should be set to direncription_allow_v2.
-USE="${USE} direncription_allow_v2"
+USE="${USE} direncryption uprev-4-to-5 cryptohome_userdataauth_interface has-kernelnext"
 
 # Use linux kernel modules and enable calling them from cmdline.
 USE="${USE} modules"
