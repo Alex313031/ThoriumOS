@@ -7,6 +7,7 @@ export CHROME_BUILD_TYPE='_official'
 export is_official_build=true
 
 ## EMERGE COMMANDS
+sudo emerge app-arch/tar
 sudo emerge app-admin/sysstat
 sudo emerge sys-process/htop
 sudo emerge sys-process/iotop
