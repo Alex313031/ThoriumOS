@@ -8,4 +8,11 @@ x11-libs/libva-intel-driver -wayland
 # error in waffle.
 media-libs/waffle -wayland
 
-chromeos-base/chromeos-chrome chrome_media v4l2_codec vaapi x264 widevine -chrome_debug
+# For cros-workon kernel 5.4
+sys-kernel/chromeos-kernel-5_4 apply_patches
+
+# Enable codecs and disable debug stuff.
+chromeos-base/chromeos-chrome -chrome_debug chrome_media v4l2_codec vaapi x264 widevine
+
+# Remove embedded config for generic boards.
+chromeos-base/chromeos-base -cros_embedded
