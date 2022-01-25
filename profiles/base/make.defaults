@@ -6,11 +6,11 @@ CHROMEOS_KERNEL_ARCH="x86_64"
 
 # We assume that our 64bit baseline CPU supports at least
 # MMX, SSE, SSE2, SSE3, and SSE4.
-BOARD_COMPILER_FLAGS="-march=x86-64 -mavx -maes"
+BOARD_COMPILER_FLAGS="-march=x86-64 -mavx -maes -O3"
 BOARD_RUSTFLAGS="-Ctarget-cpu=x86-64 -Ctarget-feature=+avx"
 
 # Include many firmwares as this is a "generic" board and might run on a
-# wide variety of platforms with who knows what kind of hardware. -cros-pd disabled EC firmware updating.
+# wide variety of platforms with who knows what kind of hardware. -cros-pd disables EC firmware updating.
 # LINUX_FIRMWARE="iwlwifi-all"
 LINUX_FIRMWARE="* -cros-pd iwlwifi-all"
 
@@ -21,7 +21,7 @@ LLVM_TARGETS="AMDGPU X86"
 USE=""
 
 # Enable non-free codecs and components.
-USE="${USE} chrome_media v4l2_codec vaapi x264 widevine -chrome_debug"
+USE="${USE} -chrome_debug chrome_media v4l2_codec vaapi x264 widevine"
 
 # Enable background blur on all graphics chipsets.
 USE="${USE} background_blur"
@@ -92,7 +92,7 @@ USE="${USE} vulkan"
 USE="${USE} legacy_firmware_ui"
 
 # Enable a few more video cards as this is a generic board. i915 is kept for posterity after M90.
-VIDEO_CARDS="intel i915 i965 llvmpipe nouveau radeon"
+VIDEO_CARDS="intel i915 i965 llvmpipe nouveau radeon vmware"
 
 # Virtual machines don't have physical TPMs.
 # Enable TPM2.0 simulator on it.
