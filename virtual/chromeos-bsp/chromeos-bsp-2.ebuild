@@ -17,6 +17,7 @@ KEYWORDS="*"
 
 RDEPEND="
 	!chromeos-base/chromeos-bsp-null
+	app-arch/tar
 	chromeos-base/frick-oem-wallpapers
 	chromeos-base/cros-trimly
 	sys-apps/iucode_tool
@@ -24,6 +25,7 @@ RDEPEND="
 	sys-kernel/linux-firmware
 	media-libs/x264
 	media-libs/cros-camera-hal-usb
+	net-misc/tlsdate
 	app-misc/sl
 	sys-apps/iotools
 	app-admin/sysstat
