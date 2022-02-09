@@ -34,6 +34,7 @@ The files here can be copied in place on top of overlay-amd46-generic in *//chro
 - Enter the CrOS SDK with `cros_sdk --chrome_root=/path/to/chromium` # Path should be absolute path, i.e. /home/alex/chromium/
 - Run (inside cros_sdk) the export commands in the exports file.
 - Run (inside cros_sdk) the emerge commands also in the exports file.
+- Copy dot-bashrc and chrome_dev.conf to the locations specified in the comments within them.
 - When running './build_packages' append `--nowithdebug --nowithautotest` \
 &nbsp; - *This builds chromeos-base/chrome (Chromium) locally instead of downloading prebuilt binaries from google storage, and excludes debug stuff.*
 - To build the disk image, use `./build_image --board=${BOARD} --noenable_rootfs_verification dev`
