@@ -2,7 +2,7 @@
 #
 # Copyright (c) 2022 Alex313031
 #
-# This should be copied to //chromiumos/src/third_party/portage-stable/app-shells/bash/files/
+# This file should be copied to //chromiumos/src/third_party/portage-stable/app-shells/bash/files/
 #
 # This file is sourced by all *interactive* bash shells on startup,
 # including some apparently interactive shells such as scp and rcp
