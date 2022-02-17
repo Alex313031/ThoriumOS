@@ -14,6 +14,6 @@ RDEPEND=""
 DEPEND="${RDEPEND}"
 
 src_install() {
-	insinto /usr/local/bin/
-	doins -r "${FILESDIR}"/bin/*
+	exeinto /usr/local/bin/
+	doexe -r "${FILESDIR}"/bin/*
 }
