@@ -8,10 +8,14 @@ x11-libs/libva-intel-driver -wayland
 # error in waffle.
 media-libs/waffle -wayland
 
+sys-kernel/chromeos-kernel-4_4 apply_patches modules
+sys-kernel/chromeos-kernel-4_14 apply_patches modules
+sys-kernel/chromeos-kernel-4_19 apply_patches modules
+
 # For cros-workon kernel 5.x.x
-sys-kernel/chromeos-kernel-5_4 apply_patches
-sys-kernel/chromeos-kernel-5_10 apply_patches
-sys-kernel/chromeos-kernel-5_15 apply_patches
+sys-kernel/chromeos-kernel-5_4 apply_patches modules
+sys-kernel/chromeos-kernel-5_10 apply_patches modules
+sys-kernel/chromeos-kernel-5_15 apply_patches modules
 
 # Enable codecs and disable debug stuff.
 chromeos-base/chromeos-chrome -chrome_debug chrome_media v4l2_codec vaapi x264 widevine
