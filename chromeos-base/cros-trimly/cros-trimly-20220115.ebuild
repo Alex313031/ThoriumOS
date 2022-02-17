@@ -15,5 +15,5 @@ DEPEND="${RDEPEND}"
 
 src_install() {
 	exeinto /usr/local/bin/
-	doexe -r "${FILESDIR}"/bin/*
+	doexe "${FILESDIR}"/bin/*
 }
