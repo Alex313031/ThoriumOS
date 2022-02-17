@@ -33,6 +33,9 @@ DOCS=( AUTHORS doc/{ratecontrol,regression_test,standards,threads,vui}.txt )
 PATCHES=("${FILESDIR}"/${P}-STRINGS.patch)
 
 multilib_src_configure() {
+
+	cros_allow_gnu_build_tools
+
 	tc-export CC
 
 	if [[ ${ABI} == x86 || ${ABI} == amd64 ]]; then
