@@ -30,15 +30,16 @@ The files here can be copied in place on top of overlay-amd46-generic in *//chro
 > To build with x264 and the extra packages, you must also
 - Download chromium source code > https://chromium.googlesource.com/chromium/src/+/refs/heads/main/docs/linux/build_instructions.md
 - Copy the *.gclient* file to the chromium source directory (//chromium not //chromium/src/)
+- Copy the *make.defaults* files to the location specified towards the top in the comments within the file.
 - Go to //chromium/src/ and run `git checkout -f origin/main`, then `git rebase-update`, then `git fetch --tags`, then `gclient sync --with_branch_heads --with_tags -f -R -D` # This updates and syncs everything needed to build Chromium for CrOS.
 - Next, go to //chromiumos/src/third_party/chromiumos-overlay/chromeos-base/chromeos-chrome/ and note the version in the .ebuild file (not the one with 9999 in its name) # This will be used in the next step to use the proper chromium version, which is usually slightly behind tip-o-tree for CrOS.
 - Go back to //chromium/src and run `git checkout tags/98.0.4729.0` # Substituting for the actual version number you got before.
 - Copy the *BUILD.gn* file to //chromium/src/build/config/compiler/ and overwrite the one in there.
-- Enter the CrOS SDK with `cros_sdk --chrome_root=/path/to/chromium` # Path should be absolute path, i.e. /home/alex/chromium/
+- Enter the CrOS SDK with `cros_sdk --enter --chrome_root=/path/to/chromium` # Path should be absolute path, i.e. /home/alex/chromium/
 - Run (inside cros_sdk) the export commands in the exports file.
 - Run (inside cros_sdk) the emerge commands also in the exports file.
-- Copy dot-bashrc and chrome_dev.conf to the locations specified in the comments within them.
-- When running './build_packages' use `build_packages --board=${BOARD} --nowithdebug --nowithautotest` \
+- Run `setup_board --board=${BOARD}`
+- When running 'build_packages' use `build_packages --board=${BOARD} --nowithdebug --nowithautotest` \
 &nbsp; - *This builds chromeos-base/chrome (Chromium) locally instead of downloading prebuilt binaries from google storage, and excludes debug stuff.*
 - To build the disk image, use `./build_image --board=${BOARD} --noenable_rootfs_verification dev`
 - NEW NOTE - My releases now have API keys baked in, but follow below if you are building for yourself.
