@@ -1,0 +1,72 @@
+# Copyright (c) 2022 The Chromium OS Authors and Alex313031. All rights reserved.
+# Distributed under the terms of the GNU General Public License v2
+
+# This file should go in //chromiumos/src/third_party/chromiumos-overlay/profiles/targets/sdk/
+
+# Settings that are common to all host sdks.  Do not place any board specific
+# settings in here, or settings for cross-compiled targets.
+#
+# See "man 5 make.conf" and "man 5 portage" for the available options.
+
+# Dummy setting so we can use the same append form below.
+USE=""
+
+# Various global settings.
+USE="${USE} hardened multilib pic pie -introspection -cracklib"
+
+# Custom USE flag ebuilds can use to determine whether it's going into the sdk
+# or into a target board.
+USE="${USE} cros_host"
+
+# Disable all x11 USE flags for packages within chroot.
+USE="${USE} -gtk2 -gtk3 -qt4"
+
+# Enable extended attributes support in our sdk tools.
+USE="${USE} xattr"
+# But disable using them in the sdk itself for now. http://crbug.com/483174
+USE="${USE} -filecaps"
+
+# No need to track power in the sdk.
+USE="${USE} -power_management"
+
+# We don't boot things inside the sdk.
+USE="${USE} -openrc"
+
+# Disable vala inside the sdk
+USE="${USE} -vala"
+
+# We only have one rootfs.
+USE="${USE} -split-usr"
+
+# Various runtime features that control emerge behavior.
+# See "man 5 make.conf" for details.
+FEATURES="allow-missing-manifests buildpkg clean-logs -collision-protect
+          -ebuild-locks force-mirror -merge-sync -pid-sandbox
+          parallel-install preserve-libs sandbox -strict userfetch
+          userpriv usersandbox -unknown-features-warn network-sandbox"
+
+# This is used by profiles/base/profile.bashrc to figure out that we
+# are targeting the cros-sdk (in all its various modes).  It should
+# be utilized nowhere else!
+CROS_SDK_HOST="cros-sdk-host"
+
+# Qemu targets we care about.
+QEMU_SOFTMMU_TARGETS="aarch64 arm i386 mips mips64 mips64el mipsel x86_64"
+QEMU_USER_TARGETS="aarch64 arm i386 mips mips64 mips64el mipsel x86_64"
+
+# Various compiler defaults.  Should be no arch-specific bits here.
+CFLAGS="-O3 -pipe -mavx -maes"
+LDFLAGS="-Wl,-O3 -Wl,--as-needed"
+
+# We want to migrate away from this at some point.
+# https://crbug.com/360346
+SYMLINK_LIB="yes"
+
+# Default target(s) for python-r1.eclass
+PYTHON_TARGETS="-python2_7 python3_6"
+PYTHON_SINGLE_TARGET="-python2_7 python3_6"
+
+# Use clang as the default compiler.
+CC=x86_64-pc-linux-gnu-clang
+CXX=x86_64-pc-linux-gnu-clang++
+LD=x86_64-pc-linux-gnu-ld.lld
