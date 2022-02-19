@@ -22,3 +22,6 @@ chromeos-base/chromeos-chrome -chrome_debug chrome_media v4l2_codec vaapi x264 w
 
 # Remove embedded config for generic boards.
 chromeos-base/chromeos-base -cros_embedded
+
+# htop use flags
+sys-process/htop lm-sensors llvm-libunwind -unicode -unwind -debug
