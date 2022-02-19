@@ -3,12 +3,15 @@
 
 ## ChromiumOS builds with x264(H.264) codecs, Kernel 5.4, Linux firmware/modules support, Intel microcode, and extra packages.
 
-- Extra packages include iotop, iotools, sysstat, htop, sl, custom wallpapers, screenfetch-dev, and TrImLy: a fstrim and e4defrag automator script I made for ChromiumOS. \
-&nbsp;&nbsp; TrImLy > https://github.com/Alex313031/TrImLy/ \
-&nbsp;&nbsp; ScreenFetch > https://github.com/KittyKatt/screenFetch
+- Extra packages include iotop, iotools, sysstat, lm-sensors, pydf, cpuid, htop, sl, custom wallpapers, screenfetch-dev, pak, and TrImLy: a fstrim and e4defrag automator script I made for ChromiumOS. \
+&nbsp; TrImLy > https://github.com/Alex313031/TrImLy/ \
+&nbsp; ScreenFetch > https://github.com/KittyKatt/screenFetch \
+&nbsp; Pak > https://github.com/myfreeer/chrome-pak-customizer
+ - Sceenfetch is like neofetch for ChromiumOS
+ - Pak can be used to unpack the .pak files used in any Chromium browser.
 
 &nbsp;&nbsp;&ndash; Inspired by and based off of ArnoldTheBat's builds which can be downloaded here > https://arnoldthebat.co.uk/wordpress/ \
-&nbsp;&nbsp; - Also some code from FydeOS > https://github.com/FydeOS
+&nbsp;&nbsp;&ndash; Also some code from FydeOS > https://github.com/FydeOS
 
 Here is Arnold's source code which this project is based on > https://github.com/arnoldthebat/chromiumos - if you don't know how to work with these overlays, I invite you to learn, but one can just download the premade image in releases.
 
