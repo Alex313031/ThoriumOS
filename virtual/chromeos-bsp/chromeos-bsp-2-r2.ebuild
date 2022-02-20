@@ -34,7 +34,7 @@ RDEPEND="
 	sys-process/iotop
 	sys-apps/lm_sensors
 	sys-process/htop
-	sys-kernel/linux-headers-5.4
+	sys-kernel/linux-headers-5.10
 	chromeos-base/google-drive-fs
 "
 DEPEND="${RDEPEND}"
@@ -45,3 +45,4 @@ DEPEND="${RDEPEND}"
 	# !net-wireless/rtl8723bu
 	# !net-wireless/rtl8812au
 	# !net-wireless/rtl8821ce
+	
