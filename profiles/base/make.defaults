@@ -33,13 +33,13 @@ USE="${USE} containers kvm_host crosvm-gpu virtio_gpu"
 # USE="${USE} dlc"
 
 # Enable legacy components for generic x64 board.
-USE="${USE} legacy_usb legacy_keyboard legacy_power_button sse"
+USE="${USE} legacy_usb legacy_keyboard legacy_power_button sse diagnostics"
 
 # Kernel configuration.
 USE="${USE} -kernel-4_4 -kernel-4_14 -kernel-4_19 kernel-5_4 -kernel-5_10 -kernel-5_15"
 
-# Enable NFS and FAT/FAT32.
-USE="${USE} nfs vfat"
+# Enable NFS and FAT/FAT32 and eMMC Tools.
+USE="${USE} nfs vfat mmc"
 
 # Dircrypto for stateful partition. On kernel 5.x this should be set to direncription_allow_v2.
 USE="${USE} direncryption uprev-4-to-5 cryptohome_userdataauth_interface has-kernelnext"
@@ -95,7 +95,7 @@ USE="${USE} vulkan"
 USE="${USE} legacy_firmware_ui"
 
 # Enable a few more video cards as this is a generic board. i915 is kept for posterity after M90.
-VIDEO_CARDS="intel i915 i965 llvmpipe nouveau radeon vmware"
+VIDEO_CARDS="intel i915 i965 llvmpipe nouveau radeon vmware libglvnd"
 
 # Virtual machines don't have physical TPMs.
 # Enable TPM2.0 simulator on it.
