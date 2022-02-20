@@ -50,17 +50,4 @@ The files here can be copied in place on top of overlay-amd46-generic in *//chro
 
 The .7z files in Releases contain **chromiumos_image.bin** which can be flashed to a USB Drive with https://www.balena.io/etcher/, *dd*, or *cros_flash* and booted on most processors supporting SSE3 or later. NOTE: NVidia is not supported. (yet)
 
-      __________________________
-     |.------------------------.|
-     ||                        ||
-     ||                        ||
-     ||    (_)          (_)    ||
-     ||                        ||
-     ||     \ __________ /     ||
-     ||                        ||
-     ||________________________||
-    //__/__/__/__/__\__\__\__\__\\
-   //__/__/__/__/____\__\__\__\__\\
-  /       /________________\       \
- /__________________________________\
- \__________________________________/
+<img src="https://github.com/Alex313031/ChromiumOS/blob/main/ChromiumBook_black.png" width="256">
