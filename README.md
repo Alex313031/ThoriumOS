@@ -49,3 +49,18 @@ The files here can be copied in place on top of overlay-amd46-generic in *//chro
 - If you modify any of the .ebuilds, DO NOT replace them with upstream Gentoo's, instead modify them in place. Some of the ebuilds have been modified to allow usage on CrOS, and some are slightly behind the latest version for compatability reasons.
 
 The .7z files in Releases contain **chromiumos_image.bin** which can be flashed to a USB Drive with https://www.balena.io/etcher/, *dd*, or *cros_flash* and booted on most processors supporting SSE3 or later. NOTE: NVidia is not supported. (yet)
+
+      __________________________
+     |.------------------------.|
+     ||                        ||
+     ||                        ||
+     ||    (_)          (_)    ||
+     ||                        ||
+     ||     \ __________ /     ||
+     ||                        ||
+     ||________________________||
+    //__/__/__/__/__\__\__\__\__\\
+   //__/__/__/__/____\__\__\__\__\\
+  /       /________________\       \
+ /__________________________________\
+ \__________________________________/
