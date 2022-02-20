@@ -34,6 +34,7 @@ RDEPEND="
 	sys-process/iotop
 	sys-apps/lm_sensors
 	sys-process/htop
+	sys-kernel/linux-headers-5.4
 	chromeos-base/google-drive-fs
 "
 DEPEND="${RDEPEND}"
