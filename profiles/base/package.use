@@ -1,0 +1,34 @@
+# Copyright (c) 2022 Alex313031
+
+# Mesa USE flags.
+media-libs/mesa-llvmpipe egl gles2 shared-glapi
+
+# Enabling wayland pulls media-libs/mesa package, which conflicts with
+# mesa-llvmpipe pulled by overwritten virtual/opengles package.
+x11-libs/libva-intel-driver -wayland
+
+# Enabling wayland causes the wl_proxy_marshal_constructor_versioned not found
+# error in waffle.
+media-libs/waffle -wayland
+
+# For CrOS Kernel 4.x.x
+sys-kernel/chromeos-kernel-4_4 apply_patches modules
+sys-kernel/chromeos-kernel-4_14 apply_patches modules
+sys-kernel/chromeos-kernel-4_19 apply_patches modules
+
+# For cros-workon kernel 5.x.x
+sys-kernel/chromeos-kernel-5_4 apply_patches modules
+sys-kernel/chromeos-kernel-5_10 apply_patches modules
+sys-kernel/chromeos-kernel-5_15 apply_patches modules
+
+# Enable codecs and disable debug stuff.
+chromeos-base/chromeos-chrome -chrome_debug chrome_media vaapi x264 widevine
+
+# Remove embedded config for generic boards.
+chromeos-base/chromeos-base -cros_embedded
+
+# htop use flags
+sys-process/htop lm-sensors llvm-libunwind -unwind -debug
+
+# Fix gptfdisk bug
+sys-apps/gptfdisk -ncurses

@@ -1,0 +1,119 @@
+# Copyright (c) 2022 The Chromium OS Authors and Alex313031. All rights reserved.
+# Distributed under the terms of the GNU General Public License v2
+
+CHROMEOS_KERNEL_SPLITCONFIG="chromiumos-x86_64"
+CHROMEOS_KERNEL_ARCH="x86_64"
+
+# We assume that our 64bit baseline CPU supports at least
+# MMX, SSE, SSE2, SSE3, and SSE4. Added AVX and O3 compiler optimizations.
+BOARD_COMPILER_FLAGS="-march=x86-64 -mavx -maes -O3"
+BOARD_RUSTFLAGS="-Ctarget-cpu=x86-64 -Ctarget-feature=+avx"
+CFLAGS="${CFLAGS} -O3 -pipe -mavx -maes"
+LDFLAGS="${LDFLAGS} -Wl,-O3"
+
+# Include many firmwares as this is a "generic" board and might run on a
+# wide variety of platforms with who knows what kind of hardware. -cros-pd disables EC firmware updating.
+# LINUX_FIRMWARE="iwlwifi-all"
+LINUX_FIRMWARE="* -cros-pd iwlwifi-all"
+
+# Use LLVM amdgpu target when building LLVM.
+LLVM_TARGETS="AMDGPU X86"
+
+# Initial value just for style purposes.
+USE=""
+
+# Remove debug constructs.
+USE="${USE} -debug"
+
+# Enable non-free codecs and components.
+USE="${USE} -chrome_debug chrome_media vaapi x264 widevine"
+
+# Enable background blur on all graphics chipsets.
+USE="${USE} background_blur"
+
+# Used by crostini.
+USE="${USE} containers kvm_host crosvm-gpu virtio_gpu"
+
+# Enable Downloadable Content (DLC), optional USE for crostini.
+# USE="${USE} dlc"
+
+# Enable legacy components for generic x64 board.
+USE="${USE} legacy_usb legacy_keyboard legacy_power_button sse diagnostics"
+
+# Kernel configuration.
+USE="${USE} -kernel-4_4 -kernel-4_14 -kernel-4_19 -kernel-5_4 kernel-5_10 -kernel-5_15 headers linux_headers linux-headers"
+
+# Enable NFS and FAT/FAT32 and eMMC Tools.
+USE="${USE} nfs vfat mmc"
+
+# Dircrypto for stateful partition. On kernel 5.x this should be set to direncription_allow_v2.
+USE="${USE} direncryption uprev-4-to-5 cryptohome_userdataauth_interface has-kernelnext"
+
+# Use linux kernel modules and enable calling them from cmdline.
+USE="${USE} modules"
+
+# Use frecon, the freon graphics virtual terminal for devices using KMS for graphics setting.
+USE="${USE} frecon"
+
+# Enable all optional features on generic overlays, minus wifi bootstrapping for linux-firmware.
+USE="${USE} buffet -wifi_bootstrapping"
+
+# LLVM is required to build the llvmpipe and radeon drivers.
+USE="${USE} llvm"
+
+# Enable libglvnd.
+USE="${USE} libglvnd"
+
+# Enable NNAPI for testing.
+USE="${USE} nnapi"
+
+# Enable hps for testing.
+USE="${USE} hps"
+
+# Enable camera HALv3
+USE="${USE} arc-camera3"
+
+# Enable sirenia for testing.
+USE="${USE} sirenia"
+
+# Enable vivid
+USE="${USE} vivid"
+
+# Enable hostap hwsim tests.
+USE="${USE} wifi_hostap_test"
+
+# Include the kernel in the base image.
+USE="${USE} include_vmlinuz"
+
+# Disable unibuild on this legacy board. This is only for existing (as of Jan 2019)
+# boards as all new boards must be unibuild enabled moving forward. Do not copy this
+# to new boards as it will be rejected. See
+# https://chromium.googlesource.com/chromiumos/platform2/+/HEAD/chromeos-config/README.md
+# for further details about chromeos-config, which is the required entry point for
+# unified builds.
+# USE="${USE} -unibuild"
+
+# Enable chromeos-config and unibuild.
+USE="${USE} unibuild has_chromeos_config_bsp"
+
+# Enable wayland and egl for LaCrOS.
+USE="${USE} wayland egl"
+
+# Enable Vulkan for ClusterFuzz.
+USE="${USE} vulkan"
+
+# Use legacy pre-Groot UI for initramfs and init script screens.
+USE="${USE} legacy_firmware_ui"
+
+# Enable a few more video cards as this is a generic board. i915 is kept for posterity after M90.
+VIDEO_CARDS="intel i915 i965 iris llvmpipe nouveau radeon vmware"
+
+# Virtual machines don't have physical TPMs.
+# Enable TPM2.0 simulator on it.
+USE="${USE} -tpm tpm2 tpm2_simulator tpm2_simulator_manufacturer"
+
+# Enable vTPM proxy on it for driver-level TPM simulator.
+USE="${USE} vtpm_proxy"
+
+# No support for zero-copy on virtual machines. Comment out for phyiscal machines.
+# USE="${USE} -video_capture_use_gpu_memory_buffer"

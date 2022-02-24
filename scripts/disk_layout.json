@@ -1,0 +1,136 @@
+{
+  "_comment": "See http://www.chromium.org/chromium-os/developer-guide/disk-layout-format",
+  "_comment": "Copyright (c) 2022 Alex313031",
+  "parent": "legacy_disk_layout.json",
+  "layouts":{
+    "common":[
+      {
+        "num": 2,
+        "size": "64 MiB"
+      },
+      {
+        "num": 4,
+        "size": "64 MiB"
+      },
+      {
+        "num": 12,
+        "size": "128 MiB"
+      },
+      {
+        # Slot B rootfs, unused on USB, but pad to 2M.
+        # installation will expand this to size from base.
+        "num": 5,
+        "fs_size":"2700 MiB",
+        "size": "2724 MiB"
+      },
+      {
+        "num": 3,
+        "fs_size":"2700 MiB",
+        "size": "2724 MiB"
+      },
+      {
+        "num": 1,
+        "size": "4096 MiB"
+      }
+    ],
+    "usb":[
+      {
+        # Slot B rootfs, unused on USB, but pad to 2M.
+        # installation will expand this to size from base.
+        "num": 5,
+        "size": "2 MiB"
+      },
+      {
+        "num": 3,
+        "fs_size":"2700 MiB",
+        "size": "2724 MiB"
+      }
+    ],
+    "factory_install": [
+      {
+        # Slot B rootfs, unused on USB, but pad to 2M.
+        # installation will expand this to size from base.
+        "num": 5,
+        "fs_size":"2700 MiB",
+        "size": "2724 MiB"
+      },
+      {
+        "num": 3,
+        "fs_size":"2700 MiB",
+        "size": "2724 MiB"
+      }
+    ],
+    "recovery":[
+      {
+        # Slot B rootfs, unused on USB, but pad to 2M.
+        # installation will expand this to size from base.
+        "num": 5,
+        "fs_size":"2700 MiB",
+        "size": "2724 MiB"
+      },
+      {
+        "num": 3,
+        "fs_size":"2700 MiB",
+        "size": "2724 MiB"
+      }
+    ],
+    "4gb-rootfs": [
+      {
+        "num": 2,
+        "size": "64 MiB"
+      },
+      {
+        "num": 4,
+        "size": "64 MiB"
+      },
+      {
+        "num": 12,
+        "size": "128 MiB"
+      },
+      {
+        "num": 5,
+        "fs_size":"2700 MiB",
+        "size": "2724 MiB"
+      },
+      {
+        "num": 3,
+        "size": "4096 MiB",
+        "fs_size": "4000 MiB"
+      },
+      {
+        "num": 1,
+        "size": "4096 MiB"
+      }
+    ],
+    # Huge rootfs, suitable for VM only images, should not be used
+    # for actual hardware devices.
+    "16gb-rootfs": [
+      {
+        "num": 2,
+        "size": "64 MiB"
+      },
+      {
+        "num": 4,
+        "size": "64 MiB"
+      },
+      {
+        "num": 12,
+        "size": "128 MiB"
+      },
+      {
+        "num": 5,
+        "fs_size":"2700 MiB",
+        "size": "2724 MiB"
+      },
+      {
+        "num": 3,
+        "fs_size": "16000 MiB",
+        "size": "16384 MiB"
+      },
+      {
+        "num": 1,
+        "size": "6144 MiB"
+      }
+    ]
+  }
+}
