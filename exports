@@ -7,8 +7,21 @@ export CHROME_BUILD_TYPE='_official'
 export is_official_build=true
 
 ## EMERGE COMMANDS
+
 sudo emerge app-arch/tar
 sudo emerge app-admin/sysstat
 sudo emerge sys-apps/lm_sensors
-sudo emerge sys-process/htop
 sudo emerge sys-process/iotop
+
+
+# BUILD COMMANDS
+
+setup_board --board=${BOARD}
+build_packages --board=${BOARD} --nowithdebug --nowithautotest
+build_image --board=${BOARD} --noenable_rootfs_verification dev
+
+# DELETE BOARD
+sudo rm -rf /build/${BOARD}
+
+# DELETE CHROOT
+cros_sdk --delete
