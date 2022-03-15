@@ -1,5 +1,7 @@
-## EXPORT COMMANDS
+# ENTER CHROOT (substitute for where //chromium actually is on your machine)
+cros_sdk --enter --chrome_root=/home/alex/chromium
 
+## EXPORT COMMANDS
 export BOARD=amd64-generic
 export CHROME_ORIGIN=LOCAL_SOURCE
 export OFFICIAL_BUILD='1'
@@ -7,18 +9,21 @@ export CHROME_BUILD_TYPE='_official'
 export is_official_build=true
 
 ## EMERGE COMMANDS
-
 sudo emerge app-arch/tar
 sudo emerge app-admin/sysstat
 sudo emerge sys-apps/lm_sensors
 sudo emerge sys-process/iotop
 
-
 # BUILD COMMANDS
-
 setup_board --board=${BOARD}
-build_packages --board=${BOARD} --nowithdebug --nowithautotest
+build_packages --board=${BOARD} --no-withdebug --no-withautotest
 build_image --board=${BOARD} --noenable_rootfs_verification dev
+
+# MOUNT AND LOOK AT OR MODIFY YOUR IMAGE
+./mount_gpt_image.sh --board=${BOARD} --most_recent
+
+# FLASH TO USB
+cros flash usb:// ${BOARD}/latest
 
 # DELETE BOARD
 sudo rm -rf /build/${BOARD}
