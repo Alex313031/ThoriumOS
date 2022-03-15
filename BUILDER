@@ -1,0 +1,17 @@
+# FOR MY USE ONLY
+
+-O3 -pipe -mavx -maes
+-Wl,-O3
+
+widevine
+-Official
+
+mesa-llvmpipe >> mesa-reven
+
+chromiumos-overlay/profiles/aarch/amd64/make.defaults
+third_party/portage-stable/profiles/arch/amd64/make.defaults
+chromiumos-overlay/profiles/default/linux/make.defaults
+chromiumos-overlay/profiles/targets/chromeos/make.defaults
+chromiumos-overlay/profiles/targets/sdk/make.defaults
+chromiumos-overlay/chromeos/config/make.conf.common
+chromiumos-overlay/chromeos/config/make.conf.generic-target
