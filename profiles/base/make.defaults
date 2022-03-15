@@ -7,7 +7,7 @@ CHROMEOS_KERNEL_ARCH="x86_64"
 # We assume that our 64bit baseline CPU supports at least
 # MMX, SSE, SSE2, SSE3, and SSE4. Added AVX and O3 compiler optimizations.
 BOARD_COMPILER_FLAGS="-march=x86-64 -mavx -maes -O3"
-BOARD_RUSTFLAGS="-Ctarget-cpu=x86-64 -Ctarget-feature=+avx"
+BOARD_RUSTFLAGS="-Ctarget-cpu=x86-64 -Ctarget-feature=+sse4,+avx"
 CFLAGS="${CFLAGS} -O3 -pipe -mavx -maes"
 LDFLAGS="${LDFLAGS} -Wl,-O3"
 
@@ -41,7 +41,10 @@ USE="${USE} containers kvm_host crosvm-gpu virtio_gpu"
 USE="${USE} legacy_usb legacy_keyboard legacy_power_button sse diagnostics"
 
 # Kernel configuration.
-USE="${USE} -kernel-4_4 -kernel-4_14 -kernel-4_19 -kernel-5_4 kernel-5_10 -kernel-5_15 headers linux_headers linux-headers"
+USE="${USE} -kernel-4_4 -kernel-4_14 -kernel-4_19 -kernel-5_4 kernel-5_10 -kernel-5_15 headers linux_headers linux-headers nouveau"
+
+# Enable mesa-reven for CloudReady graphics support.
+USE="${USE} mesa_reven"
 
 # Enable NFS and FAT/FAT32 and eMMC Tools.
 USE="${USE} nfs vfat mmc"
@@ -62,7 +65,7 @@ USE="${USE} buffet -wifi_bootstrapping"
 USE="${USE} llvm"
 
 # Enable libglvnd.
-USE="${USE} libglvnd"
+# USE="${USE} libglvnd"
 
 # Enable NNAPI for testing.
 USE="${USE} nnapi"
@@ -115,5 +118,5 @@ USE="${USE} -tpm tpm2 tpm2_simulator tpm2_simulator_manufacturer"
 # Enable vTPM proxy on it for driver-level TPM simulator.
 USE="${USE} vtpm_proxy"
 
-# No support for zero-copy on virtual machines. Comment out for phyiscal machines.
+# No support for zero-copy on virtual machines. Comment out for physical machines.
 # USE="${USE} -video_capture_use_gpu_memory_buffer"
