@@ -2,6 +2,7 @@
 
 # Mesa USE flags.
 media-libs/mesa-llvmpipe egl gles2 shared-glapi
+media-libs/mesa-reven egl gles2 shared-glapi
 
 # Enabling wayland pulls media-libs/mesa package, which conflicts with
 # mesa-llvmpipe pulled by overwritten virtual/opengles package.
