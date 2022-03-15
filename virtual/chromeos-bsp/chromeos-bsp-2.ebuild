@@ -17,6 +17,7 @@ KEYWORDS="*"
 
 RDEPEND="
 	!chromeos-base/chromeos-bsp-null
+	media-libs/mesa-reven
 	app-admin/pydf
 	app-admin/sysstat
 	app-arch/tar
