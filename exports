@@ -17,16 +17,18 @@ sudo emerge sys-process/iotop
 # BUILD COMMANDS
 setup_board --board=${BOARD}
 build_packages --board=${BOARD} --no-withdebug --no-withautotest
-build_image --board=${BOARD} --noenable_rootfs_verification dev
-
-# MOUNT AND LOOK AT OR MODIFY YOUR IMAGE
-./mount_gpt_image.sh --board=${BOARD} --most_recent
+./build_image --board=${BOARD} --noenable_rootfs_verification dev
 
 # FLASH TO USB
 cros flash usb:// ${BOARD}/latest
+
+# MOUNT IMAGE AND UNMOUNT
+./mount_gpt_image.sh --board=${BOARD} --most_recent
+./mount_gpt_image.sh --board=${BOARD} -u
 
 # DELETE BOARD
 sudo rm -rf /build/${BOARD}
 
 # DELETE CHROOT
 cros_sdk --delete
+
