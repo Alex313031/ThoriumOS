@@ -1,3 +1,4 @@
+![GitHub tag (latest SemVer)](https://img.shields.io/github/v/tag/alex313031/chromiumos?label=Version%3A) &nbsp;![GitHub commit activity](https://img.shields.io/github/commit-activity/w/alex313031/chromiumos?color=blueviolet&label=Commit%20Activity%3A) &nbsp;![Subreddit subscribers](https://img.shields.io/reddit/subreddit-subscribers/ChromiumOS?style=social)
 # ChromiumOS
 <img src="https://github.com/Alex313031/ChromiumOS/blob/main/cros_bootsplash.png">
 
