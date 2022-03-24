@@ -9,7 +9,7 @@ CHROMEOS_KERNEL_ARCH="x86_64"
 BOARD_COMPILER_FLAGS="-march=x86-64 -mavx -maes -O3"
 BOARD_RUSTFLAGS="-Ctarget-cpu=x86-64 -Ctarget-feature=+sse4,+avx"
 CFLAGS="${CFLAGS} -O3 -pipe -mavx -maes"
-LDFLAGS="${LDFLAGS} -Wl,-O3"
+LDFLAGS="${LDFLAGS} -Wl,-O3 -Wl,--lto-O3"
 
 # Include many firmwares as this is a "generic" board and might run on a
 # wide variety of platforms with who knows what kind of hardware. -cros-pd disables EC firmware updating.
