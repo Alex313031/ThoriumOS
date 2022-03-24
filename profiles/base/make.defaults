@@ -46,6 +46,9 @@ USE="${USE} -kernel-4_4 -kernel-4_14 -kernel-4_19 -kernel-5_4 kernel-5_10 -kerne
 # Enable mesa-reven for CloudReady graphics support.
 USE="${USE} mesa_reven"
 
+# Enable Steam on CrOS (borealis).
+USE="${USE} borealis"
+
 # Enable NFS and FAT/FAT32 and eMMC Tools.
 USE="${USE} nfs vfat mmc"
 
