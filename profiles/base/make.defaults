@@ -108,6 +108,9 @@ USE="${USE} wayland egl"
 # Enable Vulkan for ClusterFuzz.
 USE="${USE} vulkan"
 
+# Enable vmware GPU.
+USE="${USE} video_cards_vmware"
+
 # Use legacy pre-Groot UI for initramfs and init script screens.
 USE="${USE} legacy_firmware_ui"
 
