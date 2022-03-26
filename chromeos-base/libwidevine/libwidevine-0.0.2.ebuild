@@ -1,4 +1,4 @@
-# Copyright (c) 2020 The Fyde Innovations. All rights reserved.
+# Copyright (c) 2022 The Fyde Innovations and Alex313031. All rights reserved.
 # Distributed under the license specified in the root directory of this project.
 
 EAPI="5"
@@ -17,7 +17,7 @@ RDEPEND="
 
 DEPEND="${RDEPEND}"
 
-#BUILDTYPE="${BUILDTYPE:-Release}"
+#BUILDTYPE="${BUILDTYPE:-Official}"
 BOARD="${BOARD:-${SYSROOT##/build/}}"
 BUILD_OUT="${BUILD_OUT:-out_${BOARD}}"
 
