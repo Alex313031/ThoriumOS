@@ -1,4 +1,4 @@
-# Copyright (c) 2020 The Fyde Innovations. All rights reserved.
+# Copyright (c) 2022 The Fyde Innovations and Alex313031. All rights reserved.
 # Distributed under the license specified in the root directory of this project.
 
 EAPI="5"
@@ -18,5 +18,5 @@ S=${WORKDIR}
 
 src_install() {
   exeinto /opt/google/drive-file-stream
-  doexe -r ${FILESDIR}/*
+  doexe ${FILESDIR}/*
 }
