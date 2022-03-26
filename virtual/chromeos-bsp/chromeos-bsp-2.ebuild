@@ -41,7 +41,6 @@ RDEPEND="
 "
 DEPEND="${RDEPEND}"
 
-
 	# !net-wireless/broadcom-sta
 	# !net-wireless/rtl8188eu
 	# !net-wireless/rtl8723au
