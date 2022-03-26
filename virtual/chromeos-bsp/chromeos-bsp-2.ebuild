@@ -17,6 +17,7 @@ KEYWORDS="*"
 
 RDEPEND="
 	!chromeos-base/chromeos-bsp-null
+	!media-libs/mesa-llvmpipe
 	media-libs/mesa-reven
 	app-admin/pydf
 	app-admin/sysstat
@@ -39,7 +40,7 @@ RDEPEND="
 "
 DEPEND="${RDEPEND}"
 
-
+	# !net-wireless/broadcom-sta
 	# !net-wireless/rtl8188eu
 	# !net-wireless/rtl8723au
 	# !net-wireless/rtl8723bu
