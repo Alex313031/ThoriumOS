@@ -37,8 +37,10 @@ RDEPEND="
 	sys-apps/lm_sensors
 	sys-process/htop
 	chromeos-base/google-drive-fs
+	chromeos-base/chrome-dev-conf
 "
 DEPEND="${RDEPEND}"
+
 
 	# !net-wireless/broadcom-sta
 	# !net-wireless/rtl8188eu
