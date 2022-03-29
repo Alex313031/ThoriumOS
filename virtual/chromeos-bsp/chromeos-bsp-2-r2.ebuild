@@ -11,7 +11,7 @@ files and drivers which are not suitable for inclusion in a generic board
 overlay."
 HOMEPAGE="http://src.chromium.org"
 
-LICENSE="BSD"
+LICENSE="BSD GPL-3"
 SLOT="0"
 KEYWORDS="*"
 
@@ -24,12 +24,14 @@ RDEPEND="
 	app-arch/tar
 	app-misc/sl
 	chromeos-base/frick-oem-wallpapers
+	chromeos-base/frick-chromedev-flags
 	chromeos-base/cros-trimly
 	sys-apps/iucode_tool
 	sys-firmware/intel-microcode
 	sys-kernel/linux-firmware
 	media-libs/cros-camera-hal-usb
 	media-libs/x264
+	media-libs/x265
 	net-misc/tlsdate
 	sys-apps/cpuid
 	sys-apps/iotools
@@ -37,7 +39,8 @@ RDEPEND="
 	sys-apps/lm_sensors
 	sys-process/htop
 	chromeos-base/google-drive-fs
-	chromeos-base/chrome-dev-conf
+	chromeos-base/bash-skel
+	chromeos-base/libwidevine
 "
 DEPEND="${RDEPEND}"
 
