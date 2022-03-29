@@ -14,8 +14,9 @@ sudo emerge app-admin/sysstat
 sudo emerge sys-apps/lm_sensors
 sudo emerge sys-process/iotop
 
-# BUILD COMMANDS
+# BUILD COMMANDS (cros_workon is optional to build kernel from source.)
 setup_board --board=${BOARD}
+cros_workon --board=${BOARD} start sys-kernel/chromeos-kernel-5_10
 build_packages --board=${BOARD} --no-withdebug --no-withautotest
 ./build_image --board=${BOARD} --noenable_rootfs_verification dev
 
