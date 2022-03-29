@@ -41,7 +41,7 @@ USE="${USE} containers kvm_host crosvm-gpu virtio_gpu"
 USE="${USE} dlc"
 
 # Enable legacy components for generic x64 board.
-USE="${USE} legacy_usb legacy_keyboard legacy_power_button sse diagnostics"
+USE="${USE} legacy_usb legacy_keyboard legacy_power_button sse diagnostics selinux_experimental"
 
 # Kernel configuration.
 USE="${USE} -kernel-4_4 -kernel-4_14 -kernel-4_19 -kernel-5_4 kernel-5_10 -kernel-5_15 headers linux_headers linux-headers nouveau"
