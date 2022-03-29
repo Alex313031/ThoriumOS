@@ -5,7 +5,7 @@ cros-317118
 -O3 -pipe -mavx -maes
 -Wl,-O3 -Wl,--lto-O3
 
-# CHROMEOS-CHROME EBUILD MODIFICATIONS
+# CHROMEOS-CHROME EBUILD
 widevine
 -Official
 
@@ -53,3 +53,55 @@ chromiumos-overlay/profiles/targets/chromeos/make.defaults
 chromiumos-overlay/profiles/targets/sdk/make.defaults
 chromiumos-overlay/chromeos/config/make.conf.common
 chromiumos-overlay/chromeos/config/make.conf.generic-target
+
+# WIDEVINE PATCH
+
+under if [[ -f "${GAPI_CONFIG_FILE}" ]]; then
+			add_api_keys "${GAPI_CONFIG_FILE}"
+		fi
+	fi
+
+  if [[ "${CHROME_ORIGIN}" == "LOCAL_SOURCE" ]]; then
+    use widevine && patch_widevine
+  fi
+
+
+under "google_default_client_secret=${client_secret}"
+patch_widevine() {
+  info "patching for widevine..."
+  local target_dir="${CHROME_ROOT}/src/third_party/widevine/cdm/chromeos/x64"
+  local bin_file="${target_dir}/libwidevinecdm.so"
+  if [ ! -f ${bin_file} ]; then
+    mkdir -p $target_dir || true
+    cp ${FILESDIR}/widevine/widevine_cdm_version.h $target_dir || die "Could not copy file to $target_dir"
+    cp ${FILESDIR}/widevine/manifest.json $target_dir || die "Could not copy file to $target_dir"
+    cp ${FILESDIR}/widevine/libwidevinecdm.so $target_dir || die "Could not copy file to $bin_file"
+  fi
+}
+
+
+
+diff --git a/third_party/widevine/cdm/widevine.gni b/third_party/widevine/cdm/widevine.gni
+index d676aee4f2a3..9eadedada962 100644
+--- a/third_party/widevine/cdm/widevine.gni
++++ b/third_party/widevine/cdm/widevine.gni
+@@ -12,7 +12,9 @@ declare_args() {
+   # on Android and Fuchsia platforms.
+   # Can be optionally enabled in Chromium on non-Android platforms. Please see
+   # //src/third_party/widevine/LICENSE file for details.
+-  enable_widevine = is_chrome_branded || is_android || is_fuchsia
++  #---***FYDEOS BEGIN***---
++  enable_widevine = true
++  #---***FYDEOS END***---
+ }
+ 
+ # Disable Widevine when running linux-chromeos.
+@@ -53,7 +55,7 @@ assert(!enable_media_foundation_widevine_cdm || is_win)
+ 
+ declare_args() {
+   # Widevine CDM is bundled as part of Google Chrome builds.
+-  bundle_widevine_cdm = enable_library_widevine_cdm && is_chrome_branded
++  bundle_widevine_cdm = true
+ }
+ 
+ # Enable Widevine CDM host verification, which will sign additional binaries
