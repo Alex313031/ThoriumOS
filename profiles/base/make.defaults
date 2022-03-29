@@ -25,8 +25,11 @@ USE=""
 # Remove debug constructs.
 USE="${USE} -debug"
 
+# CPU Flags.
+USE="${USE} sse4_2 aes avx"
+
 # Enable non-free codecs and components.
-USE="${USE} -chrome_debug chrome_media vaapi x264 widevine"
+USE="${USE} -chrome_debug chrome_media vaapi x264 x265 widevine"
 
 # Enable background blur on all graphics chipsets.
 USE="${USE} background_blur"
@@ -35,7 +38,7 @@ USE="${USE} background_blur"
 USE="${USE} containers kvm_host crosvm-gpu virtio_gpu"
 
 # Enable Downloadable Content (DLC), optional USE for crostini.
-# USE="${USE} dlc"
+USE="${USE} dlc"
 
 # Enable legacy components for generic x64 board.
 USE="${USE} legacy_usb legacy_keyboard legacy_power_button sse diagnostics"
@@ -44,10 +47,13 @@ USE="${USE} legacy_usb legacy_keyboard legacy_power_button sse diagnostics"
 USE="${USE} -kernel-4_4 -kernel-4_14 -kernel-4_19 -kernel-5_4 kernel-5_10 -kernel-5_15 headers linux_headers linux-headers nouveau"
 
 # Enable mesa-reven for CloudReady graphics support.
-USE="${USE} mesa_reven"
+USE="${USE} mesa_reven reven"
 
 # Enable Steam on CrOS (borealis).
 USE="${USE} borealis"
+
+# Enable Google Drive.
+USE="${USE} google-drive-fs drivefs libfuse fuse"
 
 # Enable NFS and FAT/FAT32 and eMMC Tools.
 USE="${USE} nfs vfat mmc"
