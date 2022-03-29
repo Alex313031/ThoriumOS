@@ -2,7 +2,7 @@
 # ChromiumOS
 <img src="https://github.com/Alex313031/ChromiumOS/blob/main/cros_bootsplash.png">
 
-## ChromiumOS builds with x264(H.264) codecs, Kernel 5.10, Linux firmware/modules support, Intel microcode, and extra packages.
+## ChromiumOS builds with x264/x265 codecs, Widevine, Kernel 5.10, Linux firmware/modules support, Nouveau, Intel microcode, and extra packages.
 
 - Extra packages include iotop, iotools, sysstat, lm-sensors, pydf, cpuid, htop, sl, custom wallpapers, screenfetch-dev, pak, and TrImLy: a fstrim and e4defrag automator script I made for ChromiumOS. \
 &nbsp; TrImLy > https://github.com/Alex313031/TrImLy/ \
