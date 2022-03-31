@@ -1,0 +1,17 @@
+# Copyright 2022 The Chromium OS Authors and Alex313031. All rights reserved.
+# Use of this source code is governed by a BSD-style license that can be
+# found in the LICENSE file.
+
+base-config: &base_config
+  # RLZ code allocated for development purposes
+  brand-code: ZZCR
+  identity:
+    platform-name: Generic
+  name: amd64-frick
+  camera:
+    legacy-usb: True
+
+chromeos:
+  devices:
+    - skus:
+        - config: *base_config
