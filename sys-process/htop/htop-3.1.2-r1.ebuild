@@ -27,7 +27,7 @@ RDEPEND="
 	kernel_linux? (
 		caps? ( sys-libs/libcap )
 		delayacct? ( dev-libs/libnl:3 )
-		lm-sensors? ( sys-apps/lm_sensors )
+		lm-sensors? ( sys-apps/lm-sensors )
 	)
 "
 DEPEND="${RDEPEND}
