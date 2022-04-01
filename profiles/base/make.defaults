@@ -60,8 +60,8 @@ USE="${USE} nfs vfat mmc"
 # Dircrypto for stateful partition. On kernel 5.x this should be set to direncription_allow_v2.
 USE="${USE} direncryption uprev-4-to-5 cryptohome_userdataauth_interface has-kernelnext"
 
-# Use linux kernel modules and enable calling them from cmdline.
-USE="${USE} modules"
+# Use linux kernel modules/firmware/microcode and enable calling them from cmdline.
+USE="${USE} modules initramfs split-ucode"
 
 # Use frecon, the freon graphics virtual terminal for devices using KMS for graphics setting.
 USE="${USE} frecon"
