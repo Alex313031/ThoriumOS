@@ -1,4 +1,4 @@
-# Copyright 1999-2022 Gentoo Authors
+# Copyright 1999-2022 Gentoo Authors and Alex313031
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -20,7 +20,7 @@ fi
 SLOT="0/164" # SONAME
 
 LICENSE="GPL-2"
-IUSE="cpu_flags_ppc_altivec +interlaced opencl pic static-libs cpu_flags_x86_sse +threads"
+IUSE="cpu_flags_ppc_altivec +interlaced opencl pic static-libs +cpu_flags_x86_sse +threads"
 
 ASM_DEP=">=dev-lang/nasm-2.13"
 DEPEND="abi_x86_32? ( ${ASM_DEP} )
