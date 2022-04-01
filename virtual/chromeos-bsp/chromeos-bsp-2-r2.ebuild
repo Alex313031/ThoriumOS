@@ -36,7 +36,7 @@ RDEPEND="
 	sys-apps/cpuid
 	sys-apps/iotools
 	sys-process/iotop
-	sys-apps/lm_sensors
+	sys-apps/lm-sensors
 	sys-process/htop
 	chromeos-base/google-drive-fs
 	chromeos-base/bash-skel
