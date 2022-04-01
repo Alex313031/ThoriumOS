@@ -13,7 +13,6 @@ LDFLAGS="${LDFLAGS} -Wl,-O3 -Wl,--lto-O3"
 
 # Include many firmwares as this is a "generic" board and might run on a
 # wide variety of platforms with who knows what kind of hardware. -cros-pd disables EC firmware updating.
-# LINUX_FIRMWARE="iwlwifi-all"
 LINUX_FIRMWARE="* -cros-pd iwlwifi-all"
 
 # Use LLVM amdgpu target when building LLVM.
@@ -23,7 +22,7 @@ LLVM_TARGETS="AMDGPU X86"
 USE=""
 
 # Remove debug constructs.
-USE="${USE} -debug"
+USE="${USE} -debug -chromeless_tests"
 
 # CPU Flags.
 USE="${USE} sse4_2 aes avx"
@@ -44,7 +43,7 @@ USE="${USE} dlc"
 USE="${USE} legacy_usb legacy_keyboard legacy_power_button sse diagnostics selinux_experimental"
 
 # Kernel configuration.
-USE="${USE} -kernel-4_4 -kernel-4_14 -kernel-4_19 -kernel-5_4 kernel-5_10 -kernel-5_15 headers linux_headers linux-headers nouveau"
+USE="${USE} -kernel-4_4 -kernel-4_14 -kernel-4_19 -kernel-5_4 kernel-5_10 -kernel-5_15 kmod headers linux_headers linux-headers nouveau"
 
 # Enable mesa-reven for CloudReady graphics support.
 USE="${USE} mesa_reven reven"
