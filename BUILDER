@@ -4,6 +4,7 @@ cros-317118
 # COMPILER OPTIMIZATIONS
 -O3 -pipe -mavx -maes
 -Wl,-O3 -Wl,--lto-O3
+sse4_2 aes avx
 
 # CHROMEOS-CHROME EBUILD
 widevine
@@ -46,8 +47,8 @@ widevine
 mesa-llvmpipe >> mesa-reven
 
 # FILES TO MODIFY FOR COMPILER OPTIMIZATIONS
-chromiumos-overlay/profiles/arch/amd64/make.defaults
 third_party/portage-stable/profiles/arch/amd64/make.defaults
+chromiumos-overlay/profiles/arch/amd64/make.defaults
 chromiumos-overlay/profiles/default/linux/make.defaults
 chromiumos-overlay/profiles/targets/chromeos/make.defaults
 chromiumos-overlay/profiles/targets/sdk/make.defaults
