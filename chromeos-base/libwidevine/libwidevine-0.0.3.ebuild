@@ -19,6 +19,8 @@ CHROMIUM_DIR=/opt/google/chrome/
 S=${WORKDIR}
 
 src_install() {
+  if use widevine; then
   exeinto ${CHROMIUM_DIR}
   doexe "${FILESDIR}"/*
+  fi
 }
