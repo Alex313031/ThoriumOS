@@ -18,9 +18,11 @@ RDEPEND="${DEPEND}
 S=${WORKDIR}
 
 src_install() {
+  if use autoexpand; then
 	# Install upstart service
   exeinto "/usr/sbin"
   doexe ${FILESDIR}/expand-partition.sh	
 	insinto "/etc/init"
 	doins ${FILESDIR}/auto-expand-partition.conf
+  fi
 }
