@@ -7,13 +7,15 @@ DESCRIPTION="OEM Wallpapers for ChromiumOS, using the older default minimalist w
 LICENSE="BSD-Google"
 SLOT="0"
 KEYWORDS="*"
-IUSE=""
+IUSE="frick-wallpapers"
 S="${WORKDIR}"
 
 RDEPEND=""
 DEPEND="${RDEPEND}"
 
 src_install() {
+	if use frick-wallpapers; then
 	insinto /usr/share/chromeos-assets/wallpaper/
 	doins -r "${FILESDIR}"/wallpaper/*
+	fi
 }
