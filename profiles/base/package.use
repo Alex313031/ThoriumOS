@@ -11,6 +11,7 @@ x11-libs/libva-intel-driver -wayland
 # Enabling wayland causes the wl_proxy_marshal_constructor_versioned not found
 # error in waffle.
 media-libs/waffle -wayland gbm
+media-libs/piglit waffle
 
 # For CrOS Kernel 4.x.x
 sys-kernel/chromeos-kernel-4_4 apply_patches modules
@@ -19,7 +20,7 @@ sys-kernel/chromeos-kernel-4_19 apply_patches modules
 
 # For CrOS Kernel 5.x.x
 sys-kernel/chromeos-kernel-5_4 apply_patches modules
-sys-kernel/chromeos-kernel-5_10 apply_patches modules reven
+sys-kernel/chromeos-kernel-5_10 apply_patches modules
 sys-kernel/chromeos-kernel-5_15 apply_patches modules
 
 # Enable codecs and disable debug stuff.
@@ -28,11 +29,20 @@ chromeos-base/chromeos-chrome -chrome_debug chrome_media vaapi x264 x265 widevin
 # Remove embedded config for generic boards.
 chromeos-base/chromeos-base -cros_embedded
 
+# Enable Unicode.
+sys-libs/ncurses unicode
+
 # htop USE flags
-sys-process/htop lm-sensors llvm-libunwind -unwind -debug
+sys-process/htop lm-sensors llvm-libunwind unicode -unwind -debug
+
+# nano USE flags
+app-editors/nano unicode ncurses
 
 # lm_sensors USE flags
 sys-apps/lm-sensors contrib
+
+# Enable nodejs
+net-libs/nodejs -system-icu -system-ssl ssl npm inspector
 
 # Fix gptfdisk bug
 sys-apps/gptfdisk -ncurses
