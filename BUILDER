@@ -4,7 +4,17 @@ cros-317118
 # COMPILER OPTIMIZATIONS
 -O3 -pipe -mavx -maes
 -Wl,-O3 -Wl,--lto-O3
-sse4_2 aes avx
+-Copt-level=3 -Ctarget-feature=+sse3,+sse4,+aes,+avx
+mmx mmxext sse sse2 sse3 ssse3 sse4_1 sse4_2 aes avx
+
+# FILES TO MODIFY FOR COMPILER OPTIMIZATIONS
+third_party/portage-stable/profiles/arch/amd64/make.defaults
+chromiumos-overlay/profiles/arch/amd64/make.defaults
+chromiumos-overlay/profiles/default/linux/make.defaults
+chromiumos-overlay/profiles/targets/chromeos/make.defaults
+chromiumos-overlay/profiles/targets/sdk/make.defaults
+chromiumos-overlay/chromeos/config/make.conf.common
+chromiumos-overlay/chromeos/config/make.conf.generic-target
 
 # CHROMEOS-CHROME EBUILD
 widevine
@@ -46,15 +56,6 @@ widevine
 # USE MESA-REVEN
 mesa-llvmpipe >> mesa-reven
 
-# FILES TO MODIFY FOR COMPILER OPTIMIZATIONS
-third_party/portage-stable/profiles/arch/amd64/make.defaults
-chromiumos-overlay/profiles/arch/amd64/make.defaults
-chromiumos-overlay/profiles/default/linux/make.defaults
-chromiumos-overlay/profiles/targets/chromeos/make.defaults
-chromiumos-overlay/profiles/targets/sdk/make.defaults
-chromiumos-overlay/chromeos/config/make.conf.common
-chromiumos-overlay/chromeos/config/make.conf.generic-target
-
 # WIDEVINE PATCH
 
 under if [[ -f "${GAPI_CONFIG_FILE}" ]]; then
@@ -62,9 +63,9 @@ under if [[ -f "${GAPI_CONFIG_FILE}" ]]; then
 		fi
 	fi
 
-  if [[ "${CHROME_ORIGIN}" == "LOCAL_SOURCE" ]]; then
+	if [[ "${CHROME_ORIGIN}" == "LOCAL_SOURCE" ]]; then
     use widevine && patch_widevine
-  fi
+	fi
 
 
 under "google_default_client_secret=${client_secret}"
@@ -81,9 +82,6 @@ patch_widevine() {
 }
 
 
-
-diff --git a/third_party/widevine/cdm/widevine.gni b/third_party/widevine/cdm/widevine.gni
-index d676aee4f2a3..9eadedada962 100644
 --- a/third_party/widevine/cdm/widevine.gni
 +++ b/third_party/widevine/cdm/widevine.gni
 @@ -12,7 +12,9 @@ declare_args() {
@@ -91,10 +89,7 @@ index d676aee4f2a3..9eadedada962 100644
    # Can be optionally enabled in Chromium on non-Android platforms. Please see
    # //src/third_party/widevine/LICENSE file for details.
 -  enable_widevine = is_chrome_branded || is_android || is_fuchsia
-+  #---***FYDEOS BEGIN***---
 +  enable_widevine = true
-+  #---***FYDEOS END***---
- }
  
  # Disable Widevine when running linux-chromeos.
 @@ -53,7 +55,7 @@ assert(!enable_media_foundation_widevine_cdm || is_win)
@@ -104,5 +99,3 @@ index d676aee4f2a3..9eadedada962 100644
 -  bundle_widevine_cdm = enable_library_widevine_cdm && is_chrome_branded
 +  bundle_widevine_cdm = true
  }
- 
- # Enable Widevine CDM host verification, which will sign additional binaries
