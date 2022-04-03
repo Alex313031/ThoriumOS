@@ -22,7 +22,9 @@ RDEPEND="
 	app-admin/pydf
 	app-admin/sysstat
 	app-arch/tar
+	app-editors/nano
 	app-misc/sl
+	chromeos-base/auto-expand-partition
 	chromeos-base/frick-oem-wallpapers
 	chromeos-base/frick-chromedev-flags
 	chromeos-base/cros-trimly
@@ -34,10 +36,11 @@ RDEPEND="
 	media-libs/x265
 	net-misc/tlsdate
 	sys-apps/cpuid
+	sys-apps/i2c-tools
 	sys-apps/iotools
 	sys-process/iotop
-	sys-apps/lm-sensors
 	sys-process/htop
+	sys-apps/lm-sensors
 	chromeos-base/google-drive-fs
 	chromeos-base/bash-skel
 	chromeos-base/libwidevine
