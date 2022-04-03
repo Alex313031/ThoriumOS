@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
-DESCRIPTION="OEM Wallpapers for ChromiumOS, using the older default minimalist wallpaper by Carl Kleiner, and a photo taken by Andreas Wocko."
+DESCRIPTION="OEM Wallpapers for ChromiumOS, using a wallpaper by Carl Kleiner, and a photo taken by Andreas Wocko."
 
 LICENSE="BSD-Google"
 SLOT="0"
@@ -10,7 +10,7 @@ KEYWORDS="*"
 IUSE="frick-wallpapers"
 S="${WORKDIR}"
 
-RDEPEND=""
+RDEPEND="chromeos-base/common-assets"
 DEPEND="${RDEPEND}"
 
 src_install() {
