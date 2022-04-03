@@ -3,7 +3,7 @@
 
 EAPI="5"
 
-DESCRIPTION="Google Drive related files"
+DESCRIPTION="Installs Google Drive related files."
 HOMEPAGE="https://drive.google.com/"
 
 LICENSE="BSD-Google"
@@ -17,6 +17,8 @@ DEPEND="${RDEPEND}"
 S=${WORKDIR}
 
 src_install() {
+  if use drivefs; then
   exeinto /opt/google/drive-file-stream
   doexe ${FILESDIR}/*
+  fi
 }
