@@ -10,7 +10,7 @@ x11-libs/libva-intel-driver -wayland
 
 # Enabling wayland causes the wl_proxy_marshal_constructor_versioned not found
 # error in waffle.
-media-libs/waffle -wayland gbm
+media-libs/waffle -wayland gbm opengles
 media-libs/piglit waffle
 
 # For CrOS Kernel 4.x.x
@@ -43,6 +43,9 @@ sys-apps/lm-sensors contrib
 
 # opencv gflags patch
 media-libs/opencv gflags contrib
+
+# Fix alsa-plugins ffmpeg build error.
+media-plugins/alsa-plugins -ffmpeg
 
 # Enable nodejs
 net-libs/nodejs -system-icu -system-ssl ssl npm inspector
