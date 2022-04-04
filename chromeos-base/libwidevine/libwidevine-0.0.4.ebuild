@@ -6,7 +6,7 @@ EAPI="5"
 DESCRIPTION="Install WidevineCDM DRM."
 HOMEPAGE="https://www.widevine.com/solutions/widevine-drm"
 
-LICENSE="BSD-Google"
+LICENSE="BSD-Google WidevineCDM-LICENSE"
 SLOT="0"
 KEYWORDS="*"
 IUSE="widevine"
