@@ -14,6 +14,7 @@ sudo emerge sys-process/iotop
 # BUILD COMMANDS (cros_workon is optional to build kernel from source.)
 setup_board --board=${BOARD}
 cros_workon --board=${BOARD} start sys-kernel/chromeos-kernel-5_10
+cros_workon --board=${BOARD} start chromeos-base/chromiumos-assets
 build_packages --board=${BOARD} --no-withdebug --no-withautotest
 ./build_image --board=${BOARD} --noenable_rootfs_verification dev
 
@@ -21,8 +22,8 @@ build_packages --board=${BOARD} --no-withdebug --no-withautotest
 cros flash usb:// ${BOARD}/latest
 
 # MOUNT IMAGE AND UNMOUNT
-./mount_gpt_image.sh --board=${BOARD} --most_recent
-./mount_gpt_image.sh --board=${BOARD} -u
+./mount_gpt_image.sh --board=${BOARD} --most_recent --noread_only --nosafe
+./mount_gpt_image.sh --board=${BOARD} --unmount
 
 # DELETE BOARD
 sudo rm -rf /build/${BOARD}
