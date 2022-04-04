@@ -1,5 +1,5 @@
 # Copyright (c) 2022 The Chromium OS Authors and Alex313031. All rights reserved.
-# Distributed under the terms of the GNU General Public License v2
+# Distributed under the terms of the GNU General Public License v3
 
 EAPI=7
 
