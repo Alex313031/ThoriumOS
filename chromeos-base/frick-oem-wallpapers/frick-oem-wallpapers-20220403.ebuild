@@ -3,8 +3,9 @@
 
 EAPI=7
 DESCRIPTION="OEM Wallpapers for ChromiumOS, using a wallpaper by Carl Kleiner, and a photo taken by Andreas Wocko."
+HOMEPAGE="https://github.com/Alex313031/ChromiumOS/tree/main/wallpapers"
 
-LICENSE="BSD-Google"
+LICENSE="frick-oem-wallpapers-LICENSE"
 SLOT="0"
 KEYWORDS="*"
 IUSE="frick-wallpapers"
