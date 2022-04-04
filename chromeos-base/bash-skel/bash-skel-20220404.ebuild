@@ -4,7 +4,7 @@
 EAPI="5"
 inherit chrome-dev-flags 
 DESCRIPTION="Appends aliases to the .bashrc that is copied from /etc/skel/ to all users home dirs."
-HOMEPAGE="https://github.com/Alex313031/ChromiumOS/"
+HOMEPAGE="https://github.com/Alex313031/ChromiumOS/blob/main/dot-bashrc"
 
 LICENSE="GPL-3"
 SLOT="0"
