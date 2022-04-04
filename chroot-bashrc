@@ -1,0 +1,15 @@
+# Useful aliases for the chroot's .bashrc
+
+alias ..='cd ..'
+alias sd='cd ~/chromiumos/src/scripts'
+alias la='ls -A --color=auto'
+alias ll='ls --color=auto -l'
+alias exports='export BOARD=amd64-generic && export CHROME_ORIGIN=LOCAL_SOURCE && export OFFICIAL_BUILD=1'
+alias bashconf='nano -m -g ~/.bashrc'
+alias bas='source ~/.bashrc'
+alias s='sync'
+alias flash='cros flash usb:// ${BOARD}/latest'
+alias hist='cat /home/alex/.bash_history | grep '
+alias fl='sudo fdisk --list'
+alias clr='clear'
+alias c='%'
