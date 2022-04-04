@@ -1,19 +1,19 @@
 # Copyright (c) 2022 The Chromium OS Authors and Alex313031. All rights reserved.
 # Distributed under the terms of the GNU General Public License v2
 
-CHROMEOS_KERNEL_SPLITCONFIG="chromiumos-x86_64"
+CHROMEOS_KERNEL_SPLITCONFIG="chromeos-x86_64-reven"
 CHROMEOS_KERNEL_ARCH="x86_64"
 
 # We assume that our 64bit baseline CPU supports at least
-# MMX, SSE, SSE2, SSE3, and SSE4. Added AVX and O3 compiler optimizations.
+# MMX, SSE, SSE2, SSE3, and SSE4. Added AVX, AES, and O3 compiler optimizations.
 BOARD_COMPILER_FLAGS="-march=x86-64 -mavx -maes -O3"
-BOARD_RUSTFLAGS="-Ctarget-cpu=x86-64 -Ctarget-feature=+sse4,+avx"
+BOARD_RUSTFLAGS="-Ctarget-cpu=x86-64 -Copt-level=3 -Ctarget-feature=+sse3,+sse4,+aes,+avx"
 CFLAGS="${CFLAGS} -O3 -pipe -mavx -maes"
 LDFLAGS="${LDFLAGS} -Wl,-O3 -Wl,--lto-O3"
 
 # Include many firmwares as this is a "generic" board and might run on a
 # wide variety of platforms with who knows what kind of hardware. -cros-pd disables EC firmware updating.
-LINUX_FIRMWARE="* -cros-pd iwlwifi-all"
+LINUX_FIRMWARE="${LINUX_FIRMWARE} * -cros-pd iwlwifi-all"
 
 # Use LLVM amdgpu target when building LLVM.
 LLVM_TARGETS="AMDGPU X86"
@@ -21,14 +21,17 @@ LLVM_TARGETS="AMDGPU X86"
 # Initial value just for style purposes.
 USE=""
 
+# Extra USE flags.
+USE="${USE} bluetooth cros_disks scanner ml_service power_management vpn cups usbguard highlights assistant assistant-dlc lottie webui-tab-strip gflags"
+
 # Remove debug constructs.
 USE="${USE} -debug -chromeless_tests"
 
 # CPU Flags.
-USE="${USE} sse4_2 aes avx"
+USE="${USE} mmx mmxext sse2 sse3 ssse3 sse4_1 sse4_2 aes avx"
 
 # Enable non-free codecs and components.
-USE="${USE} -chrome_debug chrome_media vaapi x264 x265 widevine"
+USE="${USE} -chrome_debug chrome_media vaapi x264 x265 ffmpeg widevine"
 
 # Enable background blur on all graphics chipsets.
 USE="${USE} background_blur"
@@ -40,19 +43,22 @@ USE="${USE} containers kvm_host crosvm-gpu virtio_gpu"
 USE="${USE} dlc"
 
 # Enable legacy components for generic x64 board.
-USE="${USE} legacy_usb legacy_keyboard legacy_power_button sse diagnostics selinux_experimental"
+USE="${USE} legacy_usb legacy_keyboard legacy_power_button sse diagnostics selinux_experimental fdformat magic"
 
 # Kernel configuration.
-USE="${USE} -kernel-4_4 -kernel-4_14 -kernel-4_19 -kernel-5_4 kernel-5_10 -kernel-5_15 kmod headers linux_headers linux-headers nouveau"
+USE="${USE} -kernel-4_4 -kernel-4_14 -kernel-4_19 -kernel-5_4 kernel-5_10 -kernel-5_15 headers linux-mod linux_headers linux-headers nouveau usb_gadget it87"
+
+# Use linux kernel modules/firmware/microcode and enable calling them from cmdline.
+USE="${USE} modules kmod initramfs split-ucode"
 
 # Enable mesa-reven for CloudReady graphics support.
-USE="${USE} mesa_reven reven"
+USE="${USE} mesa_reven reven libkms"
 
 # Enable Steam on CrOS (borealis).
-USE="${USE} borealis"
+USE="${USE} borealis borealis_host"
 
 # Enable Google Drive.
-USE="${USE} google-drive-fs drivefs libfuse fuse"
+USE="${USE} googledrive fuse-drivefs google-drive-fs drivefs libfuse fuse user_allow_other"
 
 # Enable NFS and FAT/FAT32 and eMMC Tools.
 USE="${USE} nfs vfat mmc"
@@ -60,23 +66,21 @@ USE="${USE} nfs vfat mmc"
 # Dircrypto for stateful partition. On kernel 5.x this should be set to direncription_allow_v2.
 USE="${USE} direncryption uprev-4-to-5 cryptohome_userdataauth_interface has-kernelnext"
 
-# Use linux kernel modules/firmware/microcode and enable calling them from cmdline.
-USE="${USE} modules initramfs split-ucode"
-
 # Use frecon, the freon graphics virtual terminal for devices using KMS for graphics setting.
 USE="${USE} frecon"
+# USE="${USE} fbconsole vtconsole"
 
 # Enable all optional features on generic overlays, minus wifi bootstrapping for linux-firmware.
-USE="${USE} buffet -wifi_bootstrapping"
+USE="${USE} buffet peerd screensaver screensavers -wifi_bootstrapping"
 
 # LLVM is required to build the llvmpipe and radeon drivers.
 USE="${USE} llvm"
 
 # Enable libglvnd.
-# USE="${USE} libglvnd"
+USE="${USE} libglvnd"
 
-# Enable NNAPI for testing.
-USE="${USE} nnapi"
+# Enable NNAPI/PPAPI  for testing.
+USE="${USE} nnapi ppapi"
 
 # Enable hps for testing.
 USE="${USE} hps"
@@ -108,25 +112,25 @@ USE="${USE} include_vmlinuz"
 USE="${USE} unibuild has_chromeos_config_bsp"
 
 # Enable wayland and egl for LaCrOS.
-USE="${USE} wayland egl"
+USE="${USE} wayland egl gles2 shared-glapi"
 
 # Enable Vulkan for ClusterFuzz.
 USE="${USE} vulkan"
 
 # Enable vmware GPU.
-USE="${USE} video_cards_vmware"
+USE="${USE} video_cards_vmware virgl"
 
 # Use legacy pre-Groot UI for initramfs and init script screens.
 USE="${USE} legacy_firmware_ui"
 
 # Enable a few more video cards as this is a generic board. i915 is kept for posterity after M90.
-VIDEO_CARDS="intel i915 i965 iris llvmpipe nouveau radeon vmware"
+VIDEO_CARDS="intel i915 i965 iris virgl llvmpipe nouveau radeon vmware"
 
 # Virtual machines don't have physical TPMs.
 # Enable TPM2.0 simulator on it.
 USE="${USE} -tpm tpm2 tpm2_simulator tpm2_simulator_manufacturer"
 
-# Enable vTPM proxy on it for driver-level TPM simulator.
+# Enable vTPM proxy on board for driver-level TPM simulator.
 USE="${USE} vtpm_proxy"
 
 # No support for zero-copy on virtual machines. Comment out for physical machines.
