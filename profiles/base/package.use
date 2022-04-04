@@ -33,7 +33,7 @@ chromeos-base/chromeos-base -cros_embedded
 sys-libs/ncurses unicode
 
 # htop USE flags
-sys-process/htop lm-sensors llvm-libunwind unicode -unwind -debug
+sys-process/htop caps lm-sensors llvm-libunwind unicode -debug
 
 # nano USE flags
 app-editors/nano unicode ncurses
