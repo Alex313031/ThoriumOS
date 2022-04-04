@@ -16,9 +16,11 @@ chromiumos-overlay/profiles/targets/sdk/make.defaults
 chromiumos-overlay/chromeos/config/make.conf.common
 chromiumos-overlay/chromeos/config/make.conf.generic-target
 
-# CHROMEOS-CHROME EBUILD
+# CHROMEOS-CHROME EBUILD MODIFICATIONS
 widevine
 -Official
+
+/home/alex/chromium/src/ash/webui/ demo app, help app, and sample app
 
 "enable_discovery=true"
 		"enable_hangout_services_extension=true"
