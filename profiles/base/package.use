@@ -1,8 +1,8 @@
 # Copyright (c) 2022 Alex313031
 
 # Mesa USE flags.
-media-libs/mesa-llvmpipe egl gbm gles2 shared-glapi libglvnd
-media-libs/mesa-reven egl gbm gles2 shared-glapi llvm libglvnd dri
+media-libs/mesa-llvmpipe egl gles2 shared-glapi libglvnd
+media-libs/mesa-reven egl gles2 shared-glapi llvm libglvnd dri
 
 # Enabling wayland pulls media-libs/mesa package, which conflicts with
 # mesa-llvmpipe pulled by overwritten virtual/opengles package.
@@ -40,6 +40,9 @@ app-editors/nano unicode ncurses
 
 # lm_sensors USE flags
 sys-apps/lm-sensors contrib
+
+# opencv gflags patch
+media-libs/opencv gflags contrib
 
 # Enable nodejs
 net-libs/nodejs -system-icu -system-ssl ssl npm inspector
