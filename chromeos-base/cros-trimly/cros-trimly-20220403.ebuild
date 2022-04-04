@@ -4,6 +4,7 @@
 EAPI=7
 
 DESCRIPTION="TrImLy fstrim and e4defrag automator script for CrOS by me, memr script to drop caches by me, and screenfetch-dev by https://github.com/KittyKatt/ and pak for unpacking Chromium *.pak files by https://github.com/myfreeer/."
+HOMEPAGE="https://github.com/Alex313031/TrImLy"
 
 LICENSE="TrImLy-LICENSE"
 SLOT="0"
