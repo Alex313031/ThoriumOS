@@ -18,18 +18,18 @@ KEYWORDS="*"
 RDEPEND="
 	!chromeos-base/chromeos-bsp-null
 	!media-libs/mesa-llvmpipe
+	!sys-firmware/intel-microcode
 	media-libs/mesa-reven
 	app-admin/pydf
 	app-admin/sysstat
 	app-arch/tar
 	app-editors/nano
 	app-misc/sl
-	chromeos-base/auto-expand-partition
 	chromeos-base/frick-oem-wallpapers
 	chromeos-base/frick-chromedev-flags
 	chromeos-base/cros-trimly
 	sys-apps/iucode_tool
-	sys-firmware/intel-microcode
+	sys-firmware/intel-ucode-firmware
 	sys-kernel/linux-firmware
 	media-libs/cros-camera-hal-usb
 	media-libs/x264
