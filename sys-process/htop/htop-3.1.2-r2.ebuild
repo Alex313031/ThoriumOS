@@ -18,6 +18,7 @@ IUSE="caps debug delayacct hwloc lm-sensors llvm-libunwind openvz unicode unwind
 
 BDEPEND="virtual/pkgconfig"
 RDEPEND="
+	sys-process/lsof
 	sys-libs/ncurses:=[unicode(+)?]
 	hwloc? ( sys-apps/hwloc:= )
 	unwind? (
