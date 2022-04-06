@@ -4,7 +4,7 @@
 
 ## ChromiumOS builds with x264/x265 codecs, Widevine, Kernel 5.10, Linux firmware/modules support, Nouveau, Intel microcode, and extra packages.
 
-- Extra packages include iotop, iotools, sysstat, i2ctools, lm-sensors, pydf, cpuid, htop, sl, custom wallpapers, screenfetch-dev, pak, and TrImLy: a fstrim and e4defrag automator script I made for ChromiumOS. \
+- Extra packages include iotop, iotools, sysstat, i2ctools, haveged, lm-sensors, pydf, cpuid, htop, sl, custom wallpapers, screenfetch-dev, pak, and TrImLy: a fstrim and e4defrag automator script I made for ChromiumOS. \
 &nbsp; TrImLy > https://github.com/Alex313031/TrImLy/ \
 &nbsp; ScreenFetch > https://github.com/KittyKatt/screenFetch \
 &nbsp; Pak > https://github.com/myfreeer/chrome-pak-customizer
