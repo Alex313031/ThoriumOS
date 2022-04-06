@@ -25,6 +25,7 @@ RDEPEND="
 	app-arch/tar
 	app-editors/nano
 	app-misc/sl
+	chromeos-base/chromeos-osrelease
 	chromeos-base/frick-oem-wallpapers
 	chromeos-base/frick-chromedev-flags
 	chromeos-base/cros-trimly
@@ -38,6 +39,8 @@ RDEPEND="
 	sys-apps/cpuid
 	sys-apps/i2c-tools
 	sys-apps/iotools
+	sys-apps/haveged
+	net-misc/bridge-utils
 	sys-process/iotop
 	sys-process/htop
 	sys-apps/lm-sensors
