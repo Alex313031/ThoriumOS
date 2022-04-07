@@ -29,6 +29,9 @@ chromeos-base/chromeos-chrome -chrome_debug chrome_media vaapi x264 x265 widevin
 # Remove embedded config for generic boards.
 chromeos-base/chromeos-base -cros_embedded
 
+# Disable NVMe firmware updating.
+sys-apps/fwupd -nvme
+
 # Enable Unicode.
 sys-libs/ncurses unicode
 
@@ -41,7 +44,7 @@ app-editors/nano unicode ncurses
 # lm_sensors USE flags
 sys-apps/lm-sensors contrib
 
-# opencv gflags patch
+# OpenCV gflags patch
 media-libs/opencv gflags contrib
 
 # Fix alsa-plugins ffmpeg build error.
@@ -50,7 +53,7 @@ media-plugins/alsa-plugins -ffmpeg
 # Build libffmpeg.so library.
 media-video/ffmpeg chromium build_separate_libffmpeg
 
-# Enable nodejs
+# Enable NodeJS
 net-libs/nodejs -system-icu -system-ssl ssl npm inspector
 
 # Fix gptfdisk bug
