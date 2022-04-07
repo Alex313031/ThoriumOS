@@ -47,6 +47,9 @@ media-libs/opencv gflags contrib
 # Fix alsa-plugins ffmpeg build error.
 media-plugins/alsa-plugins -ffmpeg
 
+# Build libffmpeg.so library.
+media-video/ffmpeg chromium build_separate_libffmpeg
+
 # Enable nodejs
 net-libs/nodejs -system-icu -system-ssl ssl npm inspector
 
