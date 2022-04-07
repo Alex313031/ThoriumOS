@@ -25,6 +25,7 @@ RDEPEND="
 	app-arch/tar
 	app-editors/nano
 	app-misc/sl
+	chromeos-base/chromeos-bsp-amd64-frick
 	chromeos-base/chromeos-osrelease
 	chromeos-base/frick-oem-wallpapers
 	chromeos-base/frick-chromedev-flags
