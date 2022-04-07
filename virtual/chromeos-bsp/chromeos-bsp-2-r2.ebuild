@@ -50,7 +50,9 @@ RDEPEND="
 	chromeos-base/google-drive-fs
 	chromeos-base/bash-skel
 	chromeos-base/libwidevine
+	virtual/chromeos-config-bsp
 "
+
 DEPEND="${RDEPEND}"
 
 	# !net-wireless/broadcom-sta
