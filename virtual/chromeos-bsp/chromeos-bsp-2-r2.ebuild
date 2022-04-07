@@ -29,12 +29,14 @@ RDEPEND="
 	chromeos-base/frick-oem-wallpapers
 	chromeos-base/frick-chromedev-flags
 	chromeos-base/cros-trimly
+	dev-cpp/gflags
 	sys-apps/iucode_tool
 	sys-firmware/intel-ucode-firmware
 	sys-kernel/linux-firmware
 	media-libs/cros-camera-hal-usb
 	media-libs/x264
 	media-libs/x265
+	net-misc/telnet-bsd
 	net-misc/tlsdate
 	sys-apps/cpuid
 	sys-apps/i2c-tools
