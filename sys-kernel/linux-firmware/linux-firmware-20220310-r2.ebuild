@@ -37,8 +37,12 @@ REQUIRED_USE="initramfs? ( redistributable )"
 RESTRICT="binchecks strip test
 	unknown-license? ( bindist )"
 
-BDEPEND="initramfs? ( app-arch/cpio )"
-
+BDEPEND="
+	app-arch/cpio
+	dev-lang/python
+	dev-vcs/git
+"
+		
 #add anything else that collides to this
 RDEPEND="!savedconfig? (
 		redistributable? (
