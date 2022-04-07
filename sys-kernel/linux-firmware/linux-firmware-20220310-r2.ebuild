@@ -1,4 +1,4 @@
-# Copyright 1999-2022 Gentoo Authors
+# Copyright 1999-2022 Gentoo Authors and Alex313031
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -25,9 +25,13 @@ fi
 DESCRIPTION="Linux firmware files"
 HOMEPAGE="https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git"
 
-LICENSE="GPL-3"
+LICENSE="
+	GPL-3
+	linux_firmware_amd_ucode? ( LICENSE.amd-ucode )
+"
+
 SLOT="0"
-IUSE="initramfs +redistributable savedconfig unknown-license"
+IUSE="initramfs +redistributable savedconfig +unknown-license linux_firmware_amd_ucode"
 REQUIRED_USE="initramfs? ( redistributable )"
 
 RESTRICT="binchecks strip test
