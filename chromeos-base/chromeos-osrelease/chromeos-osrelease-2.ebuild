@@ -5,9 +5,9 @@ EAPI=5
 
 inherit osreleased
 
-DESCRIPTION="OS Release Information"
+DESCRIPTION="OS Release Information for ThoriumOS."
 
-LICENSE="BSD-Google"
+LICENSE="BSD-Google ThoriumOS-LICENSE"
 SLOT="0"
 KEYWORDS="*"
 IUSE=""
