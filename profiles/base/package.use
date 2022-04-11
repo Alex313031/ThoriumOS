@@ -30,8 +30,8 @@ chromeos-base/chromeos-chrome -chrome_debug chrome_media vaapi x264 x265 widevin
 # Remove embedded config for generic boards.
 chromeos-base/chromeos-base -cros_embedded
 
-# Disable NVMe firmware updating.
-sys-apps/fwupd -nvme
+# Disable NVMe and Synaptics firmware updating.
+sys-apps/fwupd -nvme -synaptics
 
 # Enable Unicode.
 sys-libs/ncurses unicode
