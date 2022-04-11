@@ -3,7 +3,7 @@
 
 EAPI=5
 
-inherit appid
+inherit appid cros-unibuild
 
 DESCRIPTION="Creates an app id for this build and updates the lsb-release file."
 HOMEPAGE="https://github.com/Alex313031/ChromiumOS/"
@@ -15,8 +15,12 @@ IUSE=""
 S="${WORKDIR}"
 
 # Add dependencies on other ebuilds from within this board overlay
-DEPEND="${RDEPEND}"
+DEPEND="${RDEPEND} chromeos-base/chromeos-config"
 
 src_install() {
 	doappid "{DC2BBB48-BC2C-493E-82DA-89BEE8321A5A}" "OTHER"
+	
+	# Install platform specific config files for power_manager.
+	insinto "/usr/share/power_manager/board_specific"
+	doins "${FILESDIR}"/powerd_prefs/*
 }
