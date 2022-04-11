@@ -19,37 +19,37 @@ RDEPEND="
 	!chromeos-base/chromeos-bsp-null
 	!media-libs/mesa-llvmpipe
 	!sys-firmware/intel-microcode
-	media-libs/mesa-reven
 	app-admin/pydf
 	app-admin/sysstat
 	app-arch/tar
 	app-editors/nano
 	app-misc/sl
+	chromeos-base/bash-skel
 	chromeos-base/chromeos-bsp-amd64-frick
 	chromeos-base/chromeos-osrelease
+	chromeos-base/cros-trimly
 	chromeos-base/frick-oem-wallpapers
 	chromeos-base/frick-chromedev-flags
-	chromeos-base/cros-trimly
+	chromeos-base/google-drive-fs
+	chromeos-base/libwidevine
 	dev-cpp/gflags
-	sys-apps/iucode_tool
 	sys-firmware/intel-ucode-firmware
 	sys-kernel/linux-firmware
 	media-libs/cros-camera-hal-usb
+	media-libs/mesa-reven
 	media-libs/x264
 	media-libs/x265
+	net-misc/bridge-utils
 	net-misc/telnet-bsd
 	net-misc/tlsdate
 	sys-apps/cpuid
+	sys-apps/haveged
 	sys-apps/i2c-tools
 	sys-apps/iotools
-	sys-apps/haveged
-	net-misc/bridge-utils
+	sys-apps/iucode_tool
+	sys-apps/lm-sensors
 	sys-process/iotop
 	sys-process/htop
-	sys-apps/lm-sensors
-	chromeos-base/google-drive-fs
-	chromeos-base/bash-skel
-	chromeos-base/libwidevine
 	virtual/chromeos-config-bsp
 "
 
