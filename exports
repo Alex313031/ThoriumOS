@@ -1,25 +1,38 @@
 # ENTER CHROOT (substitute for where //chromium actually is on your machine)
 cros_sdk --enter --chrome_root=/home/alex/chromium
 
-## EXPORT COMMANDS
-export BOARD=amd64-generic
-export CHROME_ORIGIN=LOCAL_SOURCE
-export OFFICIAL_BUILD='1'
+# UPDATE YOUR CHECKOUT (run both outside chroot)
+repo rebase
+repo sync -j4
 
-## EMERGE COMMANDS
+## EXPORT COMMANDS
+export BOARD=amd64-frick
+export NINJA_SUMMARIZE_BUILD=1
+export CHROME_ORIGIN=LOCAL_SOURCE
+export CHROME_BUILD_TYPE='_official'
+export OFFICIAL_BUILD='1'
+export BUILDTYPE=Release
+
+## EMERGE COMMANDS (no longer necessary)
 sudo emerge app-arch/tar
 sudo emerge app-admin/sysstat
 sudo emerge sys-process/iotop
 
 # BUILD COMMANDS (cros_workon is optional to build kernel from source.)
-setup_board --board=${BOARD}
+setup_board --board=${BOARD} --force
 cros_workon --board=${BOARD} start sys-kernel/chromeos-kernel-5_10
 cros_workon --board=${BOARD} start chromeos-base/chromiumos-assets
 build_packages --board=${BOARD} --no-withdebug --no-withautotest
 ./build_image --board=${BOARD} --noenable_rootfs_verification dev
 
+# LIST CURRENT CROS_WORKON PACKAGES.
+cros_workon --board=${BOARD} list
+
 # FLASH TO USB
 cros flash usb:// ${BOARD}/latest
+
+# INSTALL ON TARGET MACHINE (Ctrl+Alt+F2, then login with 'chronos', then run this, substituting /dev/sda for target device.)
+/usr/sbin/chromeos-install --dst /dev/sda
 
 # MOUNT IMAGE AND UNMOUNT
 ./mount_gpt_image.sh --board=${BOARD} --most_recent --noread_only --nosafe
@@ -31,3 +44,6 @@ sudo rm -rf /build/${BOARD}
 # DELETE CHROOT
 cros_sdk --delete
 
+# You can't build chrome with win set as a target_os in //chromium/.gclient
+/home/alex/chromium/src/third_party/depot_tools/win_toolchain/README.md	
+/home/alex/chromiumos/src/platform2/hiberman/README.md
