@@ -1,8 +1,8 @@
 ![GitHub tag (latest SemVer)](https://img.shields.io/github/v/tag/alex313031/chromiumos?label=Version%3A) &nbsp;![GitHub commit activity](https://img.shields.io/github/commit-activity/w/alex313031/chromiumos?color=blueviolet&label=Commit%20Activity%3A) &nbsp;![Subreddit subscribers](https://img.shields.io/reddit/subreddit-subscribers/ChromiumOS?style=social)
-# ChromiumOS
-<img src="https://github.com/Alex313031/ChromiumOS/blob/main/cros_bootsplash.png">
+# ThoriumOS
+<img src="https://github.com/Alex313031/ChromiumOS/blob/main/thoriumos_bootsplash.png">
 
-## ChromiumOS builds with x264/x265 codecs, Widevine, Kernel 5.10, Linux firmware/modules support, Nouveau, Intel microcode, and extra packages.
+## ChromiumOS builds with Thorium Browser, x264/x265 codecs, Widevine, Kernel 5.10, Linux firmware/modules support, Nouveau, Intel microcode, and extra packages.
 
 - Extra packages include iotop, iotools, sysstat, i2ctools, haveged, telnet, bridge-utils, lm-sensors, pydf, cpuid, htop, sl, custom wallpapers, screenfetch-dev, pak, and TrImLy: a fstrim and e4defrag automator script I made for ChromiumOS. \
 &nbsp; TrImLy > https://github.com/Alex313031/TrImLy/ \
