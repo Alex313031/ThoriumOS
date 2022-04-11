@@ -6,6 +6,7 @@ EAPI=5
 inherit osreleased
 
 DESCRIPTION="OS Release Information for ThoriumOS."
+HOMEPAGE="https://github.com/Alex313031/ChromiumOS/"
 
 LICENSE="BSD-Google ThoriumOS-LICENSE"
 SLOT="0"
