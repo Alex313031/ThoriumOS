@@ -22,6 +22,8 @@ widevine
 
 /home/alex/chromium/src/ash/webui/ demo app, help app, and sample app
 
+chrome_targets+=( app_shell ) > chrome_targets+=( app_shell chrome content_shell)
+
 "enable_discovery=true"
 		"enable_hangout_services_extension=true"
 		"enable_hls_sample_aes=true"
@@ -34,7 +36,6 @@ widevine
 		"disable_fieldtrial_testing_config=true"
 		"enable_resource_allowlist_generation=false"
 		"enable_profiling=false"
-		"symbol_level=0"
 		"dcheck_always_on=false"
 		"exclude_unwind_tables=true"
 		"enable_stripping=true"
@@ -71,6 +72,9 @@ under if [[ -f "${GAPI_CONFIG_FILE}" ]]; then
 
 
 under "google_default_client_secret=${client_secret}"
+	)
+}
+
 patch_widevine() {
   info "patching for widevine..."
   local target_dir="${CHROME_ROOT}/src/third_party/widevine/cdm/chromeos/x64"
