@@ -1,8 +1,9 @@
 # Copyright (c) 2022 Alex313031
 
 # Mesa USE flags.
-media-libs/mesa-llvmpipe egl gles2 shared-glapi libglvnd
-media-libs/mesa-reven egl gles2 shared-glapi llvm libglvnd dri
+media-libs/mesa egl gles2 shared-glapi llvm libglvnd
+media-libs/mesa-llvmpipe egl gles2 shared-glapi llvm libglvnd
+media-libs/mesa-reven egl gles2 shared-glapi llvm libglvnd
 
 # Enabling wayland pulls media-libs/mesa package, which conflicts with
 # mesa-llvmpipe pulled by overwritten virtual/opengles package.
@@ -51,10 +52,10 @@ media-libs/opencv gflags contrib
 media-plugins/alsa-plugins -ffmpeg
 
 # Build libffmpeg.so library.
-media-video/ffmpeg chromium build_separate_libffmpeg
+# media-video/ffmpeg chromium build_separate_libffmpeg
 
 # Enable NodeJS
-net-libs/nodejs -system-icu -system-ssl ssl npm inspector
+# net-libs/nodejs -system-icu -system-ssl ssl npm inspector
 
 # Fix gptfdisk bug
 sys-apps/gptfdisk -ncurses
