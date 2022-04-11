@@ -28,7 +28,7 @@ To start building > https://chromium.googlesource.com/chromiumos/docs/+/HEAD/dev
 About overlays > https://www.chromium.org/chromium-os/how-tos-and-troubleshooting/working-with-your-overlay-faq \
 Note that it is best if depot_tools, chromium, and chromiumos are all in $HOME. I don't know where you will put these dirs, so I just prefix things below with //.
 
-The files here can be copied in place on top of overlay-amd46-generic in *//chromiumos/src/overlays/overlay-amd64-generic*.
+First, we assume the chromiumos source, chromium source, and this repo are all in $HOME. Then go into this repo and run ./setup.sh, which will copy needed files over the chromiumos source tree and create a new overlay named overlay-amd64-frick. Run the `sed -i 's/ALL_BOARDS=(/ALL_BOARDS=(\n	amd64-frick\n/' ${HOME}/chromiumos/src/third_party/chromiumos-overlay/eclass/cros-board.eclass` command that ./setup.sh will tell you to do toward the end. This adds the overlay to this list of known board overlays.
 
 > To build with x264 and the extra packages, you must also
 - Download chromium source code > https://chromium.googlesource.com/chromium/src/+/refs/heads/main/docs/linux/build_instructions.md
