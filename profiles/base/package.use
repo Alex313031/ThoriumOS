@@ -1,18 +1,18 @@
 # Copyright (c) 2022 Alex313031
 
 # Mesa USE flags.
-media-libs/mesa egl gles2 shared-glapi llvm libglvnd
-media-libs/mesa-llvmpipe egl gles2 shared-glapi llvm libglvnd
-media-libs/mesa-reven egl gles2 shared-glapi llvm libglvnd
+media-libs/mesa egl gles2 shared-glapi llvm
+media-libs/mesa-llvmpipe egl gles2 shared-glapi llvm
+media-libs/mesa-reven egl gles2 shared-glapi llvm
 
 # Enabling wayland pulls media-libs/mesa package, which conflicts with
 # mesa-llvmpipe pulled by overwritten virtual/opengles package.
-x11-libs/libva-intel-driver -wayland
+#x11-libs/libva-intel-driver -wayland
 
 # Enabling wayland causes the wl_proxy_marshal_constructor_versioned not found
 # error in waffle.
-media-libs/waffle -wayland gbm opengles
-media-libs/piglit waffle
+#media-libs/waffle -wayland gbm opengles
+#media-libs/piglit waffle
 
 # For CrOS Kernel 4.x.x
 sys-kernel/chromeos-kernel-4_4 apply_patches modules
@@ -37,7 +37,7 @@ sys-apps/fwupd -nvme -synaptics
 sys-libs/ncurses unicode
 
 # htop USE flags
-sys-process/htop caps lm-sensors llvm-libunwind unicode -debug
+sys-process/htop caps lm-sensors llvm-libunwind unwind unicode -debug
 
 # nano USE flags
 app-editors/nano unicode ncurses
@@ -48,10 +48,13 @@ sys-apps/lm-sensors contrib
 # OpenCV gflags patch
 media-libs/opencv gflags contrib
 
+# chromeos-bsp gflags package USE.
+virtual/chromeos-bsp gflags
+
 # Fix alsa-plugins ffmpeg build error.
 media-plugins/alsa-plugins -ffmpeg
 
-# Build libffmpeg.so library.
+# Build libffmpeg.so library. (Not needed when building Chromium locally.)
 # media-video/ffmpeg chromium build_separate_libffmpeg
 
 # Enable NodeJS
