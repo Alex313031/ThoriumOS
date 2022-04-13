@@ -11,13 +11,15 @@ HOMEPAGE="https://github.com/Alex313031/ChromiumOS/"
 LICENSE="BSD-Google ThoriumOS-LICENSE"
 SLOT="0"
 KEYWORDS="*"
-IUSE=""
+IUSE="thoriumos"
 S="${WORKDIR}"
 
 src_install() {
+	if use thoriumos; then
 	do_osrelease_field "NAME" "Thorium OS"
 	do_osrelease_field "ID" "thoriumos"
 	do_osrelease_field "ID_LIKE" "chromiumos"
 	do_osrelease_field "BUG_REPORT_URL" "https://github.com/Alex313031/ChromiumOS/issues/"
 	do_osrelease_field "HOME_URL" "https://github.com/Alex313031/ChromiumOS/"
+	fi
 }
