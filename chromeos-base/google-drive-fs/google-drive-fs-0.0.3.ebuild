@@ -11,7 +11,7 @@ SLOT="0"
 KEYWORDS="*"
 IUSE="drivefs"
 
-RDEPEND=""
+RDEPEND="chromeos-base/cros-disks"
 
 DEPEND="${RDEPEND}"
 S=${WORKDIR}
