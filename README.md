@@ -54,4 +54,4 @@ First, we assume the chromiumos source, chromium source, and this repo are all i
 
 The .7z files in Releases contain **chromiumos_image.bin** which can be flashed to a USB Drive with https://www.balena.io/etcher/, *dd*, or *cros_flash* and booted on most processors supporting AVX or later.
 
-<img src="https://github.com/Alex313031/ChromiumOS/blob/main/ChromiumBook_black.png" width="256">
+<img src="https://github.com/Alex313031/ChromiumOS/blob/main/ChromiumBook_Black.png" width="256">
