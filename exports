@@ -1,4 +1,4 @@
-# ENTER CHROOT (substitute for where //chromium actually is on your machine)
+# ENTER CHROOT (Substitute for where //chromium actually is on your machine.)
 cros_sdk --enter --chrome_root=/home/alex/chromium
 
 # UPDATE YOUR CHECKOUT (run both outside chroot)
@@ -14,13 +14,13 @@ export OFFICIAL_BUILD='1'
 export BUILDTYPE=Release
 
 ## EMERGE COMMANDS (no longer necessary)
-sudo emerge app-arch/tar
-sudo emerge app-admin/sysstat
-sudo emerge sys-process/iotop
+#sudo emerge app-arch/tar
+#sudo emerge app-admin/sysstat
+#sudo emerge sys-process/iotop
 
 # BUILD COMMANDS (cros_workon is optional to build kernel from source.)
 setup_board --board=${BOARD} --force
-cros_workon --board=${BOARD} start sys-kernel/chromeos-kernel-5_10
+cros_workon --board=${BOARD} start sys-kernel/chromeos-kernel-5_15
 cros_workon --board=${BOARD} start chromeos-base/chromiumos-assets
 build_packages --board=${BOARD} --no-withdebug --no-withautotest
 ./build_image --board=${BOARD} --noenable_rootfs_verification dev
