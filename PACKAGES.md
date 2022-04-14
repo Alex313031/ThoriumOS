@@ -4,66 +4,66 @@
 
 ### List of extra packages included in ThoriumOS.
 
-blinker
-bridge-utils
-cabextract
-cherrypy
-cpio
-cpuid
-curl
-dbus-python
-diffutils
-file
-findutils
-flask
-gzip
-haveged
-htop
-http-parser
-i2ctools
-iftop
-iotop
-iperf
-iputils
-itsdangerous
-iucode_tool
-lm_sensors
-lsof
-mem
-memr
-miniupnpc
-nano
-ncdu
-net-tools
-netperf
-nvme-cli
-p7zip
-pak
-pbzip2
-pciutils
-procps
-psmisc
-pydf
-qemacs
-rsync
-screen
-screenfetch-dev
-sl
-smartmontools
-speedtest-cli
-sshfs
-strace
-sysstat
-tar
-tcpdump
-telnet-bsd
-time
-trimly
-unrar
-unzip
-usbutils
-vim
-virtualenv
-werkzeug
-wget
+blinker \
+bridge-utils \
+cabextract \
+cherrypy \
+cpio \
+cpuid \
+curl \
+dbus-python \
+diffutils \
+file \
+findutils \
+flask \
+gzip \
+haveged \
+htop \
+http-parser \
+i2ctools \
+iftop \
+iotop \
+iperf \
+iputils \
+itsdangerous \
+iucode_tool \
+lm_sensors \
+lsof \
+mem \
+memr \
+miniupnpc \
+nano \
+ncdu \
+net-tools \
+netperf \
+nvme-cli \
+p7zip \
+pak \
+pbzip2 \
+pciutils \
+procps \
+psmisc \
+pydf \
+qemacs \
+rsync \
+screen \
+screenfetch-dev \
+sl \
+smartmontools \
+speedtest-cli \
+sshfs \
+strace \
+sysstat \
+tar \
+tcpdump \
+telnet-bsd \
+time \
+trimly \
+unrar \
+unzip \
+usbutils \
+vim \
+virtualenv \
+werkzeug \
+wget \
 xz-utils
