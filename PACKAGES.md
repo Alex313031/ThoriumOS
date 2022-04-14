@@ -66,4 +66,8 @@ vim \
 virtualenv \
 werkzeug \
 wget \
-xz-utils
+xz-utils \
+
+Have fun using these on the commandline in Crosh!
+
+<img src="https://github.com/Alex313031/ChromiumOS/blob/main/Crosh_White.png" width="256">
