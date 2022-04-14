@@ -2,7 +2,7 @@
 # ThoriumOS
 <img src="https://github.com/Alex313031/ChromiumOS/blob/main/thoriumos_bootsplash.png">
 
-## ChromiumOS builds with Thorium Browser, x264/x265 codecs, Widevine, Kernel 5.15, Linux firmware/modules support, Nouveau, Intel microcode, and extra packages.
+## ChromiumOS builds with Thorium Browser, x264/x265 codecs, Widevine, Kernel 5.15, Linux Firmware/Modules support, Nouveau, Intel/AMD microcode, and extra packages.
 
 > __SYNOPSIS: ThoriumOS aims to be the ChromiumOS counterpart to Thorium. It is based on tip-o-tree, and contains the compiler optimizations of Thorium applied to the whole OS. It contains a variety of extra developer friendly packages, and trys to support as much hardware as possible via kernel configuration, graphics stack configuration, and USE flags.__
 
