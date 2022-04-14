@@ -2,7 +2,7 @@
 # ThoriumOS
 <img src="https://github.com/Alex313031/ChromiumOS/blob/main/thoriumos_bootsplash.png">
 
-## ChromiumOS builds with Thorium Browser, x264/x265 codecs, Widevine, Kernel 5.10, Linux firmware/modules support, Nouveau, Intel microcode, and extra packages.
+## ChromiumOS builds with Thorium Browser, x264/x265 codecs, Widevine, Kernel 5.15, Linux firmware/modules support, Nouveau, Intel microcode, and extra packages.
 
 - ThoriumOS uses the Thorium Browser, which I also make for Linux, Windows, MacOS (x64 and M1), and other platforms like the Raspberry Pi > https://github.com/Alex313031/Thorium
 
