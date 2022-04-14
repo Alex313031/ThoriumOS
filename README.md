@@ -7,6 +7,7 @@
 - ThoriumOS uses the Thorium Browser, which I also make for Linux, Windows, MacOS (x64 and M1), and other platforms like the Raspberry Pi > https://github.com/Alex313031/Thorium
 
 - Extra packages include iotop, iotools, sysstat, i2ctools, haveged, telnet, bridge-utils, lm-sensors, pydf, cpuid, htop, sl, custom wallpapers, screenfetch-dev, pak, and TrImLy: a fstrim and e4defrag automator script I made for ChromiumOS. \
+&nbsp;&ndash; NOTE: Please see PACKAGES.md for the full list of extra packages! \
 &nbsp; TrImLy > https://github.com/Alex313031/TrImLy/ \
 &nbsp; ScreenFetch > https://github.com/KittyKatt/screenFetch \
 &nbsp; Pak > https://github.com/myfreeer/chrome-pak-customizer
