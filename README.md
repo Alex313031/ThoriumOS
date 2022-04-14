@@ -17,6 +17,7 @@
 
 &nbsp;&nbsp;&ndash; Inspired by and based off of ArnoldTheBat's builds which can be downloaded here > https://arnoldthebat.co.uk/wordpress/ \
 &nbsp;&nbsp;&ndash; Also some code from FydeOS > https://github.com/FydeOS
+&nbsp;&nbsp;&ndash; Also some code from NayuOS > https://nayuos.nexedi.com/
 
 Here is Arnold's source code which this project is based on > https://github.com/arnoldthebat/chromiumos - if you don't know how to work with these overlays, I invite you to learn, but one can just download the premade image in releases.
 
