@@ -1,73 +1,11 @@
-### PACKAGES.md
+# PACKAGES.md
 
 <img src="https://github.com/Alex313031/ChromiumOS/blob/main/Larry_the_Cow.png">
 
-### List of extra packages included in ThoriumOS.
+### List of extra packages included in ThoriumOS:
 
-blinker \
-bridge-utils \
-cabextract \
-cherrypy \
-cpio \
-cpuid \
-curl \
-dbus-python \
-diffutils \
-file \
-findutils \
-flask \
-gzip \
-haveged \
-htop \
-http-parser \
-i2ctools \
-iftop \
-iotop \
-iperf \
-iputils \
-itsdangerous \
-iucode_tool \
-lm_sensors \
-lsof \
-mem \
-memr \
-miniupnpc \
-nano \
-ncdu \
-net-tools \
-netperf \
-nvme-cli \
-p7zip \
-pak \
-pbzip2 \
-pciutils \
-procps \
-psmisc \
-pydf \
-qemacs \
-rsync \
-screen \
-screenfetch-dev \
-sl \
-smartmontools \
-speedtest-cli \
-sshfs \
-strace \
-sysstat \
-tar \
-tcpdump \
-telnet-bsd \
-time \
-trimly \
-unrar \
-unzip \
-usbutils \
-vim \
-virtualenv \
-werkzeug \
-wget \
-xz-utils \
+blinker &nbsp; bridge-utils &nbsp; cabextract &nbsp; cherrypy &nbsp; cpio &nbsp; cpuid &nbsp; curl &nbsp; dbus-python &nbsp; diffutils &nbsp; file &nbsp; findutils &nbsp; flask &nbsp; gzip &nbsp; haveged &nbsp; htop &nbsp; http-parser &nbsp; i2ctools &nbsp; iftop &nbsp; iotop &nbsp; iperf &nbsp; iputils &nbsp; itsdangerous &nbsp; iucode_tool &nbsp; lm_sensors &nbsp; lsof &nbsp; mem &nbsp; memr &nbsp; miniupnpc &nbsp; nano &nbsp; ncdu &nbsp; net-tools &nbsp; netperf &nbsp; nvme-cli &nbsp; p7zip &nbsp; pak &nbsp; pbzip2 &nbsp; pciutils &nbsp; procps &nbsp; psmisc &nbsp; pydf &nbsp; qemacs &nbsp; rsync &nbsp; screen &nbsp; screenfetch-dev &nbsp; sl &nbsp; smartmontools &nbsp; speedtest-cli &nbsp; sshfs &nbsp; strace &nbsp; sysstat &nbsp; tar &nbsp; tcpdump &nbsp; telnet-bsd &nbsp; time &nbsp; trimly &nbsp; unrar &nbsp; unzip &nbsp; usbutils &nbsp; vim &nbsp; virtualenv &nbsp; werkzeug &nbsp; wget &nbsp; xz-utils
 
-Have fun using these on the commandline in Crosh!
+*Have fun using these on the commandline in Crosh!*
 
 <img src="https://github.com/Alex313031/ChromiumOS/blob/main/Crosh_White.png" width="256">
