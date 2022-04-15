@@ -1,0 +1,6 @@
+# camera
+- builtin_usb_camera
+- no builtin_mipi_camera
+- vivid_camera
+- no builtin_camera
+- builtin_or_vivid_camera
