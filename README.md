@@ -22,12 +22,12 @@
 
 Here is Arnold's source code which this project is based on > https://github.com/arnoldthebat/chromiumos - if you don't know how to work with these overlays, I invite you to learn, but one can just download the premade image in releases.
 
-## Installing
+## Installing <img src="https://github.com/Alex313031/Thorium/blob/main/logos/NEW/bulb_24.png">
 Follow https://chromium.googlesource.com/chromiumos/docs/+/HEAD/developer_guide.md#installing-your-chromium-os-image-to-your-hard-disk
 However when running `/usr/sbin/chromeos-install` append `--dst /dev/sdxx`, where *sdx* is your hard drive i.e. *sda1*.
 If you built your own image, API Keys will be needed to sign in. (See below.)
 
-## Building
+## Building <img src="https://github.com/Alex313031/Thorium/blob/main/logos/NEW/build_24.png">
 To start building > https://chromium.googlesource.com/chromiumos/docs/+/HEAD/developer_guide.md \
 About overlays > https://www.chromium.org/chromium-os/how-tos-and-troubleshooting/working-with-your-overlay-faq \
 Note that it is best if depot_tools, chromium, and chromiumos are all in $HOME. I don't know where you will put these dirs, so I just prefix things below with //.
