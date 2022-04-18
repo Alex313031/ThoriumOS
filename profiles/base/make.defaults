@@ -1,101 +1,122 @@
 # Copyright (c) 2022 The Chromium OS Authors and Alex313031. All rights reserved.
 # Distributed under the terms of the GNU General Public License v2
 
+# Set the kernel configuration/arch.
 CHROMEOS_KERNEL_SPLITCONFIG="chromeos-x86_64-reven"
 CHROMEOS_KERNEL_ARCH="x86_64"
 
 # We assume that our 64bit baseline CPU supports at least
-# MMX, SSE, SSE2, SSE3, and SSE4. Added AVX, AES, and O3 compiler optimizations.
+# MMX, SSE, SSE2, and SSE3.
+# This aligns with Chrome requirements:
+# SSE2: https://crbug.com/350175
+# SSE3: https://docs.google.com/document/d/1QUzL4MGNqX4wiLvukUwBf6FdCL35kCDoEJTm2wMkahw/preview
+# Added SSE4, AVX, AES, and O3 compiler optimizations.
 BOARD_COMPILER_FLAGS="-march=x86-64 -mavx -maes -O3"
 BOARD_RUSTFLAGS="-Ctarget-cpu=x86-64 -Copt-level=3 -Ctarget-feature=+sse3,+sse4,+aes,+avx"
 CFLAGS="${CFLAGS} -O3 -pipe -mavx -maes"
+CXXFLAGS="${CXXFLAGS} -O3 -pipe -mavx -maes"
 LDFLAGS="${LDFLAGS} -Wl,-O3 -Wl,--lto-O3"
 
 # Include many firmwares as this is a "generic" board and might run on a
-# wide variety of platforms with who knows what kind of hardware. -cros-pd disables EC firmware updating.
-LINUX_FIRMWARE="${LINUX_FIRMWARE} * -cros-pd iwlwifi-all"
+# wide variety of platforms with who knows what kind of hardware. -cros-pd disables USB-PD EC firmware updating.
+# LINUX_FIRMWARE="${LINUX_FIRMWARE}"
+LINUX_FIRMWARE="iwlwifi-all -cros-pd"
+
+# Set input devices for generic board.
+INPUT_DEVICES="${INPUT_DEVICES} keyboard mouse evdev cmt synaptics"
 
 # Use LLVM amdgpu target when building LLVM.
 LLVM_TARGETS="AMDGPU X86"
 
 # Initial value just for style purposes.
-USE=""
+#USE=""
 
-# Extra USE flags.
-USE="${USE} bluetooth cros_disks scanner ml_service power_management vpn cups usbguard highlights assistant assistant-dlc lottie webui-tab-strip gflags"
+# Enable optional features on generic overlays, minus wifi bootstrapping for avahi-daemon.
+USE="${USE} beep screensaver screensavers webui-tab-strip ppapi ffmpeg -wifi_bootstrapping"
+USE="${USE} bluetooth cros_disks scanner ml_service power_management cups highlights assistant assistant-dlc peerd vpn lottie"
+#USE="${USE} buffet postscript"
 
 # Remove debug constructs.
-USE="${USE} -debug -chromeless_tests"
+USE="${USE} -debug -chrome_debug -chromeless_tests"
 
-# CPU Flags.
-USE="${USE} mmx mmxext sse2 sse3 ssse3 sse4_1 sse4_2 aes avx"
+# CPU USE Flags.
+USE="${USE} mmx mmxext sse sse2 sse3 ssse3 sse4_1 sse4_2 aes avx"
 
 # Enable non-free codecs and components.
-USE="${USE} -chrome_debug chrome_media vaapi x264 x265 ffmpeg widevine"
+USE="${USE} chrome_media vaapi x264 x265 widevine"
+#USE="${USE} app_shell content_shell"
 
 # Enable background blur on all graphics chipsets.
 USE="${USE} background_blur"
 
-# Used by crostini.
-USE="${USE} containers kvm_host crosvm-gpu virtio_gpu"
+# USE flags for Crostini, CrOSVM, and containers.
+USE="${USE} crostini bruschetta containers kvm_host crosvm-gpu virtio_gpu adb"
 
-# Enable Downloadable Content (DLC), optional USE for crostini.
-USE="${USE} dlc"
+# Enable Downloadable Content (DLC), optional USE for Crostini.
+USE="${USE} dlc iioservice"
 
 # Enable legacy components for generic x64 board.
-USE="${USE} legacy_usb legacy_keyboard legacy_power_button sse diagnostics selinux_experimental fdformat magic"
+USE="${USE} legacy_usb usb legacy_keyboard legacy_power_button pcserial diagnostics diag cras selinux_experimental fdformat"
 
 # Kernel configuration.
-USE="${USE} -kernel-4_4 -kernel-4_14 -kernel-4_19 -kernel-5_4 kernel-5_10 -kernel-5_15 headers linux-mod linux_headers linux-headers nouveau usb_gadget it87"
+USE="${USE} -kernel-4_4 -kernel-4_14 -kernel-4_19 -kernel-5_4 -kernel-5_10 kernel-5_15 i2cdev builtin_fw_x86_intel_ucode builtin_fw_x86_amd_ucode linux_firmware_amd_ucode"
+USE="${USE} headers linux-mod linux_headers linux-headers it87 iwlwifi-all iwlwifi_rescan rtl8188ee edid"
+#USE="${USE} drm_atomic usb_gadget usbguard usbip udev autoexpand lxc kvm magic cros-ec nouveau"
 
 # Use linux kernel modules/firmware/microcode and enable calling them from cmdline.
-USE="${USE} modules kmod initramfs split-ucode"
+USE="${USE} modules kmod"
+USE="${USE} initramfs split-ucode"
 
 # Enable mesa-reven for CloudReady graphics support.
-USE="${USE} mesa_reven reven libkms"
+USE="${USE} mesa_reven reven"
+USE="${USE} libkms libdrm"
 
 # Enable Steam on CrOS (borealis).
-USE="${USE} borealis borealis_host"
+#USE="${USE} borealis borealis_host has-borealis"
 
 # Enable Google Drive.
-USE="${USE} googledrive fuse-drivefs google-drive-fs drivefs libfuse fuse user_allow_other"
+USE="${USE} googledrive fuse-drivefs google-drive-fs drivefs libfuse fuse fusebox spaced user_allow_other"
 
-# Enable NFS and FAT/FAT32 and eMMC Tools.
-USE="${USE} nfs vfat mmc"
+# Enable NFS, FAT/FAT32, NVMe, and eMMC Tools.
+USE="${USE} nfs vfat nvme mmc"
 
 # Dircrypto for stateful partition. On kernel 5.x this should be set to direncription_allow_v2.
-USE="${USE} direncryption uprev-4-to-5 cryptohome_userdataauth_interface has-kernelnext"
+USE="${USE} direncryption cryptohome_userdataauth_interface"
+#USE="${USE} uprev-4-to-5 has-kernelnext"
+
+# Enable fscrypt v2 usage on 5.4+
+USE="${USE} direncription_allow_v2"
+
+# mesa-llvmpipe/mesa-reven does not require this flag yet.
+USE="${USE} -gpu_sandbox_start_early"
 
 # Use frecon, the freon graphics virtual terminal for devices using KMS for graphics setting.
 USE="${USE} frecon"
-# USE="${USE} fbconsole vtconsole"
-
-# Enable all optional features on generic overlays, minus wifi bootstrapping for linux-firmware.
-USE="${USE} buffet peerd screensaver screensavers -wifi_bootstrapping"
+#USE="${USE} fbconsole vtconsole"
 
 # LLVM is required to build the llvmpipe and radeon drivers.
 USE="${USE} llvm"
 
-# Enable libglvnd.
+# Enable libglvnd for big GL.
 USE="${USE} libglvnd"
 
-# Enable NNAPI/PPAPI  for testing.
-USE="${USE} nnapi ppapi"
+# Enable NNAPI for testing.
+USE="${USE} nnapi"
 
-# Enable hps for testing.
+# Enable hps for DUT testing.
 USE="${USE} hps"
 
-# Enable camera HALv3
+# Enable camera HALv3.
 USE="${USE} arc-camera3"
 
-# Enable sirenia for testing.
+# Enable sirenia for ManaTEE runtime environment testing.
 USE="${USE} sirenia"
 
-# Enable vivid
+# Enable vivid for VM camera.
 USE="${USE} vivid"
 
 # Enable hostap hwsim tests.
-USE="${USE} wifi_hostap_test"
+#USE="${USE} wifi_hostap_test"
 
 # Include the kernel in the base image.
 USE="${USE} include_vmlinuz"
@@ -112,19 +133,20 @@ USE="${USE} include_vmlinuz"
 USE="${USE} unibuild has_chromeos_config_bsp"
 
 # Enable wayland and egl for LaCrOS.
-USE="${USE} wayland egl gles2 shared-glapi"
+#USE="${USE} wayland egl"
 
-# Enable Vulkan for ClusterFuzz.
+# Enable Vulkan for ClusterFuzz and GPU.
 USE="${USE} vulkan"
 
-# Enable vmware GPU.
+# Enable VMware GPU.
 USE="${USE} video_cards_vmware virgl"
 
 # Use legacy pre-Groot UI for initramfs and init script screens.
 USE="${USE} legacy_firmware_ui"
 
-# Enable a few more video cards as this is a generic board. i915 is kept for posterity after M90.
-VIDEO_CARDS="intel i915 i965 iris virgl llvmpipe nouveau radeon vmware"
+# Enable more video cards as this is a generic board. i915 is kept for posterity after M90.
+VIDEO_CARDS="intel i915 i965 iris llvmpipe nouveau radeon vmware"
+#VIDEO_CARDS="amdgpu vc4 fbdev"
 
 # Virtual machines don't have physical TPMs.
 # Enable TPM2.0 simulator on it.
@@ -134,4 +156,7 @@ USE="${USE} -tpm tpm2 tpm2_simulator tpm2_simulator_manufacturer"
 USE="${USE} vtpm_proxy"
 
 # No support for zero-copy on virtual machines. Comment out for physical machines.
-# USE="${USE} -video_capture_use_gpu_memory_buffer"
+#USE="${USE} -video_capture_use_gpu_memory_buffer"
+
+# Enable VKMS for compositor testing on VMs
+USE="${USE} vkms"
