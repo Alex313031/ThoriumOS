@@ -1,6 +1,6 @@
 # PACKAGES.md
 
-<img src="https://github.com/Alex313031/ChromiumOS/blob/main/Larry_the_Cow.png">
+<img src="https://github.com/Alex313031/ChromiumOS/blob/main/images/Larry_the_Cow.png">
 
 ### List of extra packages included in ThoriumOS:
 
@@ -8,4 +8,4 @@ __beep &nbsp; blinker &nbsp; bridge-utils &nbsp; cabextract &nbsp; cherrypy &nbs
 
 *Have fun using these on the commandline in Crosh!*
 
-<img src="https://github.com/Alex313031/ChromiumOS/blob/main/Crosh_White.png" width="256">
+<img src="https://github.com/Alex313031/ChromiumOS/blob/main/images/Crosh_White.png" width="256">
