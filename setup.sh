@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# Copyright (c) 2022 Alex313031
+
 YEL='\033[1;33m' # Yellow
 
 printf "\n" &&
