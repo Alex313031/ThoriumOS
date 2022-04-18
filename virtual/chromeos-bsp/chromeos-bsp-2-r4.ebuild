@@ -36,6 +36,7 @@ RDEPEND="
 	app-editors/nano
 	app-editors/qemacs
 	app-editors/vim
+	app-misc/beep
 	app-misc/screen
 	app-misc/sl
 	chrome-dev-flags? ( chromeos-base/bash-skel )
@@ -47,38 +48,57 @@ RDEPEND="
 	drivefs? ( chromeos-base/google-drive-fs )
 	widevine? ( chromeos-base/libwidevine )
 	gflags? ( dev-cpp/gflags )
+	dev-python/blinker
 	dev-python/cherrypy
 	dev-python/dbus-python
+	dev-python/flask
+	dev-python/itsdangerous
+	dev-python/virtualenv
+	dev-python/werkzeug
 	dev-util/mem
 	dev-util/strace
+	dev-vcs/git
 	sys-firmware/intel-ucode-firmware
 	sys-kernel/linux-firmware
 	media-libs/cros-camera-hal-usb
 	media-libs/mesa-reven
 	media-libs/x264
 	media-libs/x265
+	net-analyzer/iftop
 	net-analyzer/netperf
+	net-analyzer/speedtest-cli
 	net-analyzer/tcpdump
 	net-fs/sshfs
+	net-libs/http-parser
+	net-libs/miniupnpc
 	net-misc/bridge-utils
 	net-misc/curl
+	net-misc/gsutil
 	net-misc/iperf
 	net-misc/iputils
 	net-misc/rsync
 	net-misc/telnet-bsd
 	net-misc/tlsdate
 	net-misc/wget
+	sys-apps/coreutils
+	sys-apps/cpuid
 	sys-apps/diffutils
 	sys-apps/file
 	sys-apps/findutils
-	sys-apps/coreutils
-	sys-apps/cpuid
 	sys-apps/haveged
 	sys-apps/i2c-tools
 	sys-apps/iotools
 	sys-apps/iucode_tool
 	sys-apps/lm-sensors
+	sys-apps/net-tools
+	sys-apps/nvme-cli
+	sys-apps/pciutils
+	sys-apps/smartmontools
+	sys-apps/usbutils
+	sys-fs/cryptsetup
+	sys-fs/ncdu
 	sys-libs/libcap
+	sys-libs/zlib
 	sys-process/htop
 	sys-process/iotop
 	sys-process/lsof
@@ -86,6 +106,7 @@ RDEPEND="
 	sys-process/psmisc
 	sys-process/time
 	virtual/chromeos-config-bsp
+	x11-apps/igt-gpu-tools
 "
 
 DEPEND="${RDEPEND}"
