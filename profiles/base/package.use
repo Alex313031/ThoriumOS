@@ -1,9 +1,9 @@
 # Copyright (c) 2022 Alex313031
 
 # Mesa USE flags.
-media-libs/mesa egl gles2 shared-glapi llvm
-media-libs/mesa-llvmpipe egl gles2 shared-glapi llvm
-media-libs/mesa-reven egl gles2 shared-glapi llvm
+media-libs/mesa egl gles2 shared-glapi
+media-libs/mesa-llvmpipe egl gles2 shared-glapi
+media-libs/mesa-reven egl gles2 shared-glapi
 
 # Enabling wayland pulls media-libs/mesa package, which conflicts with
 # mesa-llvmpipe pulled by overwritten virtual/opengles package.
@@ -37,7 +37,10 @@ sys-apps/fwupd -nvme -synaptics
 sys-libs/ncurses unicode
 
 # htop USE flags
-sys-process/htop caps lm-sensors llvm-libunwind unwind unicode -debug
+sys-process/htop caps lm-sensors llvm-libunwind unicode -debug
+
+# modern top UI
+sys-process/procps modern-top
 
 # nano USE flags
 app-editors/nano unicode ncurses
@@ -48,7 +51,7 @@ sys-apps/lm-sensors contrib
 # OpenCV gflags patch
 media-libs/opencv gflags contrib
 
-# chromeos-bsp gflags package USE.
+# chromeos-bsp gflags package USE
 virtual/chromeos-bsp gflags
 
 # Fix alsa-plugins ffmpeg build error.
