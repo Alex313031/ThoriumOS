@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
-EAPI=6
+EAPI=7
 inherit eutils linux-info linux-mod git-r3 
 
 DESCRIPTION="Driver for Realtek RTL8821CE Wireless Adapter"
@@ -25,12 +25,14 @@ KEYWORDS="-* amd64 x86"
 
 RESTRICT="mirror"
 
-DEPEND="virtual/linux-sources"
+DEPEND="virtual/linux-sources
+		sys-kernel/chromeos-kernel-5_15
+	"
 RDEPEND=""
 
 S="${WORKDIR}/rtl8821ce-${PV}"
 BUILD_TARGETS="modules"
-KERNEL_DIR="/mnt/host/source/chroot/build/${BOARD}/var/cache/portage/sys-kernel/chromeos-kernel-4_14"
+KERNEL_DIR="/mnt/host/source/chroot/build/${BOARD}/var/cache/portage/sys-kernel/chromeos-kernel-5_15"
 BUILD_PARAMS="-C ${KERNEL_DIR} M=${S}"
 
 MODULE_NAMES="8821ce(kernel/drivers/net/wireless/:${S})"
