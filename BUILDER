@@ -50,6 +50,8 @@ chrome_targets+=( app_shell ) > chrome_targets+=( app_shell chrome content_shell
 		"enable_ink=true"
 		"enable_discovery=true"
 		"enable_cros_media_app=true"
+		"proprietary_codecs=true"
+		"ffmpeg_branding=ChromeOS"
 		"clang_use_chrome_plugins=true"
 		"enable_ffmpeg_video_decoders=true"
 		"is_component_ffmpeg=true"
