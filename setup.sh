@@ -1,8 +1,19 @@
 #!/bin/bash
 
-# Copyright (c) 2022 Alex313031
+# Copyright (c) 2022 Alex313031.
 
 YEL='\033[1;33m' # Yellow
+CYA='\033[1;96m' # Cyan
+RED='\033[1;31m' # Red
+GRE='\033[1;32m' # Green
+c0='\033[0m' # Reset Text
+bold='\033[1m' # Bold Text
+underline='\033[4m' # Underline Text
+
+# Error handling
+yell() { echo "$0: $*" >&2; }
+die() { yell "$*"; exit 111; }
+try() { "$@" || die "${RED}Failed $*"; }
 
 printf "\n" &&
 printf "${YEL}Creating overlay-amd-frick overlay dir, and merging files from overlay-amd-generic and this repo to the overlay dir.\n" &&
@@ -11,7 +22,8 @@ tput sgr0 &&
 mkdir -p -v ~/chromiumos/src/overlays/overlay-amd64-frick &&
 printf "\n" &&
 cp -r -v ~/chromiumos/src/overlays/overlay-amd64-generic/* ~/chromiumos/src/overlays/overlay-amd64-frick/ &&
-cp -r -v ../overlay-amd64-frick/* ~/chromiumos/src/overlays/overlay-amd64-frick/ &&
+cp -r -v ./* ~/chromiumos/src/overlays/overlay-amd64-frick/ &&
+cp -r -v ./chromeos-base/chromeos-chrome/. ~/chromiumos/src/third_party/chromiumos-overlay/chromeos-base/chromeos-chrome/ &&
 printf "\n" &&
 
 printf "${YEL}Done!\n" &&
@@ -20,7 +32,7 @@ printf "\n" &&
 printf "${YEL}Copying other files from this repo into //chromiumos/src/platform/\n" &&
 tput sgr0 &&
 
-cp -r -v ../overlay-amd64-frick/platform/* ~/chromiumos/src/platform/
+cp -r -v ./platform/* ~/chromiumos/src/platform/
 printf "\n" &&
 printf "${YEL}Done!\n" &&
 printf "\n" &&
