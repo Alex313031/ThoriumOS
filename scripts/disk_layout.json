@@ -73,9 +73,11 @@
         "size": "128 MiB"
       },
       {
+      # ROOT-B size should be equal to ROOT-A size.
+      # The test is complete with /usr/sbin/chromeos-install.
         "num": 5,
-        "fs_size":"2700 MiB",
-        "size": "2724 MiB"
+        "fs_size":"4000 MiB",
+        "size": "4096 MiB"
       },
       {
         "num": 3,
@@ -103,9 +105,10 @@
         "size": "128 MiB"
       },
       {
+       # ROOT-B size should be equal to ROOT-A size.
         "num": 5,
-        "fs_size":"2700 MiB",
-        "size": "2724 MiB"
+        "fs_size":"16000 MiB",
+        "size": "16384 MiB"
       },
       {
         "num": 3,
