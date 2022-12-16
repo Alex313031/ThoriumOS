@@ -1,6 +1,6 @@
 {
-  "_comment": "See http://www.chromium.org/chromium-os/developer-guide/disk-layout-format",
   "_comment": "Copyright (c) 2022 Alex313031",
+  "_comment": "See http://www.chromium.org/chromium-os/developer-guide/disk-layout-format",
   "parent": "legacy_disk_layout.json",
   "layouts":{
     "common":[
@@ -15,10 +15,10 @@
       {
         "num": 12,
         "size": "128 MiB"
-      },
+      }
+    ],
+    "base":[
       {
-        # Slot B rootfs, unused on USB, but pad to 2M.
-        # installation will expand this to size from base.
         "num": 5,
         "size": "2724 MiB"
       },
@@ -29,7 +29,7 @@
       },
       {
         "num": 1,
-        "size": "4096 MiB"
+        "size": "8 GiB"
       }
     ],
     "usb":[
@@ -43,13 +43,20 @@
         "num": 3,
         "fs_size":"2700 MiB",
         "size": "2724 MiB"
+      {
+        "num": 1,
+        "size": "8 GiB"
       }
     ],
-    "factory_install": [
+    "usb-updatable":[
       {
         "num": 3,
         "fs_size":"2700 MiB",
         "size": "2724 MiB"
+      },
+      {
+        "num": 1,
+        "size": "8 GiB"
       }
     ],
     "recovery":[
@@ -84,7 +91,7 @@
       },
       {
         "num": 1,
-        "size": "4096 MiB"
+        "size": "8 GiB"
       }
     ],
     # Huge rootfs, suitable for VM only images, should not be used
@@ -114,7 +121,7 @@
       },
       {
         "num": 1,
-        "size": "6144 MiB"
+        "size": "8 GiB"
       }
     ]
   }
