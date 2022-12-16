@@ -1,7 +1,8 @@
 # Copyright 1999-2022 Gentoo Authors and Alex313031
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI="7"
+
 inherit linux-info mount-boot savedconfig multiprocessing
 
 # In case this is a real snapshot, fill in commit below.
@@ -31,7 +32,7 @@ LICENSE="
 "
 
 SLOT="0"
-IUSE="compress initramfs +redistributable savedconfig unknown-license linux_firmware_amd_ucode"
+IUSE="compress initramfs +redistributable savedconfig +unknown-license linux_firmware_amd_ucode"
 REQUIRED_USE="initramfs? ( redistributable )"
 
 RESTRICT="binchecks strip test
