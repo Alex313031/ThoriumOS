@@ -12,7 +12,7 @@ CHROMEOS_KERNEL_ARCH="x86_64"
 # SSE3: https://docs.google.com/document/d/1QUzL4MGNqX4wiLvukUwBf6FdCL35kCDoEJTm2wMkahw/preview
 # Added SSE4, AVX, AES, and O3 compiler optimizations.
 BOARD_COMPILER_FLAGS="-march=x86-64 -mavx -maes -O3"
-BOARD_RUSTFLAGS="-Ctarget-cpu=x86-64 -Copt-level=3 -Ctarget-feature=+sse3,+sse4,+aes,+avx"
+BOARD_RUSTFLAGS="-Ctarget-cpu=x86-64 -Copt-level=3 -Ctarget-feature=+aes,+avx"
 CFLAGS="${CFLAGS} -O3 -pipe -mavx -maes"
 CXXFLAGS="${CXXFLAGS} -O3 -pipe -mavx -maes"
 LDFLAGS="${LDFLAGS} -Wl,-O3 -Wl,--lto-O3"
