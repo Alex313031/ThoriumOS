@@ -1,0 +1,13 @@
+# Copyright 2022 The ChromiumOS Authors
+# Use of this source code is governed by a BSD-style license that can be
+# found in the LICENSE file.
+
+# This file should be run after 93-powerd-tags-unibuild-touchpad-wakeup.rules
+# and before 94-powerd-late.rules
+# Keep that in mind when renaming this file.
+
+# Do not enable wakeup on Lenovo serio touchpads. They emit
+# events during suspend causing an early wake suspend failure b/221922229
+SUBSYSTEMS=="serio", ATTRS{firmware_id}=="PNP: LEN* PNP0f13", \
+  ENV{POWERD_ROLE}=="internal_touchpad", \
+  ENV{POWERD_TAGS_WAKEUP}="wakeup wakeup_disabled"
