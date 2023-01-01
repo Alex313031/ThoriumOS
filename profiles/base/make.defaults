@@ -19,8 +19,7 @@ LDFLAGS="${LDFLAGS} -Wl,-O3 -Wl,--lto-O3"
 
 # Include many firmwares as this is a "generic" board and might run on a
 # wide variety of platforms with who knows what kind of hardware. -cros-pd disables USB-PD EC firmware updating.
-# LINUX_FIRMWARE="${LINUX_FIRMWARE}"
-LINUX_FIRMWARE="iwlwifi-all -cros-pd"
+LINUX_FIRMWARE="${LINUX_FIRMWARE} amd_ucode iwlwifi-all -cros-pd"
 
 # Set input devices for generic board.
 INPUT_DEVICES="${INPUT_DEVICES} keyboard mouse evdev cmt synaptics"
@@ -59,13 +58,29 @@ USE="${USE} dlc iioservice"
 USE="${USE} legacy_usb usb legacy_keyboard legacy_power_button pcserial diagnostics diag cras selinux_experimental fdformat"
 
 # Kernel configuration.
-USE="${USE} -kernel-4_4 -kernel-4_14 -kernel-4_19 -kernel-5_4 -kernel-5_10 kernel-5_15 i2cdev builtin_fw_x86_intel_ucode builtin_fw_x86_amd_ucode linux_firmware_amd_ucode"
+USE="${USE} -kernel-4_4 -kernel-4_14 -kernel-4_19 -kernel-5_4 -kernel-5_10 kernel-5_15 i2cdev builtin_fw_x86_intel_ucode builtin_fw_x86_amd_ucode linux_firmware_amd_ucode nouveau legacy_amd64_cpu_support"
 USE="${USE} headers linux-mod linux_headers linux-headers it87 iwlwifi-all iwlwifi_rescan rtl8188ee edid"
-#USE="${USE} usb_gadget usbguard usbip udev autoexpand lxc kvm magic cros-ec nouveau"
+#USE="${USE} usb_gadget usbguard usbip udev autoexpand lxc kvm magic cros-ec"
 
 # Use linux kernel modules/firmware/microcode and enable calling them from cmdline.
 USE="${USE} modules kmod"
 USE="${USE} initramfs split-ucode"
+
+# Enable the OS installation feature
+USE="${USE} os_install_service"
+
+# Enable libinput to handle touchpad if the gestures library is not working well.
+USE="${USE} libinput"
+
+# The rgbkbd service crashes constantly. b/243560151
+USE="${USE} -rgbkbd"
+
+# Enable management of EFI boot entries when installing/updating.
+USE="${USE} manage_efi_boot_entries"
+
+# Enable chromeos postinstall to configure both efi
+# and syslinux configuration files on install.
+USE="${USE} postinstall_config_efi_and_legacy"
 
 # Enable mesa-reven for CloudReady graphics support.
 USE="${USE} mesa_reven reven"
@@ -88,6 +103,8 @@ USE="${USE} direncryption cryptohome_userdataauth_interface"
 USE="${USE} direncription_allow_v2"
 
 # mesa-llvmpipe/mesa-reven does not require this flag yet.
+# TODO(b/200187231): Reexamine if early sandbox initialization is required
+# once mesa-reven uprevs past version 21.3.
 USE="${USE} -gpu_sandbox_start_early"
 
 # Use frecon, the freon graphics virtual terminal for devices using KMS for graphics setting.
@@ -145,18 +162,21 @@ USE="${USE} video_cards_vmware virgl"
 USE="${USE} legacy_firmware_ui"
 
 # Enable more video cards as this is a generic board. i915 is kept for posterity after M90.
-VIDEO_CARDS="intel i915 i965 iris llvmpipe nouveau radeon vmware"
-#VIDEO_CARDS="amdgpu vc4 fbdev"
+VIDEO_CARDS="i965 i915 intel iris iHD iHD_g8 iHD_g9 iHD_g11 iHD_g12 llvmpipe nouveau amdgpu radeon radeonsi vmware virgl"
+#VIDEO_CARDS="vc4 fbdev"
+
+# b/195140252: Do not run the factory tasts.
+USE="${USE} no_factory_flow"
 
 # Virtual machines don't have physical TPMs.
 # Enable TPM2.0 simulator on it.
-USE="${USE} -tpm tpm2 tpm2_simulator tpm2_simulator_manufacturer"
+USE="${USE} tpm_dynamic tpm tpm2 tpm2_simulator tpm2_simulator_manufacturer"
 
 # Enable vTPM proxy on board for driver-level TPM simulator.
-USE="${USE} vtpm_proxy"
+USE="${USE} vtpm_proxy tpm_insecure_fallback"
 
 # No support for zero-copy on virtual machines. Comment out for physical machines.
-#USE="${USE} -video_capture_use_gpu_memory_buffer"
+USE="${USE} -video_capture_use_gpu_memory_buffer"
 
 # Enable VKMS for compositor testing on VMs
 USE="${USE} vkms drm_atomic"
