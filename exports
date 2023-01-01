@@ -6,6 +6,7 @@ repo rebase
 repo sync -j4
 
 ## EXPORT COMMANDS
+# export BOARD=amd64-generic
 export BOARD=amd64-frick &&
 export NINJA_SUMMARIZE_BUILD=1 &&
 export CHROME_ORIGIN=LOCAL_SOURCE &&
