@@ -27,6 +27,12 @@ sys-kernel/chromeos-kernel-5_15 apply_patches modules
 # Enable codecs and disable debug stuff.
 chromeos-base/chromeos-chrome -chrome_debug chrome_media vaapi x264 x265 widevine
 
+# Tell diagnostics that it uses mesa-reven package.
+chromeos-base/diagnostics mesa_reven
+
+# Turn off 802.11v Wireless Network Management as it makes broadcom wireless flaky
+net-wireless/wpa_supplicant-cros -wnm
+
 # Remove embedded config for generic boards.
 chromeos-base/chromeos-base -cros_embedded
 
@@ -65,3 +71,6 @@ media-plugins/alsa-plugins -ffmpeg
 
 # Fix gptfdisk bug
 sys-apps/gptfdisk -ncurses
+
+# Bluez cups bug fix
+net-wireless/bluez cups hid2hci
