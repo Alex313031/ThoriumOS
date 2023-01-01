@@ -1,7 +1,7 @@
-# Copyright 2022 The Chromium OS Authors and Alex313031. All rights reserved.
+# Copyright 2023 The Chromium OS Authors and Alex313031. All rights reserved.
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=5
+EAPI=7
 
 inherit appid cros-unibuild
 
@@ -15,6 +15,11 @@ IUSE=""
 S="${WORKDIR}"
 
 # Add dependencies on other ebuilds from within this board overlay
+RDEPEND="
+	chromeos-base/reven-hwdb
+	chromeos-base/reven-quirks
+"
+
 DEPEND="${RDEPEND} chromeos-base/chromeos-config"
 
 src_install() {
@@ -23,4 +28,7 @@ src_install() {
 	# Install platform specific config files for power_manager.
 	insinto "/usr/share/power_manager/board_specific"
 	doins "${FILESDIR}"/powerd_prefs/*
+	
+	insinto "/etc/gesture"
+	doins "${FILESDIR}"/gesture/*
 }
