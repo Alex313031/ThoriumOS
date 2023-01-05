@@ -25,7 +25,7 @@ sys-kernel/chromeos-kernel-5_10 apply_patches modules
 sys-kernel/chromeos-kernel-5_15 apply_patches modules
 
 # Enable codecs and disable debug stuff.
-chromeos-base/chromeos-chrome -chrome_debug chrome_media vaapi x264 x265 widevine
+chromeos-base/chromeos-chrome -chrome_debug -chrome_debug_tests chrome_media vaapi x264 x265 widevine
 
 # Tell diagnostics that it uses mesa-reven package.
 chromeos-base/diagnostics mesa_reven
