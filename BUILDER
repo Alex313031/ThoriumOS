@@ -1,6 +1,9 @@
 # FOR MY USE ONLY
 cros-317118
 
+# KERNEL CONFIG
+CONFIG_SENSORS_IT87=m
+
 # COMPILER OPTIMIZATIONS
 -O3 -pipe -mavx -maes
 -Wl,-O3 -Wl,--lto-O3
