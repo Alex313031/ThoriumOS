@@ -1,7 +1,7 @@
 # Copyright 2022 The Chromium OS Authors and Alex313031. All rights reserved.
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=5
+EAPI=7
 
 inherit osreleased
 
