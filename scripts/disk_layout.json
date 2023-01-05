@@ -20,16 +20,16 @@
     "base":[
       {
         "num": 5,
-        "size": "2724 MiB"
+        "size": "4096 MiB"
       },
       {
         "num": 3,
-        "fs_size":"2700 MiB",
-        "size": "2724 MiB"
+        "fs_size":"4000 MiB",
+        "size": "4096 MiB"
       },
       {
         "num": 1,
-        "size": "8 GiB"
+        "size": "6 GiB"
       }
     ],
     "usb":[
@@ -41,29 +41,30 @@
       },
       {
         "num": 3,
-        "fs_size":"2700 MiB",
-        "size": "2724 MiB"
+        "fs_size":"4000 MiB",
+        "size": "4096 MiB"
+      },
       {
         "num": 1,
-        "size": "8 GiB"
+        "size": "6 GiB"
       }
     ],
     "usb-updatable":[
       {
         "num": 3,
-        "fs_size":"2700 MiB",
-        "size": "2724 MiB"
+        "fs_size":"4000 MiB",
+        "size": "4096 MiB"
       },
       {
         "num": 1,
-        "size": "8 GiB"
+        "size": "6 GiB"
       }
     ],
     "recovery":[
       {
         "num": 3,
-        "fs_size":"2700 MiB",
-        "size": "2724 MiB"
+        "fs_size":"4000 MiB",
+        "size": "4096 MiB"
       }
     ],
     "4gb-rootfs": [
@@ -81,8 +82,8 @@
       },
       {
         "num": 5,
-        "fs_size":"2700 MiB",
-        "size": "2724 MiB"
+        "fs_size":"4000 MiB",
+        "size": "4096 MiB"
       },
       {
         "num": 3,
@@ -91,7 +92,7 @@
       },
       {
         "num": 1,
-        "size": "8 GiB"
+        "size": "6 GiB"
       }
     ],
     # Huge rootfs, suitable for VM only images, should not be used
@@ -111,8 +112,8 @@
       },
       {
         "num": 5,
-        "fs_size":"2700 MiB",
-        "size": "2724 MiB"
+        "fs_size":"4000 MiB",
+        "size": "4096 MiB"
       },
       {
         "num": 3,
@@ -121,7 +122,7 @@
       },
       {
         "num": 1,
-        "size": "8 GiB"
+        "size": "6 GiB"
       }
     ]
   }
