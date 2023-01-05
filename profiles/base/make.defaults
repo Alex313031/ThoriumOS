@@ -36,7 +36,7 @@ USE="${USE} bluetooth cros_disks scanner ml_service power_management cups highli
 #USE="${USE} buffet postscript"
 
 # Remove debug constructs.
-USE="${USE} -debug -chrome_debug -chromeless_tests"
+USE="${USE} -debug -chrome_debug -chrome_debug_tests -chromeless_tests"
 
 # CPU USE Flags.
 USE="${USE} mmx mmxext sse sse2 sse3 ssse3 sse4_1 sse4_2 aes avx"
