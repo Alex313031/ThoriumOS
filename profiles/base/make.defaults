@@ -52,7 +52,7 @@ USE="${USE} background_blur"
 USE="${USE} crostini bruschetta containers kvm_host crosvm-gpu virtio_gpu adb"
 
 # Enable Downloadable Content (DLC), optional USE for Crostini.
-USE="${USE} dlc iioservice"
+USE="${USE} dlc dlc_test iioservice"
 
 # Enable legacy components for generic x64 board.
 USE="${USE} legacy_usb usb legacy_keyboard legacy_power_button pcserial diagnostics diag cras selinux_experimental fdformat"
