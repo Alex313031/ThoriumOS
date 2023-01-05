@@ -26,5 +26,6 @@ alias it='sudo modprobe it87'
 alias chro='sudo enter-chroot'
 alias inst='crew install'
 alias run='cd /usr/local/bin'
-alias ver='cat /etc/lsb-release'
+alias ver='cat /etc/os-release'
+alias s='sync'
 cd
