@@ -1,7 +1,7 @@
 # Copyright (c) 2022 Alex313031. All rights reserved.
 # Distributed under the terms of the GNU General Public License v3
 
-EAPI="5"
+EAPI="7"
 inherit chrome-dev-flags 
 DESCRIPTION="Appends Chromium commandline flags to /etc/chrome_dev.conf."
 HOMEPAGE="https://github.com/Alex313031/ChromiumOS/"
