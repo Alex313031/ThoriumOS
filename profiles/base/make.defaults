@@ -42,7 +42,7 @@ USE="${USE} -debug -chrome_debug -chrome_debug_tests -chromeless_tests"
 USE="${USE} mmx mmxext sse sse2 sse3 ssse3 sse4_1 sse4_2 aes avx"
 
 # Enable non-free codecs and components.
-USE="${USE} chrome_media vaapi x264 x265 widevine lto"
+USE="${USE} chrome_media vaapi x264 x265 widevine lto thinlto"
 #USE="${USE} app_shell content_shell"
 
 # Enable background blur on all graphics chipsets.
