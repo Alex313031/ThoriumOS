@@ -6,6 +6,7 @@ DEPEND="${RDEPEND}"
 #the flags need be removed"
 #CHROME_REMOVE_FLAGS=""
 CHROME_TMP_CONFIG="chrome_dev.conf"
+CHROME_TMP_UI="ui.override"
 
 S=${WORKDIR}
 
