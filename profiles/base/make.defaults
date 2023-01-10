@@ -19,7 +19,7 @@ LDFLAGS="${LDFLAGS} -Wl,-O3 -Wl,--lto-O3"
 
 # Include many firmwares as this is a "generic" board and might run on a
 # wide variety of platforms with who knows what kind of hardware. -cros-pd disables USB-PD EC firmware updating.
-LINUX_FIRMWARE="${LINUX_FIRMWARE} amd_ucode iwlwifi-all -cros-pd"
+LINUX_FIRMWARE="${LINUX_FIRMWARE} amd_ucode ath3k-all iwlwifi-all brcmfmac-all -cros-pd intel_ucode"
 
 # Set input devices for generic board.
 INPUT_DEVICES="${INPUT_DEVICES} keyboard mouse evdev cmt synaptics"
