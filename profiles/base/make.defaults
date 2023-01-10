@@ -36,7 +36,7 @@ USE="${USE} bluetooth cros_disks scanner ml_service power_management cups highli
 #USE="${USE} buffet postscript"
 
 # Remove debug constructs.
-USE="${USE} -debug -chrome_debug -chrome_debug_tests -chromeless_tests"
+USE="${USE} -debug -chrome_debug -chrome_debug_tests -chromeless_tests -cros-debug"
 
 # CPU USE Flags.
 USE="${USE} mmx mmxext sse sse2 sse3 ssse3 sse4_1 sse4_2 aes avx"
@@ -173,7 +173,7 @@ USE="${USE} no_factory_flow"
 USE="${USE} tpm_dynamic tpm tpm2 tpm2_simulator tpm2_simulator_manufacturer"
 
 # Enable vTPM proxy on board for driver-level TPM simulator.
-USE="${USE} vtpm_proxy tpm_insecure_fallback"
+USE="${USE} vtpm_proxy tpm_insecure_fallback tpm_fallback"
 
 # No support for zero-copy on virtual machines. Comment out for physical machines.
 USE="${USE} -video_capture_use_gpu_memory_buffer"
