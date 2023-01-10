@@ -79,6 +79,7 @@ RDEPEND="
 	net-misc/gsutil
 	net-misc/iperf
 	net-misc/iputils
+	net-misc/libdiagcfg
 	net-misc/rsync
 	net-misc/telnet-bsd
 	net-misc/tlsdate
