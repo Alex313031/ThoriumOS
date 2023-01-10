@@ -19,7 +19,7 @@ LDFLAGS="${LDFLAGS} -Wl,-O3 -Wl,--lto-O3"
 
 # Include many firmwares as this is a "generic" board and might run on a
 # wide variety of platforms with who knows what kind of hardware. -cros-pd disables USB-PD EC firmware updating.
-LINUX_FIRMWARE="${LINUX_FIRMWARE} amd_ucode ath3k-all iwlwifi-all brcmfmac-all -cros-pd intel_ucode"
+LINUX_FIRMWARE="${LINUX_FIRMWARE} amd_ucode ath3k-all iwlwifi-all brcmfmac-all -cros-pd intel_ucode rfkill"
 
 # Set input devices for generic board.
 INPUT_DEVICES="${INPUT_DEVICES} keyboard mouse evdev cmt synaptics"
@@ -59,11 +59,11 @@ USE="${USE} legacy_usb usb legacy_keyboard legacy_power_button pcserial diagnost
 
 # Kernel configuration.
 USE="${USE} -kernel-4_4 -kernel-4_14 -kernel-4_19 -kernel-5_4 -kernel-5_10 kernel-5_15 i2cdev builtin_fw_x86_intel_ucode builtin_fw_x86_amd_ucode linux_firmware_amd_ucode nouveau legacy_amd64_cpu_support"
-USE="${USE} headers linux-mod linux_headers linux-headers it87 iwlwifi-all iwlwifi_rescan rtl8188ee edid kvm"
+USE="${USE} headers linux-mod linux_headers linux-headers it87 amd_ucode ath3k-all iwlwifi-all brcmfmac-all -cros-pd intel_ucode rfkill iwlwifi_rescan rtl8188ee edid kvm"
 #USE="${USE} usb_gadget usbguard usbip udev autoexpand lxc magic cros-ec"
 
 # Use linux kernel modules/firmware/microcode and enable calling them from cmdline.
-USE="${USE} modules kmod"
+USE="${USE} modules kmod sensors"
 USE="${USE} initramfs split-ucode"
 
 # Enable the OS installation feature
