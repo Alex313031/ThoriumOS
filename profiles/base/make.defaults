@@ -2,8 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 
 # Set the kernel configuration/arch.
-CHROMEOS_KERNEL_SPLITCONFIG="chromeos-x86_64-reven"
 CHROMEOS_KERNEL_ARCH="x86_64"
+CHROMEOS_KERNEL_SPLITCONFIG="chromeos-x86_64-reven"
 
 # We assume that our 64bit baseline CPU supports at least
 # MMX, SSE, SSE2, and SSE3.
