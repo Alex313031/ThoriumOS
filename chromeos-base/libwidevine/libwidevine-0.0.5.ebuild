@@ -1,7 +1,7 @@
 # Copyright (c) 2022 The Fyde Innovations and Alex313031. All rights reserved.
 # Distributed under the license specified in the root directory of this project.
 
-EAPI="5"
+EAPI="7"
 
 DESCRIPTION="Install WidevineCDM DRM."
 HOMEPAGE="https://www.widevine.com/solutions/widevine-drm"
