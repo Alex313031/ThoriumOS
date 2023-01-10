@@ -16,6 +16,6 @@ CHROME_DEV_FLAGS="${CHROME_DEV_FLAGS}"
 
 src_prepare() {
     if use chrome-dev-flags; then
-      CHROME_DEV_FLAGS="${CHROME_DEV_FLAGS} --shelf-hover-previews --show-component-extension-options --enable-features=EnableAppGridGhost"
+      CHROME_DEV_FLAGS="${CHROME_DEV_FLAGS} --shelf-hover-previews --show-component-extension-options --enable-features=EnableAppGridGhost --disable-features=CrostiniUseDlc"
     fi
 }
