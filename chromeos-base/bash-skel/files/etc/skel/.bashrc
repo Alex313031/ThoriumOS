@@ -19,6 +19,11 @@ fi
 
 # Put your fun stuff here.
 
+export EDITOR=nano
+export VISUAL=nano
+
+export NINJA_SUMMARIZE_BUILD=1
+
 alias ll='ls -l --color=auto'
 alias ls='ls --color=auto'
 alias la='ls -A --color=auto'
@@ -38,7 +43,7 @@ alias fl='sudo fdisk --list'
 alias journal='cat /var/log/messages && cat /var/log/boot.log'
 alias q='exit'
 alias quit='exit'
-alias rmdd='sudo rm -r '
+alias rmdd='sudo rm -r -v '
 alias sys='htop'
 alias vdir='vdir --color=auto'
 alias dir='dir --color=auto'
@@ -49,4 +54,10 @@ alias inst='crew install'
 alias run='cd /usr/local/bin'
 alias ver='cat /etc/os-release'
 alias s='sync'
+alias find='grep -rnw $PWD -e '
+alias zst="tar --use-compress-program=unzstd -xvf "
+alias x='sudo chmod +x '
+alias c='%'
+alias clone='git clone'
+alias trim='sudo fstrim -a -v'
 cd
