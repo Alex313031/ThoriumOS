@@ -1,7 +1,7 @@
 # Copyright (c) 2022 The Fyde Innovations and Alex313031. All rights reserved.
 # Distributed under the license specified in the root directory of this project.
 
-EAPI="5"
+EAPI="7"
 
 DESCRIPTION="Installs Google Drive related files."
 HOMEPAGE="https://drive.google.com/"
