@@ -32,7 +32,7 @@ LLVM_TARGETS="AMDGPU X86"
 
 # Enable optional features on generic overlays, minus wifi bootstrapping for avahi-daemon.
 USE="${USE} beep screensaver screensavers webui-tab-strip ppapi ffmpeg -wifi_bootstrapping"
-USE="${USE} bluetooth cros_disks scanner ml_service power_management cups highlights assistant assistant-dlc peerd vpn lottie"
+USE="${USE} bluetooth cros_disks scanner ml_service power_management cups highlights assistant assistant-dlc libassistant libassistant-dlc peerd vpn lottie"
 #USE="${USE} buffet postscript"
 
 # Remove debug constructs.
