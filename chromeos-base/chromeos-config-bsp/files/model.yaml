@@ -9,8 +9,8 @@ base-config: &base_config
     highlights-extension-id: "gjeelkjnolfmhphfhhjokaijbicopfln"
     screensaver-extension-id: "bnabjkecnachpogjlfilfcnlpcmacglh"
   identity:
-    platform-name: "amd64-frick"
-  name: "amd64-frick"
+    platform-name: amd64-frick
+  name: amd64-frick
   camera:
     legacy-usb: True
 
