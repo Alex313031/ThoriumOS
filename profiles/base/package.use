@@ -37,7 +37,7 @@ net-wireless/wpa_supplicant-cros -wnm
 chromeos-base/chromeos-base -cros_embedded
 
 # Extra intel media-va-driver libraries
-x11-libs/libva intel_ihd_pavp
+x11-libs/libva intel_ihd_pavp utils
 
 # Disable NVMe and Synaptics firmware updating.
 sys-apps/fwupd -nvme -synaptics
