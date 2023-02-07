@@ -23,6 +23,8 @@ chromiumos-overlay/chromeos/config/make.conf.generic-target
 widevine
 -Official
 
+libassistant
+
 /home/alex/chromium/src/ash/webui/ demo app, help app, and sample app
 
 chrome_targets+=( app_shell ) > chrome_targets+=( app_shell chrome content_shell)
@@ -118,7 +120,7 @@ patch_widevine() {
    # on Android and Fuchsia platforms.
    # Can be optionally enabled in Chromium on non-Android platforms. Please see
    # //src/third_party/widevine/LICENSE file for details.
--  enable_widevine = is_chrome_branded || is_android || is_fuchsia
+-  enable_widevine = (is_chrome_branded && !is_fuchsia) || is_android
 +  enable_widevine = true
  
  # Disable Widevine when running linux-chromeos.
