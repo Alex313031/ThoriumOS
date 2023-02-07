@@ -16,7 +16,7 @@ HOMEPAGE="https://chromium.googlesource.com/chromiumos/"
 LICENSE="BSD BSD-Google BZIP2 GPL-2 GPL-2+ GPL-3 LGPL-2.1 unRAR public-domain ThoriumOS-LICENSE"
 SLOT="0"
 KEYWORDS="*"
-IUSE="chrome-dev-flags drivefs frick-wallpapers thoriumos widevine gflags"
+IUSE="chrome-dev-flags drivefs frick-wallpapers libassistant thoriumos widevine gflags"
 
 RDEPEND="
 	!chromeos-base/chromeos-bsp-null
@@ -41,9 +41,11 @@ RDEPEND="
 	app-misc/screen
 	app-misc/sl
 	chrome-dev-flags? ( chromeos-base/bash-skel )
+	chromeos-base/assistant-dlc
 	chromeos-base/chromeos-bsp-amd64-frick
 	thoriumos? ( chromeos-base/chromeos-osrelease )
 	chromeos-base/cros-trimly
+	libassistant? ( chromeos-base/libassistant )
 	chrome-dev-flags? ( chromeos-base/frick-chromedev-flags )
 	frick-wallpapers? ( chromeos-base/frick-oem-wallpapers )
 	drivefs? ( chromeos-base/google-drive-fs )
