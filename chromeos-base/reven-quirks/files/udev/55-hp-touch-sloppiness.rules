@@ -1,0 +1,12 @@
+# Copyright 2023 The ChromiumOS Authors
+# Use of this source code is governed by a BSD-style license that can be
+# found in the LICENSE file.
+
+# Make the touch gesture library less sensitive to swiping to improve user
+# experience in kiosk environments. b/263502416
+SUBSYSTEM=="input", \
+  ATTR{[dmi/id]product_name}=="*HP Engage One Pro AIO System*", \
+  SUBSYSTEMS=="usb", \
+  ATTRS{idVendor}=="222a", \
+  ATTRS{idProduct}=="016f|016e", \
+  ENV{CROS_TOUCH_SLOP_DISTANCE}="32"
