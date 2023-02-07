@@ -42,8 +42,6 @@ RDEPEND="
 	app-misc/sl
 	chrome-dev-flags? ( chromeos-base/bash-skel )
 	chromeos-base/chromeos-bsp-amd64-frick
-	chromeos-base/termina-image
-	chromeos-base/termina-mounter
 	thoriumos? ( chromeos-base/chromeos-osrelease )
 	chromeos-base/cros-trimly
 	chrome-dev-flags? ( chromeos-base/frick-chromedev-flags )
