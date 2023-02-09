@@ -4,7 +4,7 @@
 EAPI="7"
 
 DESCRIPTION="Install libassistant.so for assistant-dlc"
-HOMEPAGE="https://www.widevine.com/solutions/widevine-drm"
+HOMEPAGE="https://assistant.google.com/"
 
 LICENSE="BSD-Google"
 SLOT="0"
@@ -14,6 +14,7 @@ IUSE="libassistant"
 DEPEND="${RDEPEND}"
 
 CHROMIUM_DIR=/opt/google/chrome/
+LIBASSISTANT_DIR=/build/share/libassistant
 
 S=${WORKDIR}
 
@@ -22,4 +23,16 @@ src_install() {
   exeinto ${CHROMIUM_DIR}
   doexe "${FILESDIR}"/*
   fi
+#
+#  if use libassistant; then
+#  exeinto ${LIBASSISTANT_DIR}
+#  doexe "${FILESDIR}"/*
+#  fi
+#
+#  	if use chrome_media; then
+#		# Copy LibAssistant v1 and v2 libraries to a temp build folder for later
+#		# installation of `assistant-dlc`.
+#		exeinto /build/share/libassistant
+#		doexe "${FROM}/libassistant.so"
+#	fi
 }
