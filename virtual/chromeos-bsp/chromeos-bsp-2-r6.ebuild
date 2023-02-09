@@ -100,7 +100,9 @@ RDEPEND="
 	sys-apps/smartmontools
 	sys-apps/usbutils
 	sys-fs/cryptsetup
+	sys-fs/mtools
 	sys-fs/ncdu
+	sys-fs/ufiformat
 	sys-libs/libcap
 	sys-libs/zlib
 	sys-process/htop
