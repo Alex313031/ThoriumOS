@@ -67,6 +67,7 @@ RDEPEND="
 	media-libs/mesa-reven
 	media-libs/x264
 	media-libs/x265
+	media-libs/libjxl
 	net-analyzer/iftop
 	net-analyzer/netperf
 	net-analyzer/speedtest-cli
