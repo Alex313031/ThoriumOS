@@ -23,16 +23,16 @@ src_install() {
   exeinto ${CHROMIUM_DIR}
   doexe "${FILESDIR}"/*
   fi
-#
-#  if use libassistant; then
-#  exeinto ${LIBASSISTANT_DIR}
-#  doexe "${FILESDIR}"/*
-#  fi
-#
-#  	if use chrome_media; then
-#		# Copy LibAssistant v1 and v2 libraries to a temp build folder for later
-#		# installation of `assistant-dlc`.
-#		exeinto /build/share/libassistant
-#		doexe "${FROM}/libassistant.so"
-#	fi
+
+  if use libassistant; then
+  exeinto ${LIBASSISTANT_DIR}
+  doexe "${FILESDIR}"/*
+  fi
+
+  	if use chrome_media; then
+		# Copy LibAssistant v1 and v2 libraries to a temp build folder for later
+		# installation of `assistant-dlc`.
+		exeinto /build/share/libassistant
+		doexe "${FROM}/libassistant.so"
+	fi
 }

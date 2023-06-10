@@ -57,6 +57,9 @@ USE="${USE} dlc dlc_test iioservice"
 # Enable legacy components for generic x64 board.
 USE="${USE} legacy_usb usb legacy_keyboard legacy_power_button pcserial diagnostics diag cras selinux_experimental fdformat"
 
+# Enable support for some UEFI-specific features.
+USE="${USE} uefi"
+
 # Kernel configuration.
 USE="${USE} -kernel-4_4 -kernel-4_14 -kernel-4_19 -kernel-5_4 -kernel-5_10 kernel-5_15 i2cdev builtin_fw_x86_intel_ucode builtin_fw_x86_amd_ucode linux_firmware_amd_ucode nouveau legacy_amd64_cpu_support"
 USE="${USE} headers linux-mod linux_headers linux-headers it87 amd_ucode ath3k-all iwlwifi-all brcmfmac-all -cros-pd intel_ucode rfkill iwlwifi_rescan rtl8188ee edid kvm"
@@ -96,8 +99,8 @@ USE="${USE} googledrive fuse-drivefs google-drive-fs drivefs libfuse fuse fusebo
 USE="${USE} nfs vfat nvme mmc"
 
 # Dircrypto for stateful partition. On kernel 5.x this should be set to direncription_allow_v2.
-USE="${USE} direncryption cryptohome_userdataauth_interface"
-#USE="${USE} uprev-4-to-5 has-kernelnext"
+USE="${USE} cryptohome_userdataauth_interface"
+#USE="${USE} uprev-4-to-5 has-kernelnext direncryption"
 
 # Enable fscrypt v2 usage on 5.4+
 USE="${USE} direncription_allow_v2"
@@ -127,7 +130,7 @@ USE="${USE} hps"
 USE="${USE} arc-camera3"
 
 # Enable sirenia for ManaTEE runtime environment testing.
-USE="${USE} sirenia"
+# USE="${USE} sirenia"
 
 # Enable vivid for VM camera.
 USE="${USE} vivid"
