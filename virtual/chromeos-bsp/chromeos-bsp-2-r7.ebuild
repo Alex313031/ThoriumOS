@@ -43,6 +43,7 @@ RDEPEND="
 	chrome-dev-flags? ( chromeos-base/bash-skel )
 	chromeos-base/assistant-dlc
 	chromeos-base/chromeos-bsp-amd64-frick
+	chromeos-base/chromeos-dbus-bindings
 	thoriumos? ( chromeos-base/chromeos-osrelease )
 	chromeos-base/cros-trimly
 	libassistant? ( chromeos-base/libassistant )
