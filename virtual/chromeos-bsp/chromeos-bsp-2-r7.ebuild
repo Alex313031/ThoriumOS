@@ -1,4 +1,4 @@
-# Copyright (c) 2022 The Chromium OS Authors and Alex313031. All rights reserved.
+# Copyright (c) 2023 The Chromium OS Authors and Alex313031. All rights reserved.
 # Distributed under the terms of the GNU General Public License v2
 
 # https://www.chromium.org/chromium-os/external-bsp-hosting/
@@ -43,7 +43,6 @@ RDEPEND="
 	chrome-dev-flags? ( chromeos-base/bash-skel )
 	chromeos-base/assistant-dlc
 	chromeos-base/chromeos-bsp-amd64-frick
-	chromeos-base/chromeos-dbus-bindings
 	thoriumos? ( chromeos-base/chromeos-osrelease )
 	chromeos-base/cros-trimly
 	libassistant? ( chromeos-base/libassistant )
@@ -52,7 +51,6 @@ RDEPEND="
 	drivefs? ( chromeos-base/google-drive-fs )
 	widevine? ( chromeos-base/libwidevine )
 	gflags? ( dev-cpp/gflags )
-	dev-python/blinker
 	dev-python/cherrypy
 	dev-python/dbus-python
 	dev-python/flask

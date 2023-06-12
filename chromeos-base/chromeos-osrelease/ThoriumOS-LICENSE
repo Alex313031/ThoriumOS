@@ -1,7 +1,7 @@
-# Copyright 2022 The Chromium OS Authors and Alex313031. All rights reserved.
+# Copyright 2023 The Chromium OS Authors and Alex313031. All rights reserved.
 # Distributed under the terms of the GNU General Public License v3
 
-EBUILD - Copyright (c) 2022 Alex313031 https://github.com/Alex313031/ : GPL-3
+EBUILD - Copyright (c) 2023 Alex313031 https://github.com/Alex313031/ : GPL-3
 
 ThoriumOS is bound by the GPL-3 License, and the ChromiumOS BSD-style license, 
 which can be found in this repo in //licenses/CrOS-LICENSE.

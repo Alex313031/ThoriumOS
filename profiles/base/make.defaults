@@ -58,7 +58,7 @@ USE="${USE} dlc dlc_test iioservice"
 USE="${USE} legacy_usb usb legacy_keyboard legacy_power_button pcserial diagnostics diag cras selinux_experimental fdformat"
 
 # Enable support for some UEFI-specific features.
-USE="${USE} uefi"
+#USE="${USE} uefi"
 
 # Kernel configuration.
 USE="${USE} -kernel-4_4 -kernel-4_14 -kernel-4_19 -kernel-5_4 -kernel-5_10 kernel-5_15 i2cdev builtin_fw_x86_intel_ucode builtin_fw_x86_amd_ucode linux_firmware_amd_ucode nouveau legacy_amd64_cpu_support"

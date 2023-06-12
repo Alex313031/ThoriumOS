@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type='project'>
+		<email>chromium-os-dev@chromium.org</email>
+		<name>Maintained by The ChromiumOS Authors</name>
+	</maintainer>
+	<longdescription>
+		ThoriumOS board-specific ebuild to install configuration files and
+		drivers not suitable for inclusion in the generic baseboard overlay.
+	</longdescription>
+</pkgmetadata>

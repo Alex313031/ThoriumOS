@@ -26,7 +26,7 @@ setup_board --board=${BOARD} --force &&
 cros_workon --board=${BOARD} start sys-kernel/chromeos-kernel-5_15 &&
 cros_workon --board=${BOARD} start chromeos-base/chromiumos-assets &&
 build_packages --board=${BOARD} --no-withdebug --no-withautotest
-build_image --board=${BOARD} --noenable_rootfs_verification dev
+build_image --board=${BOARD} --no-enable-rootfs-verification dev
 
 #build_packages --board=${BOARD} --no-withdebug --no-withautotest --cleanbuild
 
