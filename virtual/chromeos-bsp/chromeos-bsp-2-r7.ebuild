@@ -51,6 +51,7 @@ RDEPEND="
 	drivefs? ( chromeos-base/google-drive-fs )
 	widevine? ( chromeos-base/libwidevine )
 	gflags? ( dev-cpp/gflags )
+	dev-python/blinker
 	dev-python/cherrypy
 	dev-python/dbus-python
 	dev-python/flask

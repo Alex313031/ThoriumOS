@@ -1,4 +1,4 @@
-# Copyright 1999-2022 Gentoo Authors and Alex313031
+# Copyright 1999-2023 Gentoo Authors and Alex313031
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="7"
@@ -59,7 +59,7 @@ MICROCODE_SIGNATURES_DEFAULT=""
 
 # Package Maintenance instructions :
 # 1. The ebuild is in the form of intel-microcode-<INTEL_SNAPSHOT>_p<COLLECTION_SNAPSHOT>.ebuild
-# 2. The INTEL_SNAPSHOT upstream is located at: https://github.com/intel/Intel-Linux-Processor-Microcode-Data-Files\
+# 2. The INTEL_SNAPSHOT upstream is located at: https://github.com/intel/Intel-Linux-Processor-Microcode-Data-Files
 # 3. The COLLECTION_SNAPSHOT is created manually using the following steps:
 #   a. Clone the repository https://github.com/platomav/CPUMicrocodes
 #   b. Rename the Intel directory to intel-microcode-collection-<YYYYMMDD>

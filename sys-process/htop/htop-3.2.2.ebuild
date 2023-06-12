@@ -1,15 +1,15 @@
-# Copyright 1999-2022 Gentoo Authors and Alex313031
+# Copyright 1999-2023 Gentoo Authors and Alex313031
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI="7"
+EAPI=7
 
-PYTHON_COMPAT=( python3_{8..9} )
+PYTHON_COMPAT=( python3_{8..11} )
 
 # We avoid xdg.eclass here because it'll pull in glib, desktop utils on
 # htop which is often used on headless machines. bug #787470
 inherit autotools linux-info optfeature python-any-r1 xdg-utils
 
-DESCRIPTION="interactive process viewer"
+DESCRIPTION="Interactive process viewer"
 HOMEPAGE="https://htop.dev/ https://github.com/htop-dev/htop"
 if [[ ${PV} == *9999 ]] ; then
 	EGIT_REPO_URI="https://github.com/htop-dev/htop.git"
