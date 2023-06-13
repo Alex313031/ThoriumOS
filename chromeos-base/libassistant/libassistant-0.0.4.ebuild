@@ -1,7 +1,7 @@
 # Copyright (c) 2023 Alex313031. All rights reserved.
 # Distributed under the license specified in the root directory of this project.
 
-EAPI="7"
+EAPI=7
 
 DESCRIPTION="Install libassistant.so for assistant-dlc"
 HOMEPAGE="https://assistant.google.com/"
@@ -9,7 +9,7 @@ HOMEPAGE="https://assistant.google.com/"
 LICENSE="BSD-Google"
 SLOT="0"
 KEYWORDS="*"
-IUSE="libassistant"
+IUSE="libassistant chrome_media"
 
 DEPEND="${RDEPEND}"
 
@@ -29,10 +29,10 @@ src_install() {
   doexe "${FILESDIR}"/*
   fi
 
-  	if use chrome_media; then
-		# Copy LibAssistant v1 and v2 libraries to a temp build folder for later
-		# installation of `assistant-dlc`.
-		exeinto /build/share/libassistant
-		doexe "${FROM}/libassistant.so"
-	fi
+#  	if use chrome_media; then
+#		# Copy LibAssistant v1 and v2 libraries to a temp build folder for later
+#		# installation of `assistant-dlc`.
+#		exeinto /build/share/libassistant
+#		doexe "${FROM}/libassistant.so"
+#	fi
 }

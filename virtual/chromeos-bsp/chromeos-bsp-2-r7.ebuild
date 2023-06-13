@@ -18,6 +18,13 @@ SLOT="0"
 KEYWORDS="*"
 IUSE="chrome-dev-flags drivefs frick-wallpapers libassistant thoriumos widevine gflags"
 
+#	dev-python/blinker
+#	dev-python/cherrypy
+#	dev-python/flask
+#	dev-python/itsdangerous
+#	dev-python/werkzeug
+#	media-libs/libjxl
+
 RDEPEND="
 	!chromeos-base/chromeos-bsp-null
 	!media-libs/mesa-llvmpipe
@@ -51,13 +58,8 @@ RDEPEND="
 	drivefs? ( chromeos-base/google-drive-fs )
 	widevine? ( chromeos-base/libwidevine )
 	gflags? ( dev-cpp/gflags )
-	dev-python/blinker
-	dev-python/cherrypy
 	dev-python/dbus-python
-	dev-python/flask
-	dev-python/itsdangerous
 	dev-python/virtualenv
-	dev-python/werkzeug
 	dev-util/mem
 	dev-util/strace
 	dev-vcs/git
@@ -67,7 +69,6 @@ RDEPEND="
 	media-libs/mesa-reven
 	media-libs/x264
 	media-libs/x265
-	media-libs/libjxl
 	net-analyzer/iftop
 	net-analyzer/netperf
 	net-analyzer/speedtest-cli

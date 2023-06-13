@@ -27,7 +27,7 @@ HOMEPAGE="https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git
 
 LICENSE="GPL-3"
 SLOT="0"
-IUSE="compress-xz compress-zstd initramfs +redistributable savedconfig unknown-license"
+IUSE="compress-xz compress-zstd initramfs +redistributable savedconfig +unknown-license linux_firmware_amd_ucode"
 REQUIRED_USE="initramfs? ( redistributable )
 	?? ( compress-xz compress-zstd )"
 
