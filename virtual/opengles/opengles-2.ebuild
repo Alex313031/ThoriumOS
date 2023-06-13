@@ -1,4 +1,4 @@
-# Copyright 2023 The Chromium OS Authors and Alex313031. All rights reserved.
+# Copyright 2023 The ChromiumOS Authors and Alex313031
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="7"
@@ -10,5 +10,5 @@ SLOT="0"
 KEYWORDS="*"
 IUSE=""
 
-DEPEND="media-libs/mesa-reven[egl,gles2]"
-RDEPEND="${DEPEND}"
+RDEPEND="media-libs/mesa-reven[egl,gles2]"
+DEPEND=""
