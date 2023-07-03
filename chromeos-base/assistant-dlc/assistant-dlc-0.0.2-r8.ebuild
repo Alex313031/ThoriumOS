@@ -19,6 +19,7 @@ SRC_URI=""
 # V1 of libassistant.so will be built + installed into rootfs.
 DEPEND="
 	chromeos-base/chromeos-chrome
+	chromeos-base/libassistant
 "
 
 LICENSE="BSD-Google"
