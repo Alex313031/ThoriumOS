@@ -1,9 +1,10 @@
-# Copyright (c) 2022 The Chromium OS Authors and Alex313031. All rights reserved.
+# Copyright 2023 The Chromium OS Authors and Alex313031. All rights reserved.
 # Distributed under the terms of the GNU General Public License v3
 
-EAPI=7
+EAPI="7"
+
 DESCRIPTION="OEM Wallpapers for ChromiumOS, using a wallpaper by Carl Kleiner, and a photo taken by Andreas Wocko."
-HOMEPAGE="https://github.com/Alex313031/ChromiumOS/tree/main/wallpapers"
+HOMEPAGE="https://github.com/Alex313031/ThoriumOS/tree/main/wallpapers"
 
 LICENSE="frick-oem-wallpapers-LICENSE"
 SLOT="0"

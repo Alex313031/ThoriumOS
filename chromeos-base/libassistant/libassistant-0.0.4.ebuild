@@ -1,7 +1,7 @@
-# Copyright (c) 2023 Alex313031. All rights reserved.
+# Copyright 2023 Alex313031. All rights reserved.
 # Distributed under the license specified in the root directory of this project.
 
-EAPI=7
+EAPI="7"
 
 DESCRIPTION="Install libassistant.so for assistant-dlc"
 HOMEPAGE="https://assistant.google.com/"

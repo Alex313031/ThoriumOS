@@ -1,12 +1,12 @@
 # Copyright 2023 The Chromium OS Authors and Alex313031. All rights reserved.
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI="7"
 
 inherit osreleased
 
 DESCRIPTION="OS Release Information for ThoriumOS."
-HOMEPAGE="https://github.com/Alex313031/ChromiumOS/"
+HOMEPAGE="https://github.com/Alex313031/ThoriumOS/"
 
 LICENSE="BSD-Google ThoriumOS-LICENSE"
 SLOT="0"

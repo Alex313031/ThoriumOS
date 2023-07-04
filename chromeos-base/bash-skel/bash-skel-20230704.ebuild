@@ -1,10 +1,11 @@
-# Copyright (c) 2022 Alex313031. All rights reserved.
+# Copyright 2023 Alex313031. All rights reserved.
 # Distributed under the terms of the GNU General Public License v3
 
 EAPI="7"
+
 inherit chrome-dev-flags 
 DESCRIPTION="Appends aliases to the .bashrc that is copied from /etc/skel/ to all users home dirs."
-HOMEPAGE="https://github.com/Alex313031/ChromiumOS/blob/main/dot-bashrc"
+HOMEPAGE="https://github.com/Alex313031/ThoriumOS/blob/main/dot-bashrc"
 
 LICENSE="GPL-3"
 SLOT="0"

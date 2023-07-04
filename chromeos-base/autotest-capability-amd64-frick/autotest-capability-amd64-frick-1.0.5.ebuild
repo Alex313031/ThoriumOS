@@ -1,7 +1,7 @@
-# Copyright 2022 The Chromium OS Authors and Alex313031. All rights reserved.
+# Copyright 2023 The Chromium OS Authors and Alex313031. All rights reserved.
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=5
+EAPI="5"
 
 DESCRIPTION="Install autotest capabilities for amd64-frick."
 

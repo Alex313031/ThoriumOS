@@ -54,10 +54,15 @@ alias inst='crew install'
 alias run='cd /usr/local/bin'
 alias ver='cat /etc/os-release'
 alias s='sync'
-alias find='grep -rnw $PWD -e '
 alias zst="tar --use-compress-program=unzstd -xvf "
 alias x='sudo chmod +x '
 alias c='%'
 alias clone='git clone'
 alias trim='sudo fstrim -a -v'
+alias push="git push origin main"
+alias status='git status'
+alias grep2='grep -C2 --colour'
+alias diff='git diff'
+alias timetouch='/usr/bin/find . -exec touch {} +'
+alias defrag='sudo e4defrag -v '
 cd

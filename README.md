@@ -1,6 +1,6 @@
 ![GitHub tag (latest SemVer)](https://img.shields.io/github/v/tag/alex313031/chromiumos?label=Version%3A) &nbsp;![GitHub commit activity](https://img.shields.io/github/commit-activity/w/alex313031/chromiumos?color=blueviolet&label=Commit%20Activity%3A) &nbsp;![Subreddit subscribers](https://img.shields.io/reddit/subreddit-subscribers/ChromiumOS?style=social)
 # ThoriumOS
-<img src="https://github.com/Alex313031/ChromiumOS/blob/main/images/thoriumos_bootsplash.png">
+<img src="https://github.com/Alex313031/ThoriumOS/blob/main/images/thoriumos_bootsplash.png">
 
 ## ChromiumOS fork with Thorium Browser, x264/x265 codecs, Widevine, Kernel 5.15, Linux Firmware/Modules support, Nouveau, Intel/AMD microcode, and extra packages.
 
@@ -56,4 +56,4 @@ First, we assume the chromiumos source, chromium source, and this repo are all i
 
 The .7z files in Releases contain **chromiumos_image.bin** which can be flashed to a USB Drive with https://www.balena.io/etcher/, *dd*, or *cros_flash* and booted on most processors supporting AVX or later.
 
-<img src="https://github.com/Alex313031/ChromiumOS/blob/main/images/ChromiumBook_Black.png" width="256">
+<img src="https://github.com/Alex313031/ThoriumOS/blob/main/images/ChromiumBook_Black.png" width="256">

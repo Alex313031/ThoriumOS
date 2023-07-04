@@ -3,7 +3,7 @@
 
 # This is the DLC packs the shared libraries used by assistant in chrome.
 
-EAPI=7
+EAPI="7"
 
 CROS_WORKON_COMMIT="d2d95e8af89939f893b1443135497c1f5572aebc"
 CROS_WORKON_TREE="776139a53bc86333de8672a51ed7879e75909ac9"

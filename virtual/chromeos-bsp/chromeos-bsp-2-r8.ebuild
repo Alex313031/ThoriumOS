@@ -1,9 +1,9 @@
-# Copyright (c) 2023 The Chromium OS Authors and Alex313031. All rights reserved.
+# Copyright 2023 The Chromium OS Authors and Alex313031. All rights reserved.
 # Distributed under the terms of the GNU General Public License v2
 
 # https://www.chromium.org/chromium-os/external-bsp-hosting/
 
-EAPI=7
+EAPI="7"
 
 DESCRIPTION="Generic ebuild which satisifies virtual/chromeos-bsp.
 This is a direct dependency of virtual/target-chromium-os, but is expected

@@ -1,4 +1,4 @@
-# Copyright (c) 2022 The Fyde Innovations and Alex313031. All rights reserved.
+# Copyright 2023 The Fyde Innovations and Alex313031. All rights reserved.
 # Distributed under the license specified in the root directory of this project.
 
 EAPI="7"
@@ -20,7 +20,7 @@ S=${WORKDIR}
 
 src_install() {
   if use widevine; then
-  exeinto ${CHROMIUM_DIR}
-  doexe "${FILESDIR}"/*
+    exeinto ${CHROMIUM_DIR}
+    doexe "${FILESDIR}"/libwidevinecdm.so
   fi
 }
