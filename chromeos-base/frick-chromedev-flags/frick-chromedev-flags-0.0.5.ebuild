@@ -9,7 +9,7 @@ HOMEPAGE="https://github.com/Alex313031/ChromiumOS/"
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="*"
-IUSE="chrome-dev-flags"
+IUSE="chrome-dev-flags kiosk_demo"
 S=${WORKDIR}
 
 RDEPEND="chromeos-base/chromeos-login"
@@ -22,5 +22,9 @@ src_prepare() {
     
     if use chrome-dev-flags; then
       CHROME_DEV_FLAGS="${CHROME_DEV_FLAGS} --shelf-hover-previews --show-component-extension-options --enable-ui-devtools --enable-features=EnableAppGridGhost --disable-features=CrostiniUseDlc"
+    fi
+
+    if use kiosk_demo; then
+      CHROME_DEV_FLAGS="${CHROME_DEV_FLAGS} --force-kiosk-mode"
     fi
 }

@@ -1,3 +1,5 @@
+# Copyright (c) 2023 Fyde Innovations Limited and the openFyde Authors and Alex313031.
+
 # The class to append/remove flags to/from /etc/chrome_dev.conf
 RDEPEND="chromeos-base/chromeos-login"
 DEPEND="${RDEPEND}"

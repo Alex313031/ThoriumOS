@@ -114,6 +114,8 @@ RDEPEND="
 	sys-process/psmisc
 	sys-process/time
 	virtual/chromeos-config-bsp
+	virtual/cros-camera-hal
+	virtual/cros-camera-hal-configs
 	x11-apps/igt-gpu-tools
 "
 
