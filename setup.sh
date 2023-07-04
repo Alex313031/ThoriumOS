@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Copyright (c) 2022 Alex313031.
+# Copyright (c) 2023 Alex313031.
 
 YEL='\033[1;33m' # Yellow
 CYA='\033[1;96m' # Cyan
@@ -16,12 +16,11 @@ die() { yell "$*"; exit 111; }
 try() { "$@" || die "${RED}Failed $*"; }
 
 printf "\n" &&
-printf "${YEL}Creating overlay-amd-frick overlay dir, and merging files from overlay-amd-generic and this repo to the overlay dir.\n" &&
-tput sgr0 &&
+printf "${YEL}Creating overlay-amd-frick overlay dir, and merging files from overlay-amd-generic and this repo to the overlay dir.${c0}\n" &&
 
 mkdir -p -v ~/chromiumos/src/overlays/overlay-amd64-frick &&
 printf "\n" &&
-cp -r -v ~/chromiumos/src/overlays/overlay-amd64-generic/* ~/chromiumos/src/overlays/overlay-amd64-frick/ &&
+#cp -r -v ~/chromiumos/src/overlays/overlay-amd64-generic/* ~/chromiumos/src/overlays/overlay-amd64-frick/ &&
 cp -r -v ./* ~/chromiumos/src/overlays/overlay-amd64-frick/ &&
 cp -r -v ./chromeos-base/chromeos-chrome/. ~/chromiumos/src/third_party/chromiumos-overlay/chromeos-base/chromeos-chrome/ &&
 printf "\n" &&
@@ -29,29 +28,26 @@ printf "\n" &&
 printf "${YEL}Done!\n" &&
 
 printf "\n" &&
-printf "${YEL}Copying other files from this repo into //chromiumos/src/platform/\n" &&
-tput sgr0 &&
+printf "${YEL}Copying other files from this repo into //chromiumos/src/platform/${c0}\n" &&
 
 cp -r -v ./platform/* ~/chromiumos/src/platform/
 printf "\n" &&
 printf "${YEL}Done!\n" &&
 printf "\n" &&
 
-printf "${YEL}To add amd-frick to the list of known boards in cros-board.eclass, run this command:\n" &&
+printf "${YEL}To add amd-frick to the list of known boards in cros-board.eclass, run this command:${c0}\n" &&
 printf "\n" &&
-tput sgr0 &&
 
 echo "sed -i 's/ALL_BOARDS=(/ALL_BOARDS=(\n	amd64-frick\n/' ${HOME}/chromiumos/src/third_party/chromiumos-overlay/eclass/cros-board.eclass" &&
 
 printf "\n" &&
-printf "${YEL}Listing contents of ~/chromiumos.\n" &&
-tput sgr0 &&
+printf "${YEL}Listing contents of ~/chromiumos.${c0}\n" &&
 
 cd ~/chromiumos &&
 ls -A --color=auto &&
 
 printf "\n" &&
-printf "${YEL}Enjoy ThoriumOS!"
+printf "${YEL}Enjoy ThoriumOS!${c0}\n"
 printf "\n" &&
 tput sgr0 &&
 
@@ -72,7 +68,5 @@ echo "
  \__________________________________/ 
                                       " &&
 printf "\n" &&
-
-cd ~/chromiumos
 
 exit 0
