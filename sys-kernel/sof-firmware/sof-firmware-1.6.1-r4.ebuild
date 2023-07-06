@@ -1,7 +1,7 @@
-# Copyright 1999-2021 Gentoo Authors
+# Copyright 1999-2023 Gentoo Authors and Alex313031
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI="7"
 
 DESCRIPTION="Sound Open Firmware (SOF) binary files"
 
@@ -14,6 +14,9 @@ KEYWORDS="-* amd64"
 IUSE=""
 
 S=${WORKDIR}/sof-bin-stable-v${PV}
+
+RDEPEND="sys-kernel/linux-firmware"
+DEPEND="${RDEPEND}"
 
 src_compile() {
 	sed -i -e '1i #!/bin/bash\nset -e' go.sh || die

@@ -92,6 +92,7 @@ RDEPEND="
 	sys-apps/diffutils
 	sys-apps/file
 	sys-apps/findutils
+	sys-apps/gptfdisk
 	sys-apps/haveged
 	sys-apps/i2c-tools
 	sys-apps/iotools
