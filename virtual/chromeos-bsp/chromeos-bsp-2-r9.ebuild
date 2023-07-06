@@ -65,6 +65,7 @@ RDEPEND="
 	dev-vcs/git
 	sys-firmware/intel-ucode-firmware
 	sys-kernel/linux-firmware
+	sys-kernel/sof-firmware
 	media-libs/cros-camera-hal-usb
 	media-libs/mesa-reven
 	media-libs/x264

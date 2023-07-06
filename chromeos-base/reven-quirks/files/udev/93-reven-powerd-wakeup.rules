@@ -18,3 +18,9 @@ SUBSYSTEMS=="serio", ATTRS{firmware_id}=="PNP: LEN* PNP0f13", \
 SUBSYSTEM=="usb" ATTR{idVendor}=="1d6b", ATTR{idProduct}=="0001", \
   ATTR{[dmi/id]modalias}!="dmi:*ThinkPadT61*", \
   ATTR{power/wakeup}="enabled"
+
+# Do not enable wakeup on DEL08BB touchpads. They emit
+# events during deep sleep causing an early wake suspend failure b/259125954
+SUBSYSTEM=="input", ATTRS{name}=="DELL08B8:00 0488:120A Touchpad", \
+  ENV{POWERD_ROLE}=="internal_touchpad", \
+  ENV{POWERD_TAGS_WAKEUP}="wakeup wakeup_disabled"

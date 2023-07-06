@@ -2,6 +2,9 @@
 cros-317118
 
 # KERNEL CONFIG
+
+/home/alex/chromiumos/src/third_party/kernel/v5.15/chromeos/config/chromeos/x86_64/chromeos-x86_64-reven.flavour.config
+
 CONFIG_SENSORS_IT87=m
 
 # COMPILER OPTIMIZATIONS

@@ -15,9 +15,9 @@ media-libs/mesa-reven egl gles2 shared-glapi
 #media-libs/piglit waffle
 
 # For CrOS Kernel 4.x.x
-sys-kernel/chromeos-kernel-4_4 apply_patches modules
-sys-kernel/chromeos-kernel-4_14 apply_patches modules
-sys-kernel/chromeos-kernel-4_19 apply_patches modules
+#sys-kernel/chromeos-kernel-4_4 apply_patches modules
+#sys-kernel/chromeos-kernel-4_14 apply_patches modules
+#sys-kernel/chromeos-kernel-4_19 apply_patches modules
 
 # For CrOS Kernel 5.x.x
 sys-kernel/chromeos-kernel-5_4 apply_patches modules

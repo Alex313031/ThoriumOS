@@ -13,9 +13,12 @@ CHROMEOS_KERNEL_SPLITCONFIG="chromeos-x86_64-reven"
 # Added SSE4, AVX, AES, and O3 compiler optimizations.
 BOARD_COMPILER_FLAGS="-march=x86-64 -mavx -maes -O3"
 BOARD_RUSTFLAGS="-Ctarget-cpu=x86-64 -Copt-level=3 -Ctarget-feature=+aes,+avx"
-CFLAGS="${CFLAGS} -O3 -pipe -mavx -maes"
-CXXFLAGS="${CXXFLAGS} -O3 -pipe -mavx -maes"
+CFLAGS="${CFLAGS} -O3 -mavx -maes -Wno-error"
+CXXFLAGS="${CXXFLAGS} -O3 -mavx -maes -Wno-error"
+CFLAGS_MODULE="${CFLAGS_MODULE} -O3 -mavx -maes -Wno-error"
 LDFLAGS="${LDFLAGS} -Wl,-O3 -Wl,--lto-O3"
+#CPU USE EXPAND FLAGS
+CPU_FLAGS_X86="${CPU_FLAGS_X86} mmx mmxext sse sse2 sse3 ssse3 sse4_1 sse4_2 aes avx"
 
 # Include many firmwares as this is a "generic" board and might run on a
 # wide variety of platforms with who knows what kind of hardware. -cros-pd disables USB-PD EC firmware updating.
