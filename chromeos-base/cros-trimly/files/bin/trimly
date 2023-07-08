@@ -1,21 +1,28 @@
 #!/bin/bash
 
+# Copyright (c) 2023 Alex313031
+
 ## TrImLy
 # trimly.sh
-## VER. 0.5.1
+## VER. 0.5.2
 
 # constants (for coloring stdout)
-RED='\033[0;31m' # Red
 YEL='\033[1;33m' # Yellow
+CYA='\033[1;96m' # Cyan
+RED='\033[1;31m' # Red
+GRE='\033[1;32m' # Green
+c0='\033[0m' # Reset Text
+bold='\033[1m' # Bold Text
+underline='\033[4m' # Underline Text
 NC='\033[0m' # No Color
 
 #start
 printf "${RED}--------------------------------------------------------------------------------${NC}\n"
 printf "\n"
 
-printf "${RED}== TrImLy - Your fstrim automator and defrag script for ChomiumOS ==${NC}\n"
+printf "${RED}== TrImLy - Your fstrim automator and defrag script for ChromiumOS ==${NC}\n"
 printf "\n"
-printf "Note: This script must be placed in /usr/local/bin,\n made executable with 'sudo chmod +x trimly.sh',\n and run with sudo (root) priveleges.\n"
+printf "${RED}Note: This script must be placed in /usr/local/bin,\n made executable with 'sudo chmod +x trimly.sh',\n and run with sudo (root) priveleges.\n"
 printf "\n"
 
 # conditional defrag (*will not work entirely on bind mounts used on /)
