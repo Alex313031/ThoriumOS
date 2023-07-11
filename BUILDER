@@ -3,6 +3,9 @@ cros-317118
 
 # KERNEL CONFIG
 
+# commandline 
+kvm-intel.vmentry_l1d_flush=always
+
 /home/alex/chromiumos/src/third_party/kernel/v5.15/chromeos/config/chromeos/x86_64/chromeos-x86_64-reven.flavour.config
 
 CONFIG_LOCK_DOWN_KERNEL_FORCE_INTEGRITY=n
