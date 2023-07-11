@@ -40,6 +40,7 @@ RDEPEND="
 	app-arch/unrar
 	app-arch/unzip
 	app-arch/xz-utils
+	app-benchmarks/stress-ng
 	app-editors/nano
 	app-editors/qemacs
 	app-editors/vim
