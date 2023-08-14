@@ -56,9 +56,9 @@ QEMU_SOFTMMU_TARGETS="aarch64 arm i386 x86_64"
 QEMU_USER_TARGETS="aarch64 arm i386 x86_64"
 
 # Various compiler defaults.  Should be no arch-specific bits here.
-CFLAGS="-O3 -pipe -mavx -maes"
-CXXFLAGS="-O3 -pipe -mavx -maes"
-CPU_FLAGS_X86="${CPU_FLAGS_X86} mmx mmxext sse sse2 sse3 ssse3 sse4_1 sse4_2 aes avx"
+CFLAGS="-O3 -pipe -msse4.1"
+CXXFLAGS="-O3 -pipe -msse4.1"
+CPU_FLAGS_X86="${CPU_FLAGS_X86} mmx mmxext sse sse2 sse3 ssse3 sse4_1"
 LDFLAGS="-Wl,-O3 -Wl,--lto-O3 -Wl,--as-needed"
 
 # We want to migrate away from this at some point.

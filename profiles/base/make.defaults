@@ -45,7 +45,7 @@ USE="${USE} -debug -chrome_debug -chrome_debug_tests -chromeless_tests -cros-deb
 USE="${USE} mmx mmxext sse sse2 sse3 ssse3 sse4_1 sse4_2 aes avx"
 
 # Enable non-free codecs and components.
-USE="${USE} chrome_media vaapi x264 x265 widevine lto thinlto"
+USE="${USE} chrome_media vaapi x264 x265 hevc_codec widevine lto thinlto"
 #USE="${USE} app_shell content_shell"
 
 # Enable background blur on all graphics chipsets.
@@ -83,6 +83,9 @@ USE="${USE} -rgbkbd"
 
 # Enable management of EFI boot entries when installing/updating.
 USE="${USE} manage_efi_boot_entries"
+
+# Repair the GPT when installing/updating, mostly for mass deploy (b/257478857).
+USE="${USE} postinstall_cgpt_repair"
 
 # Enable chromeos postinstall to configure both efi
 # and syslinux configuration files on install.
@@ -127,7 +130,7 @@ USE="${USE} libglvnd"
 USE="${USE} nnapi"
 
 # Enable hps for DUT testing.
-USE="${USE} hps"
+# USE="${USE} hps"
 
 # Enable camera HALv3.
 USE="${USE} arc-camera3"
