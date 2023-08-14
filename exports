@@ -28,6 +28,8 @@ cros_workon --board=${BOARD} start chromeos-base/chromiumos-assets &&
 build_packages --board=${BOARD} --no-withdebug --no-withautotest
 build_image --board=${BOARD} --no-enable-rootfs-verification dev
 
+# Update /etc/lsb-release with name
+
 #build_packages --board=${BOARD} --no-withdebug --no-withautotest --cleanbuild
 
 # LIST CURRENT CROS_WORKON PACKAGES.
