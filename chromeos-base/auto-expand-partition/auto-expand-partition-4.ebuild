@@ -1,7 +1,7 @@
 # Copyright 2023 The Fyde Innovations and Alex313031. All rights reserved.
 # Distributed under the license specified in the root directory of this project.
 
-EAPI="5"
+EAPI="7"
 
 DESCRIPTION="Auto expand stateful partition on first boot."
 

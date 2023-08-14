@@ -1,7 +1,7 @@
 # Copyright 2023 Fyde Innovations Limited and the openFyde Authors and Alex313031.
 # Distributed under the license specified in the root directory of this project.
 
-EAPI="5"
+EAPI="7"
 
 inherit appid cros-unibuild
 

@@ -24,6 +24,7 @@ printf "\n" &&
 cp -r -v ./* ~/chromiumos/src/overlays/overlay-amd64-frick/ &&
 # cp -r -v ~/chromiumos/src/overlays/overlay-amd64-generic/prebuilt.conf ~/chromiumos/src/overlays/overlay-amd64-frick/ &&
 cp -r -v ./chromeos-base/chromeos-chrome/. ~/chromiumos/src/third_party/chromiumos-overlay/chromeos-base/chromeos-chrome/ &&
+cp -v ~/chromiumos/src/overlays/overlay-amd64-generic/prebuilt.conf ~/chromiumos/src/overlays/overlay-amd64-frick/ &&
 printf "\n" &&
 
 printf "${YEL}Done!\n" &&
