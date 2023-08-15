@@ -11,14 +11,14 @@ CHROMEOS_KERNEL_SPLITCONFIG="chromeos-x86_64-reven"
 # SSE2: https://crbug.com/350175
 # SSE3: https://docs.google.com/document/d/1QUzL4MGNqX4wiLvukUwBf6FdCL35kCDoEJTm2wMkahw/preview
 # Added SSE4, AVX, AES, and O3 compiler optimizations.
-BOARD_COMPILER_FLAGS="-march=x86-64 -mavx -maes -O3"
-BOARD_RUSTFLAGS="-Ctarget-cpu=x86-64 -Copt-level=3 -Ctarget-feature=+aes,+avx"
-CFLAGS="${CFLAGS} -O3 -mavx -maes -Wno-error"
-CXXFLAGS="${CXXFLAGS} -O3 -mavx -maes -Wno-error"
-CFLAGS_MODULE="${CFLAGS_MODULE} -O3 -mavx -maes -Wno-error"
+BOARD_COMPILER_FLAGS="-march=x86-64 -msse4.1 -O3"
+BOARD_RUSTFLAGS="-Ctarget-cpu=x86-64 -Copt-level=3 -Ctarget-feature=+msse4.1"
+CFLAGS="${CFLAGS} -O3 -msse4.1 -Wno-error"
+CXXFLAGS="${CXXFLAGS} -O3 -msse4.1 -Wno-error"
+CFLAGS_MODULE="${CFLAGS_MODULE} -O3 -msse4.1 -Wno-error"
 LDFLAGS="${LDFLAGS} -Wl,-O3 -Wl,--lto-O3"
 #CPU USE EXPAND FLAGS
-CPU_FLAGS_X86="${CPU_FLAGS_X86} mmx mmxext sse sse2 sse3 ssse3 sse4_1 sse4_2 aes avx"
+CPU_FLAGS_X86="${CPU_FLAGS_X86} mmx mmxext sse sse2 sse3 ssse3 sse4_1"
 
 # Include many firmwares as this is a "generic" board and might run on a
 # wide variety of platforms with who knows what kind of hardware. -cros-pd disables USB-PD EC firmware updating.
@@ -42,7 +42,7 @@ USE="${USE} bluetooth cros_disks scanner ml_service power_management cups highli
 USE="${USE} -debug -chrome_debug -chrome_debug_tests -chromeless_tests -cros-debug"
 
 # CPU USE Flags.
-USE="${USE} mmx mmxext sse sse2 sse3 ssse3 sse4_1 sse4_2 aes avx"
+USE="${USE} mmx mmxext sse sse2 sse3 ssse3 sse4_1"
 
 # Enable non-free codecs and components.
 USE="${USE} chrome_media vaapi x264 x265 hevc_codec widevine lto thinlto"

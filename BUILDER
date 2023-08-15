@@ -59,7 +59,6 @@ chrome_targets+=( app_shell ) > chrome_targets+=( app_shell chrome content_shell
 		"enable_precompiled_headers=false"
 		"media_use_ffmpeg=true"
 		"media_use_libvpx=true"
-		"enable_hls_sample_aes=true"
 		"enable_hls_demuxer=true"
 		"enable_ink=false"
 		"enable_discovery=true"
