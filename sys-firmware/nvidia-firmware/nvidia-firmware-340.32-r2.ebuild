@@ -12,7 +12,7 @@ inherit python-any-r1 unpacker
 NV_URI="http://us.download.nvidia.com/XFree86/"
 X86_NV_PACKAGE="NVIDIA-Linux-x86-${PV}"
 
-EXTRACT_FIRMWARE_REV="a0b9f9be0efad90cc84b8b2eaf587c3d7d350ea9"
+EXTRACT_FIRMWARE_REV="d19d818d1e05c7c68afb052073cc8a487cac8f5d"
 
 DESCRIPTION="Kernel and mesa firmware for nouveau (video accel and pgraph)"
 HOMEPAGE="https://nouveau.freedesktop.org/wiki/VideoAcceleration/"

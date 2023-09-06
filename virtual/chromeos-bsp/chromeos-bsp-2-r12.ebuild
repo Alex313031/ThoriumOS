@@ -107,7 +107,6 @@ RDEPEND="
 	sys-apps/rng-tools
 	sys-apps/smartmontools
 	sys-apps/usbutils
-	sys-firmware/nvidia-firmware
 	sys-fs/cryptsetup
 	sys-fs/mtools
 	sys-fs/ncdu

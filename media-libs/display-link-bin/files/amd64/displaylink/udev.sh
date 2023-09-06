@@ -75,16 +75,23 @@ prune_broken_links()
   remove_dldir_if_empty $root
 }
 
+disable_u1_u2()
+{
+    echo 0 > "/sys$1/../port/usb3_lpm_permit"
+}
+
 main()
 {
   action=$1
   root=$2
-  devnode=$4
+  devpath=$3
+  devnode=$5
 
   if [ "$action" = "add" ]; then
-    device_id=$3
+    device_id=$4
     create_displaylink_symlink $root $device_id $devnode
     start_displaylink
+    disable_u1_u2 "$devpath"
   elif [ "$action" = "remove" ]; then
       devname=$3
       unlink_displaylink_symlink "$root" "$devname"
@@ -105,7 +112,7 @@ stop_service()
 }
 
 if [ "$ACTION" = "add" ] && [ "$#" -ge 3 ]; then
-  main $ACTION $1 $2 $3
+  main $ACTION $1 $2 $3 $4
   return 0
 fi
 

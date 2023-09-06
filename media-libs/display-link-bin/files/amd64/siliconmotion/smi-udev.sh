@@ -3,12 +3,14 @@
 
 # Get the smiusbdisplay device count.
 get_smiusbdisplay_dev_count() {
-  cat /sys/bus/usb/devices/*/product | grep "SMI USB Display" -c
+  cat /sys/bus/usb/devices/*/manufacturer  | grep "Silicon_Motion" -c
 }
 
 # Start the smiusbdisplay service.
 start_smiusbdisplay() {
-  start_service
+  if [ "$(get_smiusbdisplay_dev_count)" != "0" ]; then
+	start_service
+  fi
 }
 
 # Stop the smiusbdisplay service when there is no SMI device.
