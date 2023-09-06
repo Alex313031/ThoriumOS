@@ -6,7 +6,7 @@
 
 EAPI="7"
 
-PYTHON_COMPAT=( python3_{9..11} )
+PYTHON_COMPAT=( python3_{8..11} )
 inherit python-any-r1 unpacker
 
 NV_URI="http://us.download.nvidia.com/XFree86/"

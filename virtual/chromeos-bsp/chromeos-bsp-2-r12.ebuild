@@ -90,7 +90,6 @@ RDEPEND="
 	net-misc/telnet-bsd
 	net-misc/tlsdate
 	net-misc/wget
-	net-wireless/rfkill
 	net-wireless/rtw8852-firmware
 	sys-apps/coreutils
 	sys-apps/cpuid
