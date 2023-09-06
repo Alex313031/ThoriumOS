@@ -1,7 +1,7 @@
 # Copyright 1999-2023 Gentoo Authors and Alex313031
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI="7"
 
 inherit systemd
 
@@ -34,10 +34,12 @@ src_install() {
 	default
 
 	# Install gentoo ones instead
-	newinitd "${FILESDIR}"/haveged-init.d.3 haveged
-	newconfd "${FILESDIR}"/haveged-conf.d haveged
+#	newinitd "${FILESDIR}"/haveged-init.d.3 haveged
+#	newconfd "${FILESDIR}"/haveged-conf.d haveged
 
-	systemd_newunit "${FILESDIR}"/service.gentoo ${PN}.service
+#	systemd_newunit "${FILESDIR}"/service.gentoo ${PN}.service
+	insinto /etc/init
+	doins "${FILESDIR}"/haveged-thos.conf
 	insinto /etc
 	doins "${FILESDIR}"/haveged.conf
 
