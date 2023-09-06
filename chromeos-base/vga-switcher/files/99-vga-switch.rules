@@ -1,0 +1,3 @@
+# Used to switch to intergrade graphic card, mostly to intel
+ACTION=="add", SUBSYSTEM=="drm", SUBSYSTEMS=="pci", RUN+="/lib/udev/vga-switch.sh"
+DRIVERS=="apple-gmux", RUN+="/lib/udev/vga-switch.sh"
