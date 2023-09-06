@@ -1,6 +1,11 @@
 # FOR MY USE ONLY
 cros-317118
 
+# Set amd64-frick as board in eclass
+chromiumos/src/third_party/chromiumos-overlay/eclass/cros-board.eclass
+
+# REMEMBER TO SET ALEX NAME IN /etc/lsb-release!
+
 # KERNEL CONFIG
 
 # commandline 

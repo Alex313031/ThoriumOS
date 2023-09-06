@@ -2,7 +2,7 @@
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
-EAPI="7"
+EAPI=7
 
 # cros_workon applies only to ebuild and files directory. Use the
 # canonical empty project.
