@@ -5,6 +5,7 @@ cros-317118
 chromiumos/src/third_party/chromiumos-overlay/eclass/cros-board.eclass
 
 # REMEMBER TO SET ALEX NAME IN /etc/lsb-release!
+# REMEMBER TO COPY CHROMEOS-CHROME FILES!
 
 # KERNEL CONFIG
 
