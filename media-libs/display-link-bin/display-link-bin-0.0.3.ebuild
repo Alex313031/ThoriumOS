@@ -23,19 +23,17 @@ DEPEND="${RDEPEND}"
 S=$FILESDIR
 
 src_install() {
-  local source_dir
-  if use amd64; then
-    source_dir=${FILESDIR}/amd64
-  elif use arm; then
-    source_dir=${FILESDIR}/arm 
-  fi
   insinto /etc/init
-  doins $source_dir/displaylink-driver.conf
+  doins ${FILESDIR}/displaylink-driver.conf
+
   insinto /lib/udev/rules.d
-  doins $source_dir/90-smiusbdisplay.rules
-  insinto /opt
-  dodir $source_dir/displaylink
-  dodir $source_dir/siliconmotion
+  doins ${FILESDIR}/90-smiusbdisplay.rules
+
+  exeinto /opt/displaylink
+  doexe ${FILESDIR}/displaylink/*
+
+  exeinto /opt/siliconmotion
+  doexe ${FILESDIR}/siliconmotion/*
 }
 
 
