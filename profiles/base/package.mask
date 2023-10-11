@@ -1,0 +1,7 @@
+# Copyright (c) 2023 Alex313031
+
+# Packages to block
+
+sys-kernel/chromeos-kernel-4_14::chromiumos
+
+# media-libs/lpe-support-blacklist::chromiumos

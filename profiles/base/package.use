@@ -1,4 +1,4 @@
-# Copyright (c) 2022 Alex313031
+# Copyright (c) 2023 Alex313031
 
 # Mesa USE flags.
 #media-libs/mesa egl gles2 shared-glapi
@@ -20,9 +20,9 @@ media-libs/mesa-reven egl gles2 shared-glapi
 #sys-kernel/chromeos-kernel-4_19 apply_patches modules
 
 # For CrOS Kernel 5.x.x
-sys-kernel/chromeos-kernel-5_4 apply_patches modules
-sys-kernel/chromeos-kernel-5_10 apply_patches modules
-sys-kernel/chromeos-kernel-5_15 apply_patches modules
+sys-kernel/chromeos-kernel-5_4 apply_patches lld llvm llvm_ias modules
+sys-kernel/chromeos-kernel-5_10 apply_patches clang lld modules
+sys-kernel/chromeos-kernel-5_15 apply_patches clang lld modules
 
 # Enable codecs and disable debug stuff.
 # Enable split debug to avoid relocation overflows, b/279487992.
@@ -69,6 +69,9 @@ media-plugins/alsa-plugins -ffmpeg
 
 # Build libffmpeg.so library. (Not needed when building Chromium locally.)
 # media-video/ffmpeg chromium build_separate_libffmpeg
+
+# Fix proprietary codecs
+media-video/ffmpeg gpl postproc
 
 # Enable NodeJS
 # net-libs/nodejs -system-icu -system-ssl ssl npm inspector
