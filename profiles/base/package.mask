@@ -4,4 +4,4 @@
 
 sys-kernel/chromeos-kernel-4_14::chromiumos
 
-# media-libs/lpe-support-blacklist::chromiumos
+media-libs/lpe-support-blacklist::chromiumos
