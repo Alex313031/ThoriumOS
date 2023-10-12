@@ -25,4 +25,7 @@ modify_kernel_command_line() {
   # Mitigate risk from running untrusted VMs.
   echo "kvm-intel.vmentry_l1d_flush=always" >> "$1"
 
+  # Disable kernel auditing
+  echo "audit=0" >> "$1"
+
 }
