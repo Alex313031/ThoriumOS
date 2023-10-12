@@ -10,6 +10,7 @@ base-config: &base_config
     screensaver-extension-id: "bnabjkecnachpogjlfilfcnlpcmacglh"
   identity:
     platform-name: amd64-frick
+    customization-id: amd64-frick
   name: amd64-frick
   camera:
     legacy-usb: True
