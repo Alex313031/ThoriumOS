@@ -28,8 +28,6 @@ cros_workon --board=${BOARD} start chromeos-base/chromiumos-assets &&
 build_packages --board=${BOARD} --no-withdebug --no-withautotest
 build_image --board=${BOARD} --no-enable-rootfs-verification dev
 
-# Update /etc/lsb-release with name
-
 #build_packages --board=${BOARD} --no-withdebug --no-withautotest --cleanbuild
 
 # LIST CURRENT CROS_WORKON PACKAGES.
@@ -42,6 +40,8 @@ cros flash usb:// ${BOARD}/latest
 /usr/sbin/chromeos-install --dst /dev/sda
 
 # MOUNT IMAGE AND UNMOUNT
+# Update /etc/lsb-release with name
+
 ./mount_gpt_image.sh --board=${BOARD} --most_recent --noread_only --nosafe
 ./mount_gpt_image.sh --board=${BOARD} --unmount
 
