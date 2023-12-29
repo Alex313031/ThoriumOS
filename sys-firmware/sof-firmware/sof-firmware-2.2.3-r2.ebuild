@@ -18,7 +18,8 @@ S=${WORKDIR}/sof-bin-v${PV}
 src_install() {
 	dodir /lib/firmware/intel
 	dodir /usr/bin
-	FW_DEST="${D}/lib/firmware/intel" TOOLS_DEST="${D}/usr/bin" "${S}/install.sh" v${PV} || die
+	FW_DEST="${D}/lib/firmware/intel" TOOLS_DEST="${T}/tools-not-installed" \
+		"${S}/install.sh" v${PV} || die
 }
 
 pkg_preinst() {

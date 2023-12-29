@@ -1,2 +1,0 @@
-include /sys-apps/fwupd/OWNERS
-include chromiumos/owners:v1:/device/OWNERS.reven_boot

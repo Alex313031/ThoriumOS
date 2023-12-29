@@ -1,0 +1,13 @@
+# Copyright 2023 The ChromiumOS Authors
+# Use of this source code is governed by a BSD-style license that can be
+# found in the LICENSE file.
+
+# HP t530 fails to receive eapol packets during EAP-TLS exchange unless allmulti
+# is enabled. The root cause is unknown therefore the fix is being applied
+# outside of the kernel.
+ACTION=="add|change", \
+  SUBSYSTEM=="net", \
+  ATTRS{vendor}=="0x10ec", \
+  ATTRS{device}=="0x8168", \
+  ATTR{[dmi/id]modalias}=="dmi:*pnHPt530ThinClient*", \
+  RUN+="/bin/ifconfig %k allmulti"

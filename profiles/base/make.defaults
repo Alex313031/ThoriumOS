@@ -1,5 +1,9 @@
 # Copyright (c) 2023 The Chromium OS Authors and Alex313031. All rights reserved.
-# Distributed under the terms of the GNU General Public License v2
+# Use of this source code is governed by a BSD-style license that can be
+# found in the LICENSE file.
+
+# Initial value just for style purposes.
+#USE=""
 
 # Set the kernel configuration/arch.
 CHROMEOS_KERNEL_ARCH="x86_64"
@@ -17,8 +21,9 @@ CFLAGS="${CFLAGS} -O3 -msse4.1 -Wno-error"
 CXXFLAGS="${CXXFLAGS} -O3 -msse4.1 -Wno-error"
 CFLAGS_MODULE="${CFLAGS_MODULE} -O3 -msse4.1 -Wno-error"
 LDFLAGS="${LDFLAGS} -Wl,-O3 -Wl,--lto-O3"
-#CPU USE EXPAND FLAGS
+# CPU USE EXPAND FLAGS
 CPU_FLAGS_X86="${CPU_FLAGS_X86} mmx mmxext sse sse2 sse3 ssse3 sse4_1"
+USE="${USE} march_x86-64"
 
 # Include many firmwares as this is a "generic" board and might run on a
 # wide variety of platforms with who knows what kind of hardware. -cros-pd disables USB-PD EC firmware updating.
@@ -29,9 +34,6 @@ INPUT_DEVICES="${INPUT_DEVICES} keyboard mouse evdev cmt synaptics"
 
 # Use LLVM amdgpu target when building LLVM.
 LLVM_TARGETS="AMDGPU X86"
-
-# Initial value just for style purposes.
-#USE=""
 
 # Enable optional features on generic overlays, minus wifi bootstrapping for avahi-daemon.
 USE="${USE} beep screensaver screensavers webui-tab-strip ppapi ffmpeg -wifi_bootstrapping"

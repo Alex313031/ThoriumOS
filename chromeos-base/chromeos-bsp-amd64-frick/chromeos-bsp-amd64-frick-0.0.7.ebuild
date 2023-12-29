@@ -19,6 +19,7 @@ RDEPEND="
 	!<chromeos-base/gestures-conf-0.0.2
 	chromeos-base/device-appid
 	chromeos-base/flex_bluetooth
+	chromeos-base/flex_hwis
 	chromeos-base/reven-hwdb
 	chromeos-base/reven-quirks
 	sys-firmware/fwupd-uefi-dbx
