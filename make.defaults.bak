@@ -1,4 +1,4 @@
-# Copyright (c) 2022 The Chromium OS Authors and Alex313031. All rights reserved.
+# Copyright 2023 The ChromiumOS Authors and Alex313031
 # Distributed under the terms of the GNU General Public License v2
 
 # This file should go in //chromiumos/src/third_party/chromiumos-overlay/profiles/targets/sdk/
@@ -17,6 +17,9 @@ USE="${USE} hardened multilib pic pie -introspection -cracklib"
 # Custom USE flag ebuilds can use to determine whether it's going into the sdk
 # or into a target board.
 USE="${USE} cros_host"
+
+# We do not use cron in the SDK.
+USE="${USE} -cron"
 
 # Disable all x11 USE flags for packages within chroot.
 USE="${USE} -gtk2 -gtk3 -qt4"
@@ -37,6 +40,12 @@ USE="${USE} -vala"
 
 # We only have one rootfs.
 USE="${USE} -split-usr"
+
+# We don't need smi so don't enable it to simplify dependencies.
+USE="${USE} -smi"
+
+# We shouldn't need VA-API accel in the SDK.
+USE="${USE} -vaapi"
 
 # Various runtime features that control emerge behavior.
 # See "man 5 make.conf" for details.
@@ -60,6 +69,10 @@ CFLAGS="-O3 -pipe -msse4.1"
 CXXFLAGS="-O3 -pipe -msse4.1"
 CPU_FLAGS_X86="${CPU_FLAGS_X86} mmx mmxext sse sse2 sse3 ssse3 sse4_1"
 LDFLAGS="-Wl,-O3 -Wl,--lto-O3 -Wl,--as-needed"
+RUSTFLAGS="-Ctarget-cpu=x86-64 -Copt-level=3 -Ctarget-feature=+msse4.1"
+
+# The SDK doesn't have video cards.
+VIDEO_CARDS="-*"
 
 # We want to migrate away from this at some point.
 # https://crbug.com/360346
