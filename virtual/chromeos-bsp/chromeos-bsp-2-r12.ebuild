@@ -24,6 +24,7 @@ IUSE="chrome-dev-flags drivefs frick-wallpapers libassistant thoriumos widevine 
 #	dev-python/itsdangerous
 #	dev-python/werkzeug
 #	media-libs/libjxl
+#	net-misc/gsutil
 
 RDEPEND="
 	!chromeos-base/chromeos-bsp-null
@@ -81,7 +82,6 @@ RDEPEND="
 	net-libs/miniupnpc
 	net-misc/bridge-utils
 	net-misc/curl
-	net-misc/gsutil
 	net-misc/iperf
 	net-misc/iputils
 	net-misc/libdiagcfg
