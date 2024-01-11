@@ -7,6 +7,9 @@ chromiumos/src/third_party/chromiumos-overlay/eclass/cros-board.eclass
 # REMEMBER TO SET ALEX NAME IN /etc/lsb-release!
 # REMEMBER TO COPY chromeos-base/chromeos-chrome FILES!
 
+# "is_official_build=true" > chromeos-base/chrome-icu
+# API_KEYS > chromeos-base/chromeos-chrome & chromeos-base/chrome-icu
+
 # //chromiumos/src/third_party/chromiumos-overlay/profiles/targets/sdk/ make.defaults.bak
 
 # KERNEL CONFIG
