@@ -65,6 +65,7 @@ RDEPEND="
 	dev-util/mem
 	dev-util/strace
 	dev-vcs/git
+	sys-firmware/b43-firmware
 	sys-firmware/intel-ucode-firmware
 	sys-firmware/sof-firmware
 	sys-kernel/linux-firmware
