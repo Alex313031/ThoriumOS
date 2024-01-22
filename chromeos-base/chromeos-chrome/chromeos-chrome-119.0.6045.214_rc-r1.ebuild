@@ -319,6 +319,7 @@ set_build_args() {
 		"use_vr_assets_component=true"
 		"enable_platform_hevc=true"
 		"enable_platform_ac3_eac3_audio=true"
+		"enable_platform_ac4_audio=true"
 		"enable_platform_dolby_vision=true"
 		"enable_platform_mpeg_h_audio=true"
 		"enable_platform_dts_audio=true"
