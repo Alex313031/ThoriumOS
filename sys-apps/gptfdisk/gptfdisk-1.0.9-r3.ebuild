@@ -1,4 +1,4 @@
-# Copyright 1999-2023 Gentoo Authors and Alex313031
+# Copyright 1999-2024 Gentoo Authors and Alex313031
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="7"
@@ -11,7 +11,7 @@ SRC_URI="mirror://sourceforge/${PN}/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~alpha amd64 arm arm64 ~hppa ~ia64 ~loong ~mips ppc ppc64 ~riscv sparc x86 amd64-linux x86-linux"
+KEYWORDS="~alpha amd64 arm arm64 ~hppa ~ia64 ~loong ~mips ppc ppc64 ~riscv sparc x86 ~amd64-linux ~x86-linux"
 IUSE="ncurses static"
 
 # libuuid from util-linux is required.
@@ -33,6 +33,7 @@ DEPEND="
 PATCHES=(
 	"${FILESDIR}/${PN}-1.0.9-libuuid.patch" #844073
 	"${FILESDIR}/${PN}-1.0.9-popt_segv.patch" #872131
+	"${FILESDIR}"/${PN}-1.0.9-build_flags.patch
 	"${FILESDIR}"/${PN}-1.0.9-musl-1.2.4.patch
 )
 

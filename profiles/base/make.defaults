@@ -130,7 +130,7 @@ USE="${USE} -gpu_sandbox_start_early"
 USE="${USE} frecon"
 #USE="${USE} fbconsole vtconsole"
 
-# LLVM is required to build the llvmpipe and radeon drivers.
+# LLVM is required to build the llvmpipe, mesa-reven, and radeon drivers.
 USE="${USE} llvm"
 
 # Enable libglvnd for big GL.

@@ -20,10 +20,10 @@ sudo emerge net-print/cups
 setup_board --board=${BOARD} --force &&
 cros_workon --board=${BOARD} start sys-kernel/chromeos-kernel-5_15 &&
 cros_workon --board=${BOARD} start chromeos-base/chromiumos-assets &&
-build_packages --board=${BOARD} --no-withdebug --no-withautotest
-build_image --board=${BOARD} --no-enable-rootfs-verification dev
+cros build-packages --board=${BOARD} --no-withdebug --no-withautotest
+cros build-image --board=${BOARD} --no-enable-rootfs-verification dev
 
-#build_packages --board=${BOARD} --no-withdebug --no-withautotest --cleanbuild
+#cros build-packages --board=${BOARD} --no-withdebug --no-withautotest --cleanbuild
 
 # LIST CURRENT CROS_WORKON PACKAGES.
 cros_workon --board=${BOARD} list

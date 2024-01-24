@@ -1,4 +1,4 @@
-# Copyright 1999-2023 Gentoo Authors and Alex313031
+# Copyright 1999-2024 Gentoo Authors and Alex313031
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="7"
@@ -20,16 +20,15 @@ SRC_URI="
 
 LICENSE="BSD"
 SLOT="0/17"
-KEYWORDS="amd64 arm arm64 hppa ~loong ~mips ppc ppc64 ~riscv ~s390 sparc x86"
+KEYWORDS="amd64 arm arm64 ~hppa ~loong ~mips ppc ppc64 ~riscv ~s390 sparc x86"
 IUSE="ipv6"
 
-RDEPEND=""
 BDEPEND="
 	kernel_linux? ( sys-apps/lsb-release )
 	verify-sig? ( sec-keys/openpgp-keys-miniupnp )
 "
 
-VERIFY_SIG_OPENPGP_KEY_PATH=${BROOT}/usr/share/openpgp-keys/miniupnp.asc
+VERIFY_SIG_OPENPGP_KEY_PATH=/usr/share/openpgp-keys/miniupnp.asc
 
 src_prepare() {
 	local PATCHES=(
@@ -39,7 +38,7 @@ src_prepare() {
 
 	local exprs=(
 		# These bins are not installed, upnpc-static requires building static lib
-		-e '/EXECUTABLES =/s/ upnpc-static listdevices//'
+		-e '/EXECUTABLES =/s/ upnpc-static upnp-listdevices-static//'
 		# Prevent gzipping manpage.
 		-e '/gzip/d'
 		# Disable installing the static library
