@@ -1,4 +1,4 @@
-# Copyright (c) 2023 The Chromium OS Authors and Alex313031. All rights reserved.
+# Copyright (c) 2024 The Chromium OS Authors and Alex313031. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -14,19 +14,20 @@ CHROMEOS_KERNEL_SPLITCONFIG="chromeos-x86_64-reven"
 # This aligns with Chrome requirements:
 # SSE2: https://crbug.com/350175
 # SSE3: https://docs.google.com/document/d/1QUzL4MGNqX4wiLvukUwBf6FdCL35kCDoEJTm2wMkahw/preview
-# Added SSE4, AVX, AES, and O3 compiler optimizations.
-BOARD_COMPILER_FLAGS="-march=x86-64 -msse4.1 -O3"
+# Added SSE4 and O3 compiler optimizations.
+BOARD_COMPILER_FLAGS="-march=x86-64 -msse3 -mssse3 -msse4.1 -O3"
 BOARD_RUSTFLAGS="-Ctarget-cpu=x86-64 -Copt-level=3 -Ctarget-feature=+msse4.1"
-CFLAGS="${CFLAGS} -O3 -msse4.1 -Wno-error"
-CXXFLAGS="${CXXFLAGS} -O3 -msse4.1 -Wno-error"
-CFLAGS_MODULE="${CFLAGS_MODULE} -O3 -msse4.1 -Wno-error"
-LDFLAGS="${LDFLAGS} -Wl,-O3 -Wl,--lto-O3"
+CFLAGS="${CFLAGS} -O3 -msse3 -mssse3 -msse4.1 -Wno-error"
+CXXFLAGS="${CXXFLAGS} -O3 -msse3 -mssse3 -msse4.1 -Wno-error"
+CFLAGS_MODULE="${CFLAGS_MODULE} -O3 -msse3 -mssse3 -msse4.1 -Wno-error"
+LDFLAGS="${LDFLAGS} -msse3 -mssse3 -msse4.1 -Wl,-O3 -Wl,--lto-O3"
 # CPU USE EXPAND FLAGS
 CPU_FLAGS_X86="${CPU_FLAGS_X86} mmx mmxext sse sse2 sse3 ssse3 sse4_1"
-USE="${USE} march_x86-64"
 
-# Include many firmwares as this is a "generic" board and might run on a
-# wide variety of platforms with who knows what kind of hardware. -cros-pd disables USB-PD EC firmware updating.
+USE="${USE} march_x86-64 mmx mmxext sse sse2 sse3 ssse3 sse4_1"
+
+# Include many firmwares as this is a "generic" board and might run on a wide variety
+# of platforms with who knows what kind of hardware. -cros-pd disables USB-PD EC firmware updating.
 LINUX_FIRMWARE="${LINUX_FIRMWARE} amd_ucode ath3k-all iwlwifi-all brcmfmac-all -cros-pd intel_ucode rfkill"
 
 # Set input devices for generic board.
@@ -42,9 +43,6 @@ USE="${USE} bluetooth cros_disks scanner ml_service power_management cups highli
 
 # Remove debug constructs.
 USE="${USE} -debug -chrome_debug -chrome_debug_tests -chromeless_tests -cros-debug"
-
-# CPU USE Flags.
-USE="${USE} mmx mmxext sse sse2 sse3 ssse3 sse4_1"
 
 # Enable non-free codecs and components.
 USE="${USE} chrome_media vaapi x264 x265 hevc_codec widevine lto thinlto"
@@ -66,7 +64,7 @@ USE="${USE} legacy_usb usb legacy_keyboard legacy_power_button pcserial diagnost
 USE="${USE} uefi"
 
 # Kernel configuration.
-USE="${USE} -kernel-4_4 -kernel-4_14 -kernel-4_19 -kernel-5_4 -kernel-5_10 kernel-5_15 i2cdev builtin_fw_x86_intel_ucode builtin_fw_x86_amd_ucode linux_firmware_amd_ucode nouveau legacy_amd64_cpu_support"
+USE="${USE} -kernel-4_4 -kernel-4_14 -kernel-4_19 -kernel-5_4 -kernel-5_10 kernel-5_15 -kernel-6_1 -kernel-6_6 i2cdev builtin_fw_x86_intel_ucode builtin_fw_x86_amd_ucode linux_firmware_amd_ucode nouveau legacy_amd64_cpu_support"
 USE="${USE} headers linux-mod linux_headers linux-headers it87 amd_ucode ath3k-all iwlwifi-all brcmfmac-all -cros-pd intel_ucode rfkill iwlwifi_rescan rtl8188ee edid"
 
 # USE flags from FydeOS
@@ -80,6 +78,9 @@ USE="${USE} initramfs split-ucode"
 
 # Enable the OS installation feature
 USE="${USE} os_install_service"
+
+# Enable the flexor package.
+USE="${USE} flexor"
 
 # Enable libinput to handle touchpad if the gestures library is not working well.
 USE="${USE} libinput"
@@ -156,14 +157,6 @@ USE="${USE} vivid"
 # Include the kernel in the base image.
 USE="${USE} include_vmlinuz"
 
-# Disable unibuild on this legacy board. This is only for existing (as of Jan 2019)
-# boards as all new boards must be unibuild enabled moving forward. Do not copy this
-# to new boards as it will be rejected. See
-# https://chromium.googlesource.com/chromiumos/platform2/+/HEAD/chromeos-config/README.md
-# for further details about chromeos-config, which is the required entry point for
-# unified builds.
-# USE="${USE} -unibuild"
-
 # Enable chromeos-config and unibuild.
 USE="${USE} unibuild has_chromeos_config_bsp"
 
@@ -184,7 +177,7 @@ VIDEO_CARDS="i965 i915 intel iris iHD iHD_g8 iHD_g9 iHD_g11 iHD_g12 llvmpipe nou
 #VIDEO_CARDS="${VIDEO_CARDS} vc4 fbdev"
 
 # b/195140252: Do not run the factory tasts.
-#USE="${USE} no_factory_flow"
+USE="${USE} no_factory_flow"
 
 # Virtual machines don't have physical TPMs.
 # Enable TPM2.0 simulator on it.
@@ -197,4 +190,4 @@ USE="${USE} vtpm_proxy tpm_insecure_fallback tpm_fallback"
 USE="${USE} -video_capture_use_gpu_memory_buffer"
 
 # Enable VKMS for compositor testing on VMs
-USE="${USE} vkms drm_atomic"
+#USE="${USE} vkms drm_atomic"

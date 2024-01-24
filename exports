@@ -14,11 +14,6 @@ export CHROME_BUILD_TYPE='_official' &&
 export OFFICIAL_BUILD='1' &&
 export BUILDTYPE=Release
 
-## EMERGE COMMANDS
-#sudo emerge app-arch/tar
-#sudo emerge app-admin/sysstat
-#sudo emerge sys-process/iotop
-
 sudo emerge net-print/cups
 
 # BUILD COMMANDS (cros_workon is optional to build kernel from source.)
