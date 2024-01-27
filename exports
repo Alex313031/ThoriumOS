@@ -21,8 +21,12 @@ setup_board --board=${BOARD} --force &&
 cros_workon --board=${BOARD} start sys-kernel/chromeos-kernel-5_15 &&
 cros_workon --board=${BOARD} start chromeos-base/chromiumos-assets &&
 cros_workon --board=${BOARD} start chromeos-base/chromeos-login &&
+cros_workon --board=${BOARD} start chromeos-base/oobe_config &&
 cros build-packages --board=${BOARD} --no-withdebug --no-withautotest
 cros build-image --board=${BOARD} --no-enable-rootfs-verification dev
+
+# Locaition of chrome
+//chromiumos/out/sdk/cache/chromeos-chrome/chrome-src/src/out_amd64-frick/Release/
 
 #cros build-packages --board=${BOARD} --no-withdebug --no-withautotest --cleanbuild
 
