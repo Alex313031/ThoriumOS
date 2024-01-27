@@ -17,7 +17,8 @@ SLOT="b43"
 KEYWORDS="amd64 ~arm64 ppc x86"
 RESTRICT="binchecks bindist strip"
 
-BDEPEND=">=net-wireless/b43-fwcutter-015"
+RDEPEND="net-wireless/b43-fwcutter"
+BDEPEND="net-wireless/b43-fwcutter"
 
 src_compile() {
 	mkdir ebuild-output || die

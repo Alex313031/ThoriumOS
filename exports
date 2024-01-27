@@ -6,7 +6,6 @@ repo rebase
 repo sync -j4
 
 ## EXPORT COMMANDS
-# export BOARD=amd64-generic
 export BOARD=amd64-frick &&
 export NINJA_SUMMARIZE_BUILD=1 &&
 export CHROME_ORIGIN=LOCAL_SOURCE &&
@@ -20,6 +19,7 @@ sudo emerge net-print/cups
 setup_board --board=${BOARD} --force &&
 cros_workon --board=${BOARD} start sys-kernel/chromeos-kernel-5_15 &&
 cros_workon --board=${BOARD} start chromeos-base/chromiumos-assets &&
+cros_workon --board=${BOARD} start chromeos-base/chromeos-login &&
 cros build-packages --board=${BOARD} --no-withdebug --no-withautotest
 cros build-image --board=${BOARD} --no-enable-rootfs-verification dev
 

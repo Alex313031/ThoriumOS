@@ -1,7 +1,7 @@
 # Useful aliases for the chroot's .bashrc
 
 alias ..='cd ..'
-alias cd='cd ~/chromiumos/src/scripts'
+alias scripts='cd ~/chromiumos/src/scripts'
 alias la='ls -A --color=auto'
 alias ll='ls --color=auto -l'
 alias exports='export BOARD=amd64-frick && export NINJA_SUMMARIZE_BUILD=1 && export CHROME_ORIGIN=LOCAL_SOURCE && export CHROME_BUILD_TYPE='_official' && export OFFICIAL_BUILD=1' && export BUILDTYPE=Release
