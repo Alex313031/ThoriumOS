@@ -1,0 +1,38 @@
+# Metadata information for this directory.
+#
+# For more information on DIR_METADATA files, see:
+#   https://source.chromium.org/chromium/infra/infra/+/HEAD:go/src/infra/tools/dirmd/README.md
+#
+# For the schema of this file, see Metadata message:
+#   https://source.chromium.org/chromium/infra/infra/+/HEAD:go/src/infra/tools/dirmd/proto/dir_metadata.proto
+
+monorail {
+  component: "Infra>Client>Chrome"
+}
+
+chromeos {
+  cq {
+    source_test_plans {
+      test_plan_starlark_files {
+        host: "chrome-internal.googlesource.com"
+        project: "chromeos/config-internal"
+        path: "test/plans/v2/ctpv1_compatible/parallels_cq.star"
+      }
+      test_plan_starlark_files {
+        host: "chrome-internal.googlesource.com"
+        project: "chromeos/config-internal"
+        path: "test/plans/v2/ctpv1_compatible/video_conference_cq_critical.star"
+      }
+      test_plan_starlark_files {
+        host: "chrome-internal.googlesource.com"
+        project: "chromeos/config-internal"
+        path: "test/plans/v2/ctpv1_compatible/privacyhub_cq.star"
+      }
+      test_plan_starlark_files {
+        host: "chrome-internal.googlesource.com"
+        project: "chromeos/config-internal"
+        path: "test/plans/v2/ctpv1_compatible/chrome_uprev_cq.star"
+      }
+    }
+  }
+}
