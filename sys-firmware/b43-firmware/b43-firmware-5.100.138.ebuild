@@ -17,7 +17,10 @@ SLOT="b43"
 KEYWORDS="amd64 ~arm64 ppc x86"
 RESTRICT="binchecks bindist strip"
 
-RDEPEND="net-wireless/b43-fwcutter"
+RDEPEND="
+	net-wireless/b43-fwcutter
+	sys-kernel/linux-firmware
+"
 BDEPEND="net-wireless/b43-fwcutter"
 
 src_compile() {
