@@ -1,7 +1,7 @@
-# Copyright 1999-2021 Gentoo Authors
+# Copyright 1999-2024 Gentoo Authors and Alex313031
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI="7"
 
 inherit toolchain-funcs
 
@@ -22,10 +22,14 @@ DEPEND="
 
 DOCS=( README.md )
 
+src_configure() {
+	cros_allow_gnu_build_tools
+}
+
 src_prepare() {
 	default
 	sed \
-		-e "s/-lncurses/$($(tc-getPKG_CONFIG) --libs ncurses)/" \
+		-e "s@-lncurses@$($(tc-getPKG_CONFIG) --libs ncurses)@" \
 		-i Makefile || die
 }
 

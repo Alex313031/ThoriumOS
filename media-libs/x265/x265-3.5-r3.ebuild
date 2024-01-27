@@ -3,7 +3,7 @@
 
 EAPI="7"
 
-inherit cmake multilib-minimal multibuild
+inherit cmake multilib-minimal multilib multibuild flag-o-matic
 
 if [[ ${PV} = 9999* ]]; then
 	inherit git-r3
@@ -157,6 +157,9 @@ x265_variant_src_configure() {
 }
 
 multilib_src_configure() {
+
+	cros_allow_gnu_build_tools
+
 	local myabicmakeargs=(
 		-DENABLE_TESTS=$(usex test ON OFF)
 		$(multilib_is_native_abi || echo "-DENABLE_CLI=OFF")

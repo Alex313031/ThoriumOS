@@ -35,6 +35,9 @@ RDEPEND="opencl? ( >=virtual/opencl-0-r3[${MULTILIB_USEDEP}] )"
 DOCS=( AUTHORS doc/{ratecontrol,regression_test,standards,threads,vui}.txt )
 
 multilib_src_configure() {
+
+	cros_allow_gnu_build_tools
+
 	tc-export CC
 
 	if [[ ${ABI} == x86 || ${ABI} == amd64 ]]; then
