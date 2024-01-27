@@ -14,6 +14,7 @@ export OFFICIAL_BUILD='1' &&
 export BUILDTYPE=Release
 
 sudo emerge net-print/cups
+sudo emerge net-wireless/b43-fwcutter
 
 # BUILD COMMANDS (cros_workon is optional to build kernel from source.)
 setup_board --board=${BOARD} --force &&

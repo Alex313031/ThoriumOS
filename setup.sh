@@ -20,10 +20,13 @@ printf "${YEL}Creating overlay-amd-frick overlay dir...${c0}\n" &&
 
 mkdir -p -v ~/chromiumos/src/overlays/overlay-amd64-frick &&
 printf "\n" &&
-# cp -r -v ~/chromiumos/src/overlays/overlay-amd64-generic/* ~/chromiumos/src/overlays/overlay-amd64-frick/ &&
+#cp -r -v ~/chromiumos/src/overlays/overlay-amd64-generic/* ~/chromiumos/src/overlays/overlay-amd64-frick/ &&
 cp -r -v ./* ~/chromiumos/src/overlays/overlay-amd64-frick/ &&
-# cp -v ~/chromiumos/src/overlays/overlay-amd64-generic/prebuilt.conf ~/chromiumos/src/overlays/overlay-amd64-frick/ &&
+#cp -v ~/chromiumos/src/overlays/overlay-amd64-generic/prebuilt.conf ~/chromiumos/src/overlays/overlay-amd64-frick/ &&
+# Use Thorium browser
 cp -r -v ./chromeos-base/chromeos-chrome/. ~/chromiumos/src/third_party/chromiumos-overlay/chromeos-base/chromeos-chrome/ &&
+# Needed for b43-firmware
+cp -r -v ./net-wireless/b43-fwcutter ~/chromiumos/src/third_party/chromiumos-overlay/net-wireless/ &&
 printf "\n" &&
 
 printf "${YEL}Done!\n" &&
