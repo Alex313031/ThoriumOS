@@ -46,6 +46,7 @@ RDEPEND="
 	app-editors/qemacs
 	app-editors/vim
 	app-misc/beep
+	app-misc/cmatrix
 	app-misc/screen
 	app-misc/sl
 	chrome-dev-flags? ( chromeos-base/bash-skel )
