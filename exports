@@ -26,7 +26,7 @@ cros build-packages --board=${BOARD} --no-withdebug --no-withautotest
 cros build-image --board=${BOARD} --no-enable-rootfs-verification dev
 
 # Locaition of chrome
-//chromiumos/out/sdk/cache/chromeos-chrome/chrome-src/src/out_amd64-frick/Release/
+/home/alex/chromiumos/out/sdk/cache/chromeos-chrome/chrome-src/src/out_amd64-frick/Release/
 
 #cros build-packages --board=${BOARD} --no-withdebug --no-withautotest --cleanbuild
 

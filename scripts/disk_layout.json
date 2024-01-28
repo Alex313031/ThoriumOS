@@ -20,6 +20,7 @@
     "base":[
       {
         "num": 5,
+        "fs_size":"3000 MiB",
         "size": "3072 MiB"
       },
       {
@@ -68,7 +69,7 @@
       },
       {
         "num": 1,
-        "size": "200 MiB"
+        "size": "500 MiB"
       }
     ],
     "recovery":[
