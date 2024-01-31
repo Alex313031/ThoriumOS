@@ -10,7 +10,7 @@ chromiumos/src/third_party/chromiumos-overlay/eclass/cros-board.eclass
 # "is_official_build=true" > chromeos-base/chrome-icu
 # API_KEYS > chromeos-base/chromeos-chrome & chromeos-base/chrome-icu
 
-# //chromiumos/src/third_party/chromiumos-overlay/profiles/targets/sdk/ make.defaults.bak
+# make.defaults.bak : //chromiumos/src/third_party/chromiumos-overlay/profiles/targets/sdk/make.defaults
 
 # KERNEL CONFIG
 
