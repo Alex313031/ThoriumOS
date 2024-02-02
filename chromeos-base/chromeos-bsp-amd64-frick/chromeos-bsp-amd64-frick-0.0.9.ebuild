@@ -15,7 +15,7 @@ IUSE=""
 S="${WORKDIR}"
 
 # TODO(b/321687359), remove once root issue is resolved.
-DEPEND="sys-apps/busybox"
+# DEPEND="sys-apps/busybox"
 # Add dependencies on other ebuilds from within this board overlay
 RDEPEND="
 	!<chromeos-base/gestures-conf-0.0.2
