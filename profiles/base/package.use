@@ -14,15 +14,21 @@ media-libs/mesa-reven egl gles2 shared-glapi
 #media-libs/waffle -wayland gbm opengles
 #media-libs/piglit waffle
 
+# For VMware
+app-emulation/open-vm-tools -icu resolutionkms fuse vgauth -deploypkg dnet pam
+
 # For CrOS Kernel 4.x.x
 #sys-kernel/chromeos-kernel-4_4 apply_patches modules
 #sys-kernel/chromeos-kernel-4_14 apply_patches modules
 #sys-kernel/chromeos-kernel-4_19 apply_patches modules
 
 # For CrOS Kernel 5.x.x
-sys-kernel/chromeos-kernel-5_4 apply_patches lld llvm llvm_ias modules
+sys-kernel/chromeos-kernel-5_4 apply_patches clang lld llvm llvm_ias modules
 sys-kernel/chromeos-kernel-5_10 apply_patches clang lld modules
 sys-kernel/chromeos-kernel-5_15 apply_patches clang lld modules
+
+# Use explicit config
+#sys-kernel/linux-firmware savedconfig
 
 # Enable codecs and disable debug stuff.
 # Enable split debug to avoid relocation overflows, b/279487992.

@@ -27,6 +27,8 @@ cp -r -v ./* ~/chromiumos/src/overlays/overlay-amd64-frick/ &&
 cp -r -v ./chromeos-base/chromeos-chrome/. ~/chromiumos/src/third_party/chromiumos-overlay/chromeos-base/chromeos-chrome/ &&
 # Needed for b43-firmware
 cp -r -v ./net-wireless/b43-fwcutter ~/chromiumos/src/third_party/chromiumos-overlay/net-wireless/ &&
+# Aliases for chroot's bashrc
+cp -v ./chroot-bashrc ~/chromiumos/out/home/alex/.bashrc &&
 printf "\n" &&
 
 printf "${YEL}Done!\n" &&
@@ -64,8 +66,8 @@ echo "
      ||     \ __________ /     ||     
      ||                        ||     
      ||________________________||     
-    //__/__/__/__/__\__\__\__\__\\    
-   //__/__/__/__/____\__\__\__\__\\   
+    //__/__/__/__/__\__\__\__\__\\\    
+   //__/__/__/__/____\__\__\__\__\\\   
   /       /________________\       \  
  /__________________________________\ 
  \__________________________________/ 

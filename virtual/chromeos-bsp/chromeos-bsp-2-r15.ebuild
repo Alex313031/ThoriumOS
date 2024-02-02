@@ -1,4 +1,4 @@
-# Copyright 2023 The Chromium OS Authors and Alex313031. All rights reserved.
+# Copyright 2024 The Chromium OS Authors and Alex313031. All rights reserved.
 # Distributed under the terms of the GNU General Public License v2
 
 # https://www.chromium.org/chromium-os/external-bsp-hosting/
@@ -47,8 +47,10 @@ RDEPEND="
 	app-editors/vim
 	app-misc/beep
 	app-misc/cmatrix
+	app-misc/neofetch
 	app-misc/screen
 	app-misc/sl
+	app-text/dos2unix
 	chrome-dev-flags? ( chromeos-base/bash-skel )
 	chromeos-base/assistant-dlc
 	chromeos-base/chromeos-bsp-amd64-frick
@@ -70,8 +72,12 @@ RDEPEND="
 	sys-firmware/intel-ucode-firmware
 	sys-firmware/sof-firmware
 	sys-kernel/linux-firmware
+	sys-firmware/mssl1680-firmware
 	media-libs/cros-camera-hal-usb
 	media-libs/display-link-bin
+	media-libs/intel-lpe-audio-config
+	media-libs/lpe-support-blacklist
+	media-libs/lpe-support-topology
 	media-libs/mesa-reven
 	media-libs/x264
 	media-libs/x265
@@ -129,6 +135,8 @@ RDEPEND="
 
 DEPEND="${RDEPEND}"
 
+	# app-emulation/open-vm-tools
+	# virtual/gentoo-extra-pkgs
 	# !net-wireless/broadcom-sta
 	# !net-wireless/rtl8188eu
 	# !net-wireless/rtl8723au

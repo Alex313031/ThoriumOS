@@ -1,0 +1,166 @@
+#!/bin/bash
+
+# ==== Please configure =====
+VMWARE_DISKLIB_PATH=~/vmware-vix-disklib-distrib
+OVFTOOL_PATH=/usr/bin
+# ===========================
+
+if [[ "$#" -ne 2 ]]; then
+	echo "usage: create-image.sh <path/to/chromiumos_test_image.bin> <result.ova>"
+	exit 1
+fi
+
+DISKMGR="env LD_LIBRARY_PATH=$VMWARE_DISKLIB_PATH/lib64 $VMWARE_DISKLIB_PATH/bin64/vmware-vdiskmanager"
+if [[ ! -f "$VMWARE_DISKLIB_PATH/bin64/vmware-vdiskmanager" ]]; then
+	echo "vdiskmanager not found"
+	exit 1
+fi
+OVFTOOL=$OVFTOOL_PATH/ovftool
+if [[ ! -f "$OVFTOOL" ]]; then
+	echo "ovftool not found"
+	exit 1
+fi
+
+if [[ ! -f "$1" ]]; then
+	echo "Source disk image not found"
+	exit 1
+fi
+
+set -e
+
+TARGET_FILE=$2
+DISK_FILE_NAME=__tmp_disk$RANDOM.vmdk
+
+echo Removing temp files that may exist...
+find . -maxdepth 1 -name '__tmp_*.vm*' -delete
+
+echo Converting image to $DISK_FILE_NAME...
+qemu-img convert -O vmdk $1 $DISK_FILE_NAME
+
+echo Resizing $DISK_FILE_NAME to 15G...
+$DISKMGR -x 15GB $DISK_FILE_NAME
+
+TEMP_VMX=__tmp_vmx$RANDOM.vmx
+echo Creating $TEMP_VMX...
+cat << EOF > $TEMP_VMX
+displayname = "openfyde"
+guestos = "other5xlinux-64"
+virtualhw.version = "18"
+config.version = "8"
+numvcpus = "4"
+memsize = "4096"
+cpuid.numSMT = "1"
+numa.vcpu.coresPerNode = "0"
+pciBridge0.present = "TRUE"
+pciBridge4.present = "TRUE"
+pciBridge4.virtualDev = "pcieRootPort"
+pciBridge4.functions = "8"
+pciBridge5.present = "TRUE"
+pciBridge5.virtualDev = "pcieRootPort"
+pciBridge5.functions = "8"
+pciBridge6.present = "TRUE"
+pciBridge6.virtualDev = "pcieRootPort"
+pciBridge6.functions = "8"
+pciBridge7.present = "TRUE"
+pciBridge7.virtualDev = "pcieRootPort"
+pciBridge7.functions = "8"
+vmci0.present = "TRUE"
+ide1:0.clientDevice = "FALSE"
+ide1:0.deviceType = "atapi-cdrom"
+ide1:0.autodetect = "TRUE"
+ide1:0.startConnected = "FALSE"
+ide1:0.allowguestconnectioncontrol = "true"
+ethernet0.present = "TRUE"
+ethernet0.virtualDev = "e1000"
+ethernet0.connectionType = "nat"
+ethernet0.startConnected = "TRUE"
+ethernet0.addressType = "generated"
+ethernet0.wakeonpcktrcv = "true"
+ethernet0.allowguestconnectioncontrol = "true"
+usb.present = "TRUE"
+ehci.present = "TRUE"
+nvme0:0.present = "TRUE"
+nvme0:0.deviceType = "disk"
+nvme0:0.fileName = "$DISK_FILE_NAME"
+nvme0:0.allowguestconnectioncontrol = "false"
+nvme0:0.mode = "persistent"
+nvme0.present = "TRUE"
+sound.present = "TRUE"
+sound.virtualDev = "hdaudio"
+sound.autodetect = "TRUE"
+vmci0.unrestricted = "false"
+vcpu.hotadd = "true"
+mem.hotadd = "true"
+tools.syncTime = "false"
+toolscripts.afterpoweron = "true"
+toolscripts.afterresume = "true"
+toolscripts.beforepoweroff = "true"
+toolscripts.beforesuspend = "true"
+powerType.powerOff = "soft"
+powerType.reset = "soft"
+powerType.suspend = "soft"
+virtualHW.productCompatibility = "hosted"
+sound.fileName = "-1"
+floppy0.present = "FALSE"
+pciBridge0.pciSlotNumber = "17"
+pciBridge4.pciSlotNumber = "21"
+pciBridge5.pciSlotNumber = "22"
+pciBridge6.pciSlotNumber = "23"
+pciBridge7.pciSlotNumber = "24"
+usb.pciSlotNumber = "32"
+ethernet0.pciSlotNumber = "33"
+sound.pciSlotNumber = "34"
+ehci.pciSlotNumber = "35"
+nvme0.pciSlotNumber = "160"
+nvme0:0.redo = ""
+svga.vramSize = "268435456"
+vmotion.checkpointFBSize = "4194304"
+vmotion.checkpointSVGAPrimarySize = "268435456"
+vmci0.id = "986647951"
+monitor.phys_bits_used = "45"
+cleanShutdown = "TRUE"
+softPowerOff = "TRUE"
+usb:1.speed = "2"
+usb:1.present = "TRUE"
+usb:1.deviceType = "hub"
+usb:1.port = "1"
+usb:1.parent = "-1"
+svga.guestBackedPrimaryAware = "TRUE"
+firmware = "efi"
+checkpoint.vmState = ""
+vmotion.svga.mobMaxSize = "1073741824"
+vmotion.svga.graphicsMemoryKB = "1048576"
+mks.enable3d = "TRUE"
+svga.graphicsMemoryKB = "1048576"
+vmotion.svga.supports3D = "1"
+vmotion.svga.baseCapsLevel = "9"
+vmotion.svga.maxPointSize = "1"
+vmotion.svga.maxTextureSize = "16384"
+vmotion.svga.maxVolumeExtent = "2048"
+vmotion.svga.maxTextureAnisotropy = "16"
+vmotion.svga.lineStipple = "0"
+vmotion.svga.dxMaxConstantBuffers = "14"
+vmotion.svga.dxProvokingVertex = "0"
+vmotion.svga.sm41 = "1"
+vmotion.svga.multisample2x = "1"
+vmotion.svga.multisample4x = "1"
+vmotion.svga.msFullQuality = "1"
+vmotion.svga.logicOps = "1"
+vmotion.svga.bc67 = "9"
+vmotion.svga.sm5 = "1"
+vmotion.svga.multisample8x = "1"
+vmotion.svga.logicBlendOps = "1"
+usb:0.present = "TRUE"
+usb:0.deviceType = "hid"
+usb:0.port = "0"
+usb:0.parent = "-1"
+EOF
+
+echo Creating ova file...
+$OVFTOOL --acceptAllEulas "$TEMP_VMX" "$TARGET_FILE"
+echo $TARGET_FILE created!
+
+echo Removing temp files...
+rm $TEMP_VMX
+rm $DISK_FILE_NAME
+

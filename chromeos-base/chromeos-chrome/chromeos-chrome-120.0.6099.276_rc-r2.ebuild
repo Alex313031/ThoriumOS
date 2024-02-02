@@ -78,7 +78,7 @@ IUSE="
 	v4l2_codec
 	v4lplugin
 	+vaapi
-	verbose
+	+verbose
 	vtable_verify
 	xkbcommon
 	+widevine
@@ -314,7 +314,6 @@ set_build_args() {
 		"rtc_build_examples=false"
 		"rtc_use_pipewire=false"
 		"enable_vr=true"
-		"use_vr_assets_component=true"
 		"enable_platform_hevc=true"
 		"enable_hevc_parser_and_hw_decoder=true"
 		"enable_platform_ac3_eac3_audio=true"

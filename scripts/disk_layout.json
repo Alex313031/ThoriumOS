@@ -1,5 +1,5 @@
 {
-  "_comment": "Copyright (c) 2023 Alex313031",
+  "_comment": "Copyright (c) 2024 Alex313031",
   "_comment": "See http://www.chromium.org/chromium-os/developer-guide/disk-layout-format",
   "parent": "legacy_disk_layout.json",
   "layouts":{
@@ -15,18 +15,16 @@
       {
         "num": 12,
         "size": "128 MiB"
-      }
-    ],
-    "base":[
+      },
       {
         "num": 5,
-        "fs_size":"3000 MiB",
-        "size": "3072 MiB"
+        "size":"3724 MiB"
       },
       {
         "num": 3,
-        "fs_size":"3000 MiB",
-        "size": "3072 MiB"
+        # caculate: size = fs_size / 64  + 200 (M)
+        "fs_size":"3484 MiB",
+        "size":"3724 MiB"
       },
       {
         "num": 1,
@@ -42,8 +40,8 @@
       },
       {
         "num": 3,
-        "fs_size":"3000 MiB",
-        "size": "3072 MiB"
+        "fs_size":"3484 MiB",
+        "size": "3724 MiB"
       },
       {
         "num": 1,
@@ -53,8 +51,8 @@
     "usb-updatable":[
       {
         "num": 3,
-        "fs_size":"3000 MiB",
-        "size": "3072 MiB"
+        "fs_size":"3484 MiB",
+        "size": "3724 MiB"
       },
       {
         "num": 1,
@@ -64,8 +62,8 @@
     "factory_install": [
       {
         "num": 3,
-        "size": "520 MiB",
-        "fs_size": "512 MiB"
+        "fs_size":"3484 MiB",
+        "size": "3724 MiB"
       },
       {
         "num": 1,
@@ -75,8 +73,8 @@
     "recovery":[
       {
         "num": 3,
-        "fs_size":"3000 MiB",
-        "size": "3072 MiB"
+        "fs_size":"3484 MiB",
+        "size": "3724 MiB"
       }
     ],
     "4gb-rootfs": [

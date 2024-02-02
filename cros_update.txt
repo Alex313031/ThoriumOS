@@ -1,22 +1,5 @@
-esdfs intel_lpe
-
 # board specific setup
 skip_blacklist_check=1
-skip_test_image_content=1
-FLAGS_boot_args="${FLAGS_boot_args} audit=0"
-
-# package.mask
-sys-kernel/chromeos-kernel-4_14::chromiumos
-media-libs/lpe-support-blacklist::chromiumos
-
-# package.use
-sys-kernel/chromeos-kernel-5_4 clang apply_patches lld llvm llvm_ias
->=sys-kernel/chromeos-kernel-5_4-9999 -apply_patches lld llvm llvm_ias
-sys-kernel/chromeos-kernel-5_10 apply_patches clang lld
-sys-kernel/linux-firmware savedconfig
-
-
-# files/powerd
 
 # virtual/openfyde-board-spec
 

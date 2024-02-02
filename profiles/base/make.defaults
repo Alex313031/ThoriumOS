@@ -68,7 +68,7 @@ USE="${USE} -kernel-4_4 -kernel-4_14 -kernel-4_19 -kernel-5_4 -kernel-5_10 kerne
 USE="${USE} headers linux-mod linux_headers linux-headers it87 amd_ucode ath3k-all iwlwifi-all brcmfmac-all -cros-pd intel_ucode rfkill iwlwifi_rescan rtl8188ee edid"
 
 # USE flags from FydeOS
-#USE="${USE} esdfs intel_lpe"
+USE="${USE} esdfs intel_lpe"
 
 #USE="${USE} usb_gadget usbguard usbip udev autoexpand lxc magic cros-ec"
 
@@ -181,10 +181,10 @@ USE="${USE} no_factory_flow"
 
 # Virtual machines don't have physical TPMs.
 # Enable TPM2.0 simulator on it.
-USE="${USE} tpm_dynamic tpm tpm2 tpm2_simulator tpm2_simulator_manufacturer"
+USE="${USE} tpm tpm2 tpm_dynamic tpm2_simulator tpm2_simulator_manufacturer"
 
 # Enable vTPM proxy on board for driver-level TPM simulator.
-USE="${USE} vtpm_proxy tpm_insecure_fallback tpm_fallback"
+USE="${USE} vtpm_proxy tpm_fallback tpm_insecure_fallback"
 
 # No support for zero-copy on virtual machines. Comment out for physical machines.
 USE="${USE} -video_capture_use_gpu_memory_buffer"

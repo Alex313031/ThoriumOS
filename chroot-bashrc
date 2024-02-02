@@ -1,10 +1,29 @@
+# /etc/skel/.bashrc
+#
+# This file is sourced by all *interactive* bash shells on startup,
+# including some apparently interactive shells such as scp and rcp
+# that can't tolerate any output.  So make sure this doesn't display
+# anything or bad things will happen !
+
+
+# Test for an interactive shell.  There is no need to set anything
+# past this point for scp and rcp, and it's important to refrain from
+# outputting anything in those cases.
+if [[ $- != *i* ]] ; then
+	# Shell is non-interactive.  Be done now!
+	return
+fi
+
+
+# Put your fun stuff here.
+
 # Useful aliases for the chroot's .bashrc
 
 alias ..='cd ..'
-alias scripts='cd ~/chromiumos/src/scripts'
+alias scripts='cd /mnt/host/source/src/scripts'
 alias la='ls -A --color=auto'
 alias ll='ls --color=auto -l'
-alias exports='export BOARD=amd64-frick && export NINJA_SUMMARIZE_BUILD=1 && export CHROME_ORIGIN=LOCAL_SOURCE && export CHROME_BUILD_TYPE='_official' && export OFFICIAL_BUILD=1' && export BUILDTYPE=Release
+alias exports="export BOARD=amd64-frick && export NINJA_SUMMARIZE_BUILD=1 && export CHROME_ORIGIN=LOCAL_SOURCE && export CHROME_BUILD_TYPE=\'_official\' && export OFFICIAL_BUILD=1 && export BUILDTYPE=Release"
 alias bashconf='nano -m -g ~/.bashrc'
 alias bas='source ~/.bashrc'
 alias s='sync'
@@ -12,5 +31,6 @@ alias flash='cros flash usb:// ${BOARD}/latest'
 alias hist='cat /home/alex/.bash_history | grep '
 alias fl='sudo fdisk --list'
 alias clr='clear'
+alias cls='clear'
 alias c='%'
 alias rmdd='sudo rm -r -v '

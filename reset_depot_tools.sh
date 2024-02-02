@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Copyright (c) 2022 Alex313031 and Midzer.
+# Copyright (c) 2024 Alex313031.
 
 YEL='\033[1;33m' # Yellow
 CYA='\033[1;96m' # Cyan
@@ -24,10 +24,18 @@ displayHelp () {
 	printf "${bold}${YEL}from your home directory, and then re-clone depot_tools in \$HOME.${c0}\n" &&
 	printf "\n"
 }
-
 case $1 in
 	--help) displayHelp; exit 0;;
 esac
+
+# chromium/src dir env variable
+if [ -z "${CR_DIR}" ]; then 
+    CR_SRC_DIR="$HOME/chromium/src"
+    export CR_SRC_DIR
+else 
+    CR_SRC_DIR="${CR_DIR}"
+    export CR_SRC_DIR
+fi
 
 printf "\n" &&
 printf "${YEL}Removing depot_tools, etc...${c0}\n" &&
@@ -59,7 +67,5 @@ source ~/.bashrc &&
 
 printf "\n" &&
 
-printf "${GRE}Completed. ${YEL}You can now run ./trunk.sh\n"
-tput sgr0 &&
-
-exit 0
+printf "${GRE}Completed. ${YEL}You can now run \'./trunk.sh\'\n"
+tput sgr0
