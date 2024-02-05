@@ -1,37 +1,198 @@
 {
   "_comment": "Copyright (c) 2024 Alex313031",
   "_comment": "See http://www.chromium.org/chromium-os/developer-guide/disk-layout-format",
-  "parent": "legacy_disk_layout.json",
-  "layouts":{
-    "common":[
+  # See README_disk_layout
+  "parent": "common_disk_layout.json",
+  "metadata": {
+    "block_size": 512,
+    "fs_block_size": 4096
+  },
+  "layouts": {
+    # common is the standard layout template.
+    "common": [
       {
+        # Reserve space for RW firmware. Only used on some boards.
+        "num": 11,
+        "label": "RWFW",
+        "type": "firmware",
+        "size": "8 MiB"
+      },
+      {
+        # Unused partition, reserved for software slot C.
+        "num": 6,
+        "label": "KERN-C",
+        "type": "kernel"
+      },
+      {
+        # Unused partition, reserved for software slot C.
+        "num": 7,
+        "label": "ROOT-C",
+        "type": "rootfs"
+      },
+      {
+        # Unused partition, reserved for future changes.
+        "num": 9,
+        "type": "reserved",
+        "label": "reserved"
+      },
+      {
+        # Unused partition, reserved for future changes.
+        "num": 10,
+        "type": "reserved",
+        "label": "reserved"
+      },
+      {
+        # Pad out so Kernel A starts on a 4096 block boundry for
+        # performance. This is especially important on Daisy.
+        "type": "blank",
+        "size": "2014 KiB"
+      },
+      {
+        # Kernel for Slot A, no file system.
         "num": 2,
+        "label": "KERN-A",
+        "type": "kernel",
+        "size": "16 MiB"
+      },
+      {
+        # Kernel for Slot B, no file system.
+        "num": 4,
+        "label": "KERN-B",
+        "type": "kernel",
+        "size": "16 MiB"
+      },
+      {
+        # Board specific files, mostly unused.
+        "num": 8,
+        "label": "OEM",
+        "type": "data",
+        "fs_format": "ext4",
+        "size": "16 MiB",
+        "uuid": "random"
+      },
+      {
+        # Pad out, but not sure why.
+        "type": "blank",
         "size": "64 MiB"
       },
       {
-        "num": 4,
-        "size": "64 MiB"
+        # Used for Legacy Bios, and EFI Bios, not ChromeOS hardware
+        "num": 12,
+        "label": "EFI-SYSTEM",
+        "type": "efi",
+        "fs_format": "vfat",
+        "size": "32 MiB",
+        "uuid": "clear"
       },
+      {
+        # Slot B rootfs. Must match Root A in side for normal
+        # updates. Will contain copy of Root A after install, and
+        # contain new rootfs's after runtime updates.
+        "num": 5,
+        "label": "ROOT-B",
+        "type": "rootfs",
+        "size": "4 GiB"
+      },
+      {
+        # Slot A rootfs. Rootfs + extras (AKA verity) must fit, AKA:
+        #   size <= FS size + Verity size
+        #
+        # Verity's size can be found by:
+        #   verity_bytes = div_round_up(fs_bytes, 128) +
+        #                  div_round_up(fs_bytes, 16384) + 4096
+        #
+        # That means that the FS MiB should be:
+        #   ((total_MiB * 1024 * 1024 - 4096) * 16384 / 16513) / (1024 * 1024)
+        #
+        # The reason to not set your fs_size to be exactly what is specified
+        # by the formula above is to make builds start failing a little bit
+        # before we're truly out of space, allowing a quick release valve to
+        # relieve some of the pressure while we try to find other ways to save
+        # space.
+        #
+        # Note that in the past it was observed that updates would fail if the
+        # rootfs size shrunk (crbug.com/192136).  There are no known reasons to
+        # shrink the rootfs size, but if you come up with one you should
+        # revisit that bug and make sure it won't affect you.
+        #
+        # Changes to the offset of this partition may require
+        # changes in cros-signing/security_test_baselines/
+        # ensure_secure_kernelparams.config to allow secure boot.
+        "num": 3,
+        "label": "ROOT-A",
+        "type": "rootfs",
+        "fs_format": "ext2",
+        "fs_options": {
+          "squashfs": "-noI -no-exports -comp lzo -Xalgorithm lzo1x_999 -Xcompression-level 9",
+          "ext2": "-i 65536",
+          "btrfs": "skinny-metadata"
+        },
+        "size": "4 GiB",
+        "fs_size": "4000 MiB",
+        "uuid": "clear"
+      },
+      {
+        # User data, fills all remaining space on drive.
+        "num": 1,
+        "label": "STATE",
+        "type": "data",
+        "fs_format": "ext4",
+        "size": "3 GiB",
+        "features": ["expand"],
+        "uuid": "random"
+      }
+    ],
+    # Used for installs on main device
+    # by default, same as 'common'.
+    "base": [
+    ],
+    # Used for bootable USB installs (not recovery).
+    "usb": [
+      {
+        # Slot B rootfs, unused on USB, but pad to 2M.
+        # installation will expand this to size from base.
+        "num": 5,
+        "size": "2 MiB"
+      }
+    ],
+    # CAN apply updates when running from USB.
+    "usb-updatable": [
+    ],
+    # Used for factory install images.
+    "factory_install": [
       {
         "num": 12,
-        "size": "128 MiB"
+        "size": "32 MiB"
       },
       {
         "num": 5,
-        "size":"3724 MiB"
+        "size": "2 MiB"
       },
       {
         "num": 3,
-        # caculate: size = fs_size / 64  + 200 (M)
-        "fs_size":"3484 MiB",
-        "size":"3724 MiB"
+        "size": "480 MiB",
+        "fs_size": "460 MiB",
+        "fs_options": {
+          "ext2": "-i 32768"
+        }
       },
       {
         "num": 1,
-        "size": "4 GiB"
+        "size": "140 MiB"
       }
     ],
-    "usb":[
+    # Used for recovery images.
+    "recovery": [
+      {
+        # Kernel for Slot A, no file system.
+        # Make the partition as large as the firmware supports so we can boot
+        # larger recovery kernels.  The kernel won't actually be this large.
+        # NB: firmware defaulted to 32 MiB since 2015
+        # (https://crrev.com/c/281806), and was increased to 512 MiB in 2018
+        # (https://crbug.com/873135#c5).
+        "num": 2,
+        "size": "32 MiB"
+      },
       {
         # Slot B rootfs, unused on USB, but pad to 2M.
         # installation will expand this to size from base.
@@ -39,100 +200,37 @@
         "size": "2 MiB"
       },
       {
-        "num": 3,
-        "fs_size":"3484 MiB",
-        "size": "3724 MiB"
-      },
-      {
+        # Stateful on recovery is dynamically resized larger.
         "num": 1,
-        "size": "4 GiB"
+        "size": "2 MiB"
       }
     ],
-    "usb-updatable":[
-      {
-        "num": 3,
-        "fs_size":"3484 MiB",
-        "size": "3724 MiB"
-      },
-      {
-        "num": 1,
-        "size": "6 GiB"
-      }
-    ],
-    "factory_install": [
-      {
-        "num": 3,
-        "fs_size":"3484 MiB",
-        "size": "3724 MiB"
-      },
-      {
-        "num": 1,
-        "size": "500 MiB"
-      }
-    ],
-    "recovery":[
-      {
-        "num": 3,
-        "fs_size":"3484 MiB",
-        "size": "3724 MiB"
-      }
-    ],
+    # Very large rootfs, suitable for development with symbols,
+    # etc. Cannot apply updates when running from USB (no slot B)
     "4gb-rootfs": [
       {
-        "num": 2,
-        "size": "64 MiB"
-      },
-      {
-        "num": 4,
-        "size": "64 MiB"
-      },
-      {
-        "num": 12,
-        "size": "128 MiB"
-      },
-      {
         "num": 5,
-        "fs_size":"4000 MiB",
-        "size": "4096 MiB"
+        "size": "2 MiB"
       },
       {
+        # This partition is larger than the base partition, so the
+        # installer will corrupt the disk during installation.
         "num": 3,
-        "fs_size": "4000 MiB",
-        "size": "4096 MiB"
-      },
-      {
-        "num": 1,
-        "size": "6 GiB"
+        "size": "4 GiB",
+        "fs_size": "4000 MiB"
       }
     ],
     # Huge rootfs, suitable for VM only images, should not be used
     # for actual hardware devices.
     "16gb-rootfs": [
       {
-        "num": 2,
-        "size": "64 MiB"
-      },
-      {
-        "num": 4,
-        "size": "64 MiB"
-      },
-      {
-        "num": 12,
-        "size": "128 MiB"
-      },
-      {
         "num": 5,
-        "fs_size":"4000 MiB",
-        "size": "4096 MiB"
+        "size": "2 MiB"
       },
       {
         "num": 3,
-        "fs_size": "16000 MiB",
-        "size": "16384 MiB"
-      },
-      {
-        "num": 1,
-        "size": "6 GiB"
+        "size": "16 GiB",
+        "fs_size": "16000 MiB"
       }
     ]
   }

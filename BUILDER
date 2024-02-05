@@ -6,6 +6,7 @@ chromiumos/src/third_party/chromiumos-overlay/eclass/cros-board.eclass
 
 # REMEMBER TO SET ALEX NAME IN /etc/lsb-release!
 # REMEMBER TO COPY chromeos-base/chromeos-chrome FILES!
+# REMOVE apply_landlock_policy form chromeos-base/chromeos-login
 
 # "is_official_build=true" > chromeos-base/chrome-icu
 # API_KEYS > chromeos-base/chromeos-chrome & chromeos-base/chrome-icu
@@ -51,6 +52,7 @@ libassistant
 chrome_targets+=( app_shell ) > chrome_targets+=( app_shell chrome content_shell)
 
 		"is_official_build=true"
+		"thin_lto_enable_cache=true"
 		"is_time_of_day_supported=true"
 		"enable_stripping=true"
 		"dcheck_always_on=false"
@@ -75,7 +77,7 @@ chrome_targets+=( app_shell ) > chrome_targets+=( app_shell chrome content_shell
 		"enable_ink=false"
 		"enable_discovery=true"
 		"enable_cros_media_app=false"
-		"clang_use_chrome_plugins=true"
+		"clang_use_chrome_plugins=false"
 		"enable_ffmpeg_video_decoders=true"
 		"is_component_ffmpeg=false"
 		"use_webaudio_ffmpeg=false"

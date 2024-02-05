@@ -274,6 +274,7 @@ set_build_args() {
 		#
 		# Build with Thorium args
 		"is_official_build=true"
+		"thin_lto_enable_cache=true"
 		"is_time_of_day_supported=true"
 		"enable_stripping=true"
 		"dcheck_always_on=false"

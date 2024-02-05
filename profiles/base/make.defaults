@@ -127,8 +127,8 @@ USE="${USE} direncription_allow_v2"
 USE="${USE} -gpu_sandbox_start_early"
 
 # Use frecon, the freon graphics virtual terminal for devices using KMS for graphics setting.
-USE="${USE} frecon"
-#USE="${USE} fbconsole vtconsole"
+USE="${USE} frecon vtconsole"
+#USE="${USE} fbconsole"
 
 # LLVM is required to build the llvmpipe, mesa-reven, and radeon drivers.
 USE="${USE} llvm"

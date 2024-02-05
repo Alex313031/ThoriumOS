@@ -21,7 +21,7 @@ printf "${YEL}Creating overlay-amd-frick overlay dir...${c0}\n" &&
 mkdir -p -v ~/chromiumos/src/overlays/overlay-amd64-frick &&
 printf "\n" &&
 #cp -r -v ~/chromiumos/src/overlays/overlay-amd64-generic/* ~/chromiumos/src/overlays/overlay-amd64-frick/ &&
-cp -r -v ./* ~/chromiumos/src/overlays/overlay-amd64-frick/ &&
+cp -r -v ./. ~/chromiumos/src/overlays/overlay-amd64-frick/ &&
 #cp -v ~/chromiumos/src/overlays/overlay-amd64-generic/prebuilt.conf ~/chromiumos/src/overlays/overlay-amd64-frick/ &&
 # Use Thorium browser
 cp -r -v ./chromeos-base/chromeos-chrome/. ~/chromiumos/src/third_party/chromiumos-overlay/chromeos-base/chromeos-chrome/ &&
@@ -38,7 +38,7 @@ printf "${YEL}Done!\n" &&
 printf "\n" &&
 printf "${YEL}Copying other files from this repo into //chromiumos/src/platform/${c0}\n" &&
 
-cp -r -v ./platform/* ~/chromiumos/src/platform/
+cp -r -v ./platform/. ~/chromiumos/src/platform/
 printf "\n" &&
 printf "${YEL}Done!\n" &&
 printf "\n" &&
