@@ -91,7 +91,7 @@
         "num": 5,
         "label": "ROOT-B",
         "type": "rootfs",
-        "size": "4 GiB"
+        "size":"3724 MiB"
       },
       {
         # Slot A rootfs. Rootfs + extras (AKA verity) must fit, AKA:
@@ -127,8 +127,8 @@
           "ext2": "-i 65536",
           "btrfs": "skinny-metadata"
         },
-        "size": "4 GiB",
-        "fs_size": "4000 MiB",
+        "size": "3724 MiB",
+        "fs_size": "3484 MiB",
         "uuid": "clear"
       },
       {
@@ -157,6 +157,15 @@
     ],
     # CAN apply updates when running from USB.
     "usb-updatable": [
+      {
+        "num": 3,
+        "size": "3724 MiB",
+        "fs_size": "3484 MiB"
+      },
+      {
+        "num": 1,
+        "size": "6 GiB"
+      }
     ],
     # Used for factory install images.
     "factory_install": [
@@ -170,15 +179,15 @@
       },
       {
         "num": 3,
-        "size": "480 MiB",
-        "fs_size": "460 MiB",
+        "size": "500 MiB",
+        "fs_size": "480 MiB",
         "fs_options": {
           "ext2": "-i 32768"
         }
       },
       {
         "num": 1,
-        "size": "140 MiB"
+        "size": "256 MiB"
       }
     ],
     # Used for recovery images.

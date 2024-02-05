@@ -34,6 +34,9 @@ sys-kernel/chromeos-kernel-5_15 apply_patches clang lld modules
 # Enable split debug to avoid relocation overflows, b/279487992.
 chromeos-base/chromeos-chrome -chrome_debug -cros-debug -chrome_debug_tests debug_fission chrome_media vaapi x264 x265 hevc_codec widevine
 
+# Fix Reven installer
+chromeos-base/chromeos-login -apply_landlock_policy
+
 # Tell diagnostics that it uses mesa-reven package.
 chromeos-base/diagnostics mesa_reven
 
