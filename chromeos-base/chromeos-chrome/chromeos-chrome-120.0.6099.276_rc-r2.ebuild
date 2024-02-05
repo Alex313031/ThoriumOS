@@ -298,7 +298,7 @@ set_build_args() {
 		"enable_ink=false"
 		"enable_discovery=true"
 		"enable_cros_media_app=false"
-		"clang_use_chrome_plugins=true"
+		"clang_use_chrome_plugins=false"
 		"enable_ffmpeg_video_decoders=true"
 		"is_component_ffmpeg=false"
 		"use_webaudio_ffmpeg=false"

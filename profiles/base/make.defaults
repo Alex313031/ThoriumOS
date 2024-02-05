@@ -3,7 +3,7 @@
 # found in the LICENSE file.
 
 # Initial value just for style purposes.
-#USE=""
+USE=""
 
 # Set the kernel configuration/arch.
 CHROMEOS_KERNEL_ARCH="x86_64"
@@ -173,7 +173,7 @@ USE="${USE} video_cards_vmware virgl"
 USE="${USE} legacy_firmware_ui"
 
 # Enable more video cards as this is a generic board. i915 is kept for posterity after M90.
-VIDEO_CARDS="i965 i915 intel iris iHD iHD_g8 iHD_g9 iHD_g11 iHD_g12 llvmpipe nouveau amdgpu radeon radeonsi vmware virgl"
+VIDEO_CARDS="${VIDEO_CARDS} i965 i915 intel iris iHD iHD_g8 iHD_g9 iHD_g11 iHD_g12 llvmpipe nouveau amdgpu radeon radeonsi vmware virgl"
 #VIDEO_CARDS="${VIDEO_CARDS} vc4 fbdev"
 
 # b/195140252: Do not run the factory tasts.
