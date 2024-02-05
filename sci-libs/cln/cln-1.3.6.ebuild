@@ -3,7 +3,7 @@
 
 EAPI="7"
 
-inherit toolchain-funcs flag-o-matic
+inherit autotools toolchain-funcs flag-o-matic
 
 DESCRIPTION="Class library (C++) for numbers"
 HOMEPAGE="https://www.ginac.de/CLN/"
@@ -17,6 +17,9 @@ IUSE="-doc +examples"
 RDEPEND="dev-libs/gmp:0="
 DEPEND="${RDEPEND}
 	doc? ( virtual/latex-base )"
+BDEPEND="${RDEPEND}
+	sys-devel/autoconf-archive
+"
 
 pkg_setup() {
 	use sparc && append-cppflags -DNO_ASM
