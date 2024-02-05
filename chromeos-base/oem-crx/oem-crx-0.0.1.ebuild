@@ -17,7 +17,7 @@ RDEPEND="chromeos-base/common-assets"
 DEPEND="${RDEPEND}"
 
 src_install() {
-	mkdir -v /mnt/stateful_partition/unencrypted/import_extensions
+	mkdir -p -v /mnt/stateful_partition/unencrypted/import_extensions
 
 	insinto /mnt/stateful_partition/unencrypted/import_extensions/
 	doins -r "${FILESDIR}"/crx/*
