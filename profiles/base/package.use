@@ -10,8 +10,8 @@ media-libs/mesa-reven egl gles2 shared-glapi
 #x11-libs/libva-intel-driver -wayland
 
 # Enabling wayland causes the wl_proxy_marshal_constructor_versioned not found
-# error in waffle.
-#media-libs/waffle -wayland gbm opengles
+# error in waffle. Also Documentation for me to read.
+media-libs/waffle gbm opengles doc -wayland
 #media-libs/piglit waffle
 
 # For VMware
@@ -36,9 +36,6 @@ chromeos-base/chromeos-chrome -chrome_debug -cros-debug -chrome_debug_tests debu
 
 # Fix Reven installer
 chromeos-base/chromeos-login -apply_landlock_policy
-
-# Documentation for me to read
-media-libs/waffle doc
 
 # Tell diagnostics that it uses mesa-reven package.
 chromeos-base/diagnostics mesa_reven

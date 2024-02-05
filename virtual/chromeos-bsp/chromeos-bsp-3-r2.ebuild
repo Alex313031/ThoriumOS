@@ -47,6 +47,7 @@ RDEPEND="
 	app-misc/beep
 	app-misc/cmatrix
 	app-misc/neofetch
+	app-misc/pi
 	app-misc/screen
 	app-misc/sl
 	app-text/dos2unix
@@ -69,7 +70,6 @@ RDEPEND="
 	dev-util/mem
 	dev-util/strace
 	dev-vcs/git
-	sci-libs/cln
 	sys-firmware/b43-firmware
 	sys-firmware/intel-ucode-firmware
 	sys-firmware/sof-firmware
