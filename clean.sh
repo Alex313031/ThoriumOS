@@ -18,7 +18,7 @@ try() { "$@" || die "${RED}Failed $*"; }
 printf "\n" &&
 printf "${YEL}Cleaning overlay-amd-frick overlay dir...${c0}\n" &&
 
-rm -r -v ~/chromiumos/src/overlays/overlay-amd64-frick &&
+sudo rm -r -v ~/chromiumos/src/overlays/overlay-amd64-frick &&
 
 printf "\n" &&
 printf "${GRE}Done!\n" &&
