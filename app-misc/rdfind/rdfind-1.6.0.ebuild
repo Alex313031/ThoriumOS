@@ -15,10 +15,11 @@ KEYWORDS="~alpha amd64 arm arm64 hppa ~ia64 ~loong ~m68k ~mips ppc ppc64 ~riscv 
 
 RDEPEND="dev-libs/nettle:="
 DEPEND="${RDEPEND}"
-BDEPEND="dev-build/autoconf-archive"
+BDEPEND="sys-devel/autoconf-archive"
 
 src_configure() {
 	cros_allow_gnu_build_tools
+	"${S}/configure"
 }
 
 src_prepare() {
@@ -31,4 +32,9 @@ src_test() {
 	local -x SANDBOX_PREDICT="${SANDBOX_PREDICT}"
 	addpredict /
 	default
+}
+
+src_install() {
+	emake
+	dobin rdfind
 }
