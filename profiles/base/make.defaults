@@ -115,7 +115,7 @@ USE="${USE} nfs vfat nvme mmc"
 USE="${USE} cryptohome_userdataauth_interface"
 #USE="${USE} uprev-4-to-5 has-kernelnext direncryption"
 
-# Enable using sudo
+# Enable using sudo in Crosh
 USE="${USE} login_enable_crosh_sudo"
 
 # Enable fscrypt v2 usage on 5.4+
