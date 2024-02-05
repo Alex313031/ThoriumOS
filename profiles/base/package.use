@@ -37,6 +37,9 @@ chromeos-base/chromeos-chrome -chrome_debug -cros-debug -chrome_debug_tests debu
 # Fix Reven installer
 chromeos-base/chromeos-login -apply_landlock_policy
 
+# Documentation for me to read
+media-libs/waffle docs
+
 # Tell diagnostics that it uses mesa-reven package.
 chromeos-base/diagnostics mesa_reven
 
