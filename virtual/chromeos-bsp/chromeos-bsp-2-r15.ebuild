@@ -19,7 +19,6 @@ KEYWORDS="*"
 IUSE="chrome-dev-flags drivefs frick-wallpapers libassistant thoriumos widevine gflags"
 
 #	dev-python/blinker
-#	dev-python/cherrypy
 #	dev-python/flask
 #	dev-python/itsdangerous
 #	dev-python/werkzeug
@@ -63,6 +62,7 @@ RDEPEND="
 	drivefs? ( chromeos-base/google-drive-fs )
 	widevine? ( chromeos-base/libwidevine )
 	gflags? ( dev-cpp/gflags )
+	dev-python/cherrypy
 	dev-python/dbus-python
 	dev-python/virtualenv
 	dev-util/mem
