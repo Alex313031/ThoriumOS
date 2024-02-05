@@ -45,7 +45,7 @@ USE="${USE} bluetooth cros_disks scanner ml_service power_management cups highli
 USE="${USE} -debug -chrome_debug -chrome_debug_tests -chromeless_tests -cros-debug"
 
 # Enable non-free codecs and components.
-USE="${USE} chrome_media vaapi x264 x265 hevc_codec widevine lto thinlto"
+USE="${USE} chrome_media vaapi x264 x265 hevc_codec widevine lto thinlto vainfo"
 #USE="${USE} app_shell content_shell"
 
 # Enable background blur on all graphics chipsets.
