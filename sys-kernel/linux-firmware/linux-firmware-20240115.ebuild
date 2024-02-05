@@ -45,9 +45,7 @@ BDEPEND="
 	deduplicate? ( app-misc/rdfind )"
 
 #add anything else that collides to this
-RDEPEND="
-		app-misc/rdfind
-		!savedconfig? (
+RDEPEND="!savedconfig? (
 			redistributable? (
 				!sys-firmware/alsa-firmware[alsa_cards_ca0132]
 				!sys-block/qla-fc-firmware
