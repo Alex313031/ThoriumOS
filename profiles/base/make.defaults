@@ -79,6 +79,9 @@ USE="${USE} initramfs split-ucode"
 # Enable the OS installation feature
 USE="${USE} os_install_service"
 
+# /var/lib/flex_id/flex_id
+USE="${USE} flex_id"
+
 # Enable the flexor package.
 #USE="${USE} flexor"
 
