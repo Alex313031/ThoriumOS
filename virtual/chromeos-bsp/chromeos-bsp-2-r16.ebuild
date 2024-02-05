@@ -47,6 +47,7 @@ RDEPEND="
 	app-misc/beep
 	app-misc/cmatrix
 	app-misc/neofetch
+	app-misc/rdfind
 	app-misc/screen
 	app-misc/sl
 	app-text/dos2unix
