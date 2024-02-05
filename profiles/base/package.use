@@ -38,7 +38,7 @@ chromeos-base/chromeos-chrome -chrome_debug -cros-debug -chrome_debug_tests debu
 chromeos-base/chromeos-login -apply_landlock_policy
 
 # Documentation for me to read
-media-libs/waffle docs
+media-libs/waffle doc
 
 # Tell diagnostics that it uses mesa-reven package.
 chromeos-base/diagnostics mesa_reven
