@@ -78,7 +78,7 @@ IUSE="
 	v4l2_codec
 	v4lplugin
 	+vaapi
-	+verbose
+	verbose
 	vtable_verify
 	xkbcommon
 	+widevine
