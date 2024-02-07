@@ -19,6 +19,7 @@ sudo emerge net-print/cups &&
 sudo emerge net-wireless/b43-fwcutter
 
 setup_board --board=${BOARD}
+
 cros_workon --board=${BOARD} start sys-kernel/chromeos-kernel-5_15 &&
 cros_workon --board=${BOARD} start chromeos-base/chromiumos-assets &&
 cros_workon --board=${BOARD} start chromeos-base/chromeos-login &&
