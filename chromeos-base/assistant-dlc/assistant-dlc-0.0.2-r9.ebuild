@@ -50,7 +50,6 @@ src_unpack() {
 
 src_install() {
 	exeinto "$(dlc_add_path ${CHROME_DIR})"
-	doexe "${LIBASSISTANT_DIR}/libassistant.so"
 	doexe "${LIBASSISTANT_DIR}/libassistant_v2.so"
 	dlc_src_install
 }

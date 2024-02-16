@@ -1,1 +1,5 @@
+# Allow the pupr bot to send the cls to CQ.
 include chromiumos/owners:v1:/bots/OWNERS.pupr
+
+# TODO: Add per-package OWNERS and delete this when done.
+*

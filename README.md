@@ -1,8 +1,8 @@
-![GitHub tag (latest SemVer)](https://img.shields.io/github/v/tag/alex313031/chromiumos?label=Version%3A) &nbsp;![GitHub commit activity](https://img.shields.io/github/commit-activity/w/alex313031/chromiumos?color=blueviolet&label=Commit%20Activity%3A) &nbsp;![Subreddit subscribers](https://img.shields.io/reddit/subreddit-subscribers/ChromiumOS?style=social)
+![GitHub tag (latest SemVer)](https://img.shields.io/github/v/tag/alex313031/chromiumos?label=Latest Image%3A) &nbsp;![GitHub commit activity](https://img.shields.io/github/commit-activity/w/alex313031/chromiumos?color=blueviolet&label=Commit%20Activity%3A) &nbsp;![Subreddit subscribers](https://img.shields.io/reddit/subreddit-subscribers/ChromiumOS?style=social)
 # ThoriumOS
 <img src="https://github.com/Alex313031/ThoriumOS/blob/main/images/thoriumos_bootsplash.png">
 
-## ChromiumOS fork with Thorium Browser, x264/x265 codecs, Widevine, Kernel 5.15, Linux Firmware/Modules support, Nouveau, Intel/AMD microcode, and extra packages.
+## ChromiumOS fork with Thorium Browser, x264/x265 codecs, Widevine, Kernel 5.15, Linux Firmware/Modules support, Nouveau, Intel/AMD microcode, Google DriveFS, and extra packages.
 
 > __SYNOPSIS: ThoriumOS aims to be the ChromiumOS counterpart to Thorium. It is based on tip-o-tree, and contains the compiler optimizations of Thorium applied to the whole OS. It contains a variety of extra developer friendly packages, and trys to support as much hardware as possible via kernel configuration, graphics stack configuration, and USE flags.__
 
