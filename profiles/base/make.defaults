@@ -58,7 +58,7 @@ USE="${USE} crostini bruschetta containers kvm kvm_host crosvm-gpu virtio_gpu ad
 USE="${USE} dlc dlc_test iioservice"
 
 # Enable legacy components for generic x64 board.
-USE="${USE} legacy_usb usb legacy_keyboard legacy_power_button pcserial diagnostics diag cras selinux_experimental fdformat"
+USE="${USE} legacy_usb usb legacy_keyboard legacy_power_button ac_power pcserial diagnostics diag cras selinux_experimental fdformat"
 
 # Enable support for some UEFI-specific features.
 USE="${USE} uefi"
@@ -193,7 +193,7 @@ USE="${USE} vtpm_proxy tpm_fallback tpm_insecure_fallback"
 USE="${USE} -video_capture_use_gpu_memory_buffer"
 
 # Enable VKMS for compositor testing on VMs
-#USE="${USE} vkms drm_atomic"
+USE="${USE} vkms drm_atomic"
 
 # Enable biod testing
 #USE="${USE} biod"
