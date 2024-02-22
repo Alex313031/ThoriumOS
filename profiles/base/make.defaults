@@ -83,7 +83,7 @@ USE="${USE} os_install_service"
 USE="${USE} flex_id"
 
 # Enable the flexor package.
-USE="${USE} flexor"
+#USE="${USE} flexor"
 
 # Enable libinput to handle touchpad if the gestures library is not working well.
 USE="${USE} libinput"
@@ -193,7 +193,7 @@ USE="${USE} vtpm_proxy tpm_fallback tpm_insecure_fallback"
 USE="${USE} -video_capture_use_gpu_memory_buffer"
 
 # Enable VKMS for compositor testing on VMs
-#USE="${USE} vkms drm_atomic"
+USE="${USE} vkms drm_atomic"
 
 # Enable biod testing
 #USE="${USE} biod"
