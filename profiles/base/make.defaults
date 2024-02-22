@@ -193,7 +193,7 @@ USE="${USE} vtpm_proxy tpm_fallback tpm_insecure_fallback"
 USE="${USE} -video_capture_use_gpu_memory_buffer"
 
 # Enable VKMS for compositor testing on VMs
-USE="${USE} vkms drm_atomic"
+#USE="${USE} vkms drm_atomic"
 
 # Enable biod testing
 #USE="${USE} biod"

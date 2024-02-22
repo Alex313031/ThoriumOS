@@ -14,7 +14,8 @@ chromiumos/src/third_party/chromiumos-overlay/eclass/cros-board.eclass
 
 # KERNEL CONFIG
 
-/home/alex/chromiumos/src/third_party/kernel/v5.15/chromeos/config/chromeos/x86_64/chromeos-x86_64-reven.flavour.config
+/home/alex/chromiumos/src/third_party/kernel/v5.15/chromeos/config/chromeos/x86_64
+chromeos-x86_64-reven.flavour.config
 
 CONFIG_LOCK_DOWN_KERNEL_FORCE_INTEGRITY=n
 CONFIG_LSM="landlock,yama,loadpin,safesetid,integrity,chromiumos,selinux"
