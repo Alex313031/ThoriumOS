@@ -51,7 +51,7 @@ IUSE="
 	+fonts
 	hibernate
 	hw_details
-	feature_management
+	+feature_management
 	goma_thinlto
 	+hevc_codec
 	+highdpi
@@ -275,7 +275,6 @@ set_build_args() {
 		# Build with Thorium args
 		"is_official_build=true"
 		"thin_lto_enable_cache=true"
-		"is_time_of_day_supported=true"
 		"enable_stripping=true"
 		"dcheck_always_on=false"
 		"exclude_unwind_tables=true"
@@ -373,7 +372,7 @@ set_build_args() {
 
 		# Whether the target board has any device models supporting the
 		# "time of day" wallpaper and screensaver collections.
-		# "is_time_of_day_supported=$(usetf feature_management)"
+		"is_time_of_day_supported=$(usetf feature_management)"
 	)
 
 	# BUILD_STRING_ARGS needs appropriate quoting. So, we keep them separate and

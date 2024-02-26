@@ -22,7 +22,6 @@ IUSE="chrome-dev-flags drivefs frick-wallpapers libassistant thoriumos widevine 
 #	dev-python/flask
 #	dev-python/itsdangerous
 #	dev-python/werkzeug
-#	media-libs/libjxl
 #	net-misc/gsutil
 
 RDEPEND="
@@ -79,6 +78,7 @@ RDEPEND="
 	media-libs/cros-camera-hal-usb
 	media-libs/display-link-bin
 	media-libs/intel-lpe-audio-config
+	media-libs/libjxl
 	media-libs/lpe-support-blacklist
 	media-libs/lpe-support-topology
 	media-libs/mesa-reven

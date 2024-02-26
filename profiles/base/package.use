@@ -1,4 +1,4 @@
-# Copyright (c) 2023 Alex313031
+# Copyright (c) 2024 The Chromium OS Authors and Alex313031.
 
 # Mesa USE flags.
 #media-libs/mesa egl gles2 shared-glapi

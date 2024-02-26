@@ -50,7 +50,6 @@ chrome_targets+=( app_shell ) > chrome_targets+=( app_shell chrome content_shell
 
 		"is_official_build=true"
 		"thin_lto_enable_cache=true"
-		"is_time_of_day_supported=true"
 		"enable_stripping=true"
 		"dcheck_always_on=false"
 		"exclude_unwind_tables=true"
