@@ -22,6 +22,7 @@ mkdir -p -v ~/chromiumos/src/overlays/overlay-amd64-frick &&
 printf "\n" &&
 #cp -r -v ~/chromiumos/src/overlays/overlay-amd64-generic/* ~/chromiumos/src/overlays/overlay-amd64-frick/ &&
 cp -r -v ./. ~/chromiumos/src/overlays/overlay-amd64-frick/ &&
+cp -r -v ./* ~/chromiumos/src/overlays/overlay-amd64-frick/ &&
 #cp -v ~/chromiumos/src/overlays/overlay-amd64-generic/prebuilt.conf ~/chromiumos/src/overlays/overlay-amd64-frick/ &&
 # Use Thorium browser
 cp -r -v ./chromeos-base/chromeos-chrome/. ~/chromiumos/src/third_party/chromiumos-overlay/chromeos-base/chromeos-chrome/ &&
@@ -29,10 +30,6 @@ cp -r -v ./chromeos-base/chromeos-chrome/. ~/chromiumos/src/third_party/chromium
 cp -r -v ./net-wireless/b43-fwcutter ~/chromiumos/src/third_party/chromiumos-overlay/net-wireless/ &&
 # Needed for linux-firmware
 cp -r -v ./app-misc/rdfind ~/chromiumos/src/third_party/chromiumos-overlay/app-misc/ &&
-# Copy our kernel config
-cp -v ./kconfigs/.config ~/chromiumos/src/third_party/kernel/v5.15/chromeos/config/chromeos/x86_64/chromeos-x86_64-frick.flavour.config &&
-# Aliases for chroot's bashrc
-cp -v ./chroot-bashrc ~/chromiumos/out/home/alex/.bashrc &&
 printf "\n" &&
 
 printf "${YEL}Done!\n" &&
@@ -41,6 +38,15 @@ printf "\n" &&
 printf "${YEL}Copying other files from this repo into //chromiumos/src/platform/${c0}\n" &&
 
 cp -r -v ./platform/. ~/chromiumos/src/platform/
+
+printf "\n" &&
+printf "${YEL}Copying kernel config and chroot .bashrc${c0}\n" &&
+
+# Copy our kernel config
+cp -v ./kconfigs/.config ~/chromiumos/src/third_party/kernel/v5.15/chromeos/config/chromeos/x86_64/chromeos-x86_64-frick.flavour.config &&
+# Aliases for chroot's bashrc
+cp -v ./chroot-bashrc ~/chromiumos/out/home/alex/.bashrc &&
+
 printf "\n" &&
 printf "${YEL}Done!\n" &&
 printf "\n" &&
