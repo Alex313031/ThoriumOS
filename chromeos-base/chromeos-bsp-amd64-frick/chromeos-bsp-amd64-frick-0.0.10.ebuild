@@ -20,6 +20,7 @@ S="${WORKDIR}"
 #DEPEND="sys-apps/busybox"
 RDEPEND="
 	!<chromeos-base/gestures-conf-0.0.2
+	!<chromeos-base/chromeos-bsp-reven-private-0.0.1-r20
 	chromeos-base/chromeos-config
 	chromeos-base/device-appid
 	chromeos-base/flex_bluetooth

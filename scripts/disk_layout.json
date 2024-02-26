@@ -1,6 +1,6 @@
 {
-  "_comment": "Copyright (c) 2024 Alex313031",
-  "_comment": "See http://www.chromium.org/chromium-os/developer-guide/disk-layout-format",
+  # Copyright (c) 2024 Alex313031
+  # See http://www.chromium.org/chromium-os/developer-guide/disk-layout-format
   # See README_disk_layout
   "parent": "common_disk_layout.json",
   "metadata": {
