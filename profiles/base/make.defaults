@@ -90,7 +90,7 @@ USE="${USE} os_install_service"
 USE="${USE} flex_id"
 
 # Enable the flexor package.
-#USE="${USE} flexor"
+USE="${USE} flexor"
 
 # Enable libinput to handle touchpad if the gestures library is not working well.
 USE="${USE} libinput"
