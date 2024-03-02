@@ -15,7 +15,7 @@ media-libs/waffle gbm opengles doc -wayland
 #media-libs/piglit waffle
 
 # For VMware
-app-emulation/open-vm-tools -icu resolutionkms fuse vgauth -deploypkg dnet pam
+#app-emulation/open-vm-tools -icu resolutionkms fuse vgauth -deploypkg dnet pam
 
 # For CrOS Kernel 4.x.x
 #sys-kernel/chromeos-kernel-4_4 apply_patches modules

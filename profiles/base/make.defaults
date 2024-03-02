@@ -70,8 +70,11 @@ USE="${USE} -apply_landlock_policy"
 
 # Kernel configuration.
 USE="${USE} -kernel-4_4 -kernel-4_14 -kernel-4_19 -kernel-5_4 -kernel-5_10 kernel-5_15 -kernel-6_1 -kernel-6_6"
-USE="${USE} i2cdev builtin_fw_x86_intel_ucode builtin_fw_x86_amd_ucode linux_firmware_amd_ucode nouveau legacy_amd64_cpu_support"
-USE="${USE} headers linux-mod linux_headers linux-headers it87 amd_ucode ath3k-all iwlwifi-all brcmfmac-all -cros-pd intel_ucode rfkill iwlwifi_rescan rtl8188ee edid"
+USE="${USE} i2cdev builtin_fw_x86_intel_ucode linux_firmware_amd_ucode nouveau legacy_amd64_cpu_support"
+USE="${USE} headers linux-mod linux_headers linux-headers it87 amd_ucode ath3k-all iwlwifi-all brcmfmac-all intel_ucode rfkill iwlwifi_rescan rtl8188ee edid -cros-pd"
+
+# Disabled by Alex313031 due to kernel breakage with upstream linux-firmware
+USE="${USE} -builtin_fw_x86_amd_ucode"
 
 # USE flags from FydeOS
 USE="${USE} esdfs intel_lpe"
@@ -90,7 +93,7 @@ USE="${USE} os_install_service"
 USE="${USE} flex_id"
 
 # Enable the flexor package.
-USE="${USE} flexor"
+#USE="${USE} flexor"
 
 # Enable libinput to handle touchpad if the gestures library is not working well.
 USE="${USE} libinput"
@@ -156,10 +159,10 @@ USE="${USE} libglvnd"
 USE="${USE} arc-camera3"
 
 # Enable sirenia for ManaTEE runtime environment testing.
-# USE="${USE} sirenia"
+#USE="${USE} sirenia"
 
 # Enable vivid for VM camera.
-USE="${USE} vivid"
+#USE="${USE} vivid"
 
 # Enable hostap hwsim tests.
 #USE="${USE} wifi_hostap_test"
