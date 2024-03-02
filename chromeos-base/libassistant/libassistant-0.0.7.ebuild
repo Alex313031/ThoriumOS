@@ -8,7 +8,7 @@ HOMEPAGE="https://assistant.google.com/"
 
 LICENSE="BSD-Google"
 SLOT="0"
-KEYWORDS="*"
+KEYWORDS="amd64"
 IUSE="libassistant chrome_media"
 
 DEPEND="${RDEPEND}"

@@ -8,7 +8,7 @@ HOMEPAGE="https://www.widevine.com/solutions/widevine-drm"
 
 LICENSE="BSD-Google WidevineCDM-LICENSE"
 SLOT="0"
-KEYWORDS="*"
+KEYWORDS="amd64"
 IUSE="widevine"
 
 RDEPEND="chromeos-base/chromeos-chrome"

@@ -56,6 +56,7 @@ RDEPEND="
 	chromeos-base/chromeos-bsp-amd64-frick
 	thoriumos? ( chromeos-base/chromeos-osrelease )
 	chromeos-base/cros-trimly
+	chromeos-base/easy-unlock
 	chromeos-base/oem-crx
 	chromeos-base/vga-switcher
 	libassistant? ( chromeos-base/libassistant )
