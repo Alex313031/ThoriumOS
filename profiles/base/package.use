@@ -31,8 +31,10 @@ sys-kernel/chromeos-kernel-5_15 apply_patches clang lld modules
 #sys-kernel/linux-firmware savedconfig
 
 # Enable codecs and disable debug stuff.
+chromeos-base/chromeos-chrome -chrome_debug -cros-debug -chrome_debug_tests chrome_media vaapi x264 x265 hevc_codec widevine feature_management
+
 # Enable split debug to avoid relocation overflows, b/279487992.
-chromeos-base/chromeos-chrome -chrome_debug -cros-debug -chrome_debug_tests debug_fission chrome_media vaapi x264 x265 hevc_codec widevine feature_management
+#chromeos-base/chromeos-chrome debug_fission
 
 # Fix Reven installer
 chromeos-base/chromeos-login -apply_landlock_policy
