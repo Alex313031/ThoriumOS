@@ -1,1 +1,2 @@
-release-R121-15699.B
+repo init -u https://chromium.googlesource.com/chromiumos/manifest -b release-R122-15753.B && repo sync -j4
+
