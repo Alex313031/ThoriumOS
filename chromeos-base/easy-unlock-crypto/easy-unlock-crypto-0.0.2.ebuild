@@ -19,7 +19,6 @@ RDEPEND="
 "
 
 DEPEND="${RDEPEND}"
-S=${WORKDIR}
 
 src_install() {
   exeinto /opt/google/easy_unlock
