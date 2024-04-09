@@ -116,7 +116,7 @@ fi &&
 	source ~/.bashrc &&
 	mkdir -p ~/chromiumos &&
 	cd ~/chromiumos &&
-	repo init -u https://chromium.googlesource.com/chromiumos/manifest -b main &&
+	repo init -u https://chromium.googlesource.com/chromiumos/manifest -b release-R123-15786.B &&
 	repo sync -j4
 }
 
@@ -145,7 +145,7 @@ printf "\n" &&
 cd ~/ &&
 mkdir -p ~/chromiumos &&
 cd ~/chromiumos &&
-repo init -u https://chromium.googlesource.com/chromiumos/manifest -b main &&
+repo init -u https://chromium.googlesource.com/chromiumos/manifest -b release-R123-15786.B &&
 repo sync -j4 &&
 
 printf "${YEL}Done!\n" &&

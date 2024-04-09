@@ -134,10 +134,8 @@ USE="${USE} login_enable_crosh_sudo"
 # Enable fscrypt v2 usage on 5.4+
 USE="${USE} direncription_allow_v2"
 
-# mesa-llvmpipe/mesa-reven does not require this flag yet.
-# TODO(b/200187231): Reexamine if early sandbox initialization is required
-# once mesa-reven uprevs past version 21.3.
-USE="${USE} -gpu_sandbox_start_early"
+# Start GPU sandboxing earlier.
+USE="${USE} gpu_sandbox_start_early"
 
 # Use frecon, the freon graphics virtual terminal for devices using KMS for graphics setting.
 USE="${USE} frecon vtconsole"
