@@ -24,7 +24,7 @@ Here is Arnold's source code which this project is based on > https://github.com
 
 ## Installing <img src="https://github.com/Alex313031/Thorium/blob/main/logos/NEW/bulb_light.svg#gh-dark-mode-only"> <img src="https://github.com/Alex313031/Thorium/blob/main/logos/NEW/bulb_dark.svg#gh-light-mode-only">
 The .7z files in Releases contain chromiumos_image.bin which can be flashed to a USB Drive with https://www.balena.io/etcher/, dd, or cros_flash and booted on most processors supporting AVX or later.
-Follow https://chromium.googlesource.com/chromiumos/docs/+/HEAD/developer_guide.md#Installing-your-ChromiumOS-image-to-your-hard-disk
+Follow https://www.chromium.org/chromium-os/developer-library/guides/development/developer-guide/#installing-chromiumos-on-your-device
 However when running `/usr/sbin/chromeos-install` append `--dst /dev/sdxx`, where *sdxx* is your hard drive i.e. *sda1*.
 If you built your own image, API Keys will be needed to sign in. (See below.)
 
