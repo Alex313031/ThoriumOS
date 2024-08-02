@@ -35,6 +35,9 @@ USE="${USE} -power_management"
 # We don't boot things inside the sdk.
 USE="${USE} -openrc"
 
+# We don't need translation support in our SDK tools.  b/248739853
+USE="${USE} -nls"
+
 # Disable vala inside the sdk
 USE="${USE} -vala"
 

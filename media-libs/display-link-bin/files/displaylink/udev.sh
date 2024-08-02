@@ -111,18 +111,22 @@ stop_service()
   stop displaylink-driver
 }
 
-if [ "$ACTION" = "add" ] && [ "$#" -ge 3 ]; then
-  main $ACTION $1 $2 $3 $4
-  return 0
-fi
-
-if  [ "$ACTION" = "remove" ]; then
-  if [ "$#" -ge 2 ]; then
-    main $ACTION $1 $2 $3
-    return 0
-  else
-    prune_broken_links $root
-    return 0
-  fi
-fi
+case "$ACTION" in
+  add)
+    if [ "$#" -ge 3 ]; then
+      main $ACTION $1 $2 $3 $4
+      return 0
+    elif [ "$#" -ge 2 ]; then
+      start_displaylink
+      return 0
+    fi ;;
+  remove)
+    if [ "$#" -ge 2 ]; then
+      main $ACTION $1 $2 $3
+      return 0
+    else
+      prune_broken_links $root
+      return 0
+    fi ;;
+esac
 

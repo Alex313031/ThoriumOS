@@ -169,25 +169,35 @@
     ],
     # Used for factory install images.
     "factory_install": [
+      # Factory kernels are a bit larger, and we don't need to retain backward
+      # compatibility. Bump them up a bit for some headroom.
       {
-        "num": 12,
+        "num": 2,
         "size": "32 MiB"
       },
       {
+        "num": 4,
+        "size": "32 MiB"
+      },
+      {
+        "num": 12,
+        "size": "64 MiB"
+      },
+      {
         "num": 5,
-        "size": "2 MiB"
+        "size": "1"
       },
       {
         "num": 3,
         "size": "560 MiB",
-        "fs_size": "452 MiB",
+        "fs_size": "552 MiB",
         "fs_options": {
           "ext2": "-i 32768"
         }
       },
       {
         "num": 1,
-        "size": "256 MiB"
+        "size": "200 MiB"
       }
     ],
     # Used for recovery images.
@@ -240,6 +250,10 @@
         "num": 3,
         "size": "16 GiB",
         "fs_size": "16000 MiB"
+      },
+      {
+        "num": 1,
+        "size": "9 GiB"
       }
     ]
   }
