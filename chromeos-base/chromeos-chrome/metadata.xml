@@ -20,6 +20,7 @@
 	<flag name='highdpi'>Add high DPI resources</flag>
 	<flag name='jumbo'>Coalesce translation units together, making builds faster (not automatically tested).</flag>
 	<flag name='lld'>Use lld linker</flag>
+	<flag name='merge_request'>Merge advance features</flag>
 	<flag name='nacl'>Build Native Client (NaCL) support</flag>
 	<flag name='neon'>Use neon instructions (ARM only)</flag>
 	<flag name='oobe_config'>Build utilities to save and restore OOBE config</flag>
