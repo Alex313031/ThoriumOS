@@ -16,7 +16,7 @@ CROS_WORKON_LOCALNAME="platform/empty-project"
 DESCRIPTION="Assistant DLC"
 SRC_URI=""
 
-# V1 of libassistant.so will be built + installed into rootfs.
+# V2 of libassistant.so will be built + installed into rootfs.
 DEPEND="
 	chromeos-base/chromeos-chrome
 	chromeos-base/libassistant

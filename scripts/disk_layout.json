@@ -52,14 +52,14 @@
         "num": 2,
         "label": "KERN-A",
         "type": "kernel",
-        "size": "16 MiB"
+        "size": "20 MiB"
       },
       {
         # Kernel for Slot B, no file system.
         "num": 4,
         "label": "KERN-B",
         "type": "kernel",
-        "size": "16 MiB"
+        "size": "20 MiB"
       },
       {
         # Board specific files, mostly unused.
@@ -76,12 +76,12 @@
         "size": "64 MiB"
       },
       {
-        # Used for Legacy Bios, and EFI Bios, not ChromeOS hardware
+        # Used for Legacy BIOS, and UEFI BIOS, not ChromeOS hardware
         "num": 12,
         "label": "EFI-SYSTEM",
         "type": "efi",
         "fs_format": "vfat",
-        "size": "32 MiB",
+        "size": "64 MiB",
         "uuid": "clear"
       },
       {

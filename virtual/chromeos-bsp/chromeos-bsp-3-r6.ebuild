@@ -18,11 +18,18 @@ SLOT="0"
 KEYWORDS="*"
 IUSE="chrome-dev-flags drivefs frick-wallpapers libassistant thoriumos widevine gflags"
 
+
+## Deprecated
 #	dev-python/blinker
 #	dev-python/flask
 #	dev-python/itsdangerous
 #	dev-python/werkzeug
+
+## To Re-Add
+#	dev-python/virtualenv
 #	net-misc/gsutil
+#	app-editors/qemacs
+#	chromeos-base/easy-unlock
 
 RDEPEND="
 	!chromeos-base/chromeos-bsp-null
@@ -41,7 +48,6 @@ RDEPEND="
 	app-arch/xz-utils
 	app-benchmarks/stress-ng
 	app-editors/nano
-	app-editors/qemacs
 	app-editors/vim
 	app-misc/beep
 	app-misc/cmatrix
@@ -56,7 +62,7 @@ RDEPEND="
 	chromeos-base/chromeos-bsp-amd64-frick
 	thoriumos? ( chromeos-base/chromeos-osrelease )
 	chromeos-base/cros-trimly
-	chromeos-base/easy-unlock
+	chromeos-base/easy-unlock-crypto
 	chromeos-base/oem-crx
 	chromeos-base/vga-switcher
 	libassistant? ( chromeos-base/libassistant )
@@ -67,7 +73,6 @@ RDEPEND="
 	gflags? ( dev-cpp/gflags )
 	dev-python/cherrypy
 	dev-python/dbus-python
-	dev-python/virtualenv
 	dev-util/mem
 	dev-util/strace
 	dev-vcs/git

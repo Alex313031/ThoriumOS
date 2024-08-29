@@ -43,7 +43,7 @@ printf "\n" &&
 printf "${YEL}Copying kernel config and chroot .bashrc${c0}\n" &&
 
 # Copy our kernel config
-cp -v ./kconfigs/config ~/chromiumos/src/third_party/kernel/v5.15/chromeos/config/chromeos/x86_64/chromeos-x86_64-frick.flavour.config &&
+cp -v ./kconfigs/config ~/chromiumos/src/third_party/kernel/v6.6/chromeos/config/chromeos/x86_64/chromeos-x86_64-frick.flavour.config &&
 # Aliases for chroot's bashrc
 cp -v ./chroot-bashrc ~/chromiumos/out/home/alex/.bashrc &&
 
